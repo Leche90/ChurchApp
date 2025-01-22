@@ -1,0 +1,87 @@
+.partner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 90px;
+}
+
+h4 {
+    font-size: 22px;
+    color: #333;
+    position: relative;
+    margin-top: 20px;
+    position: relative;
+}
+
+.partner-left {
+    padding-left: 10%;
+}
+
+.partner-left,
+.partner-right {
+    width: 40%;
+    border-top: #333;
+}
+
+.partner-left h4,
+.partner-right h4{
+    margin-bottom: 10px;
+}
+
+.partner-left p,
+.partner-right p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;    
+}
+
+.partner-left a {
+    color: rgb(129, 0, 193);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.partner-left a:hover {
+    text-decoration: underline;
+    color: rgb(112, 0, 146);
+}
+
+.partner-left p {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+    margin-top: 1px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+}
+
+.subscribe-form input {
+    padding: 10px;
+    border: 1px solid hsl(0, 0%, 87%);
+    border-radius: 4px;
+    width: 200px;
+    font-size: 16px;
+    flex: 0.5;
+    margin-left: -20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe-form button {
+    background-color: rgb(129, 0, 193);
+    color: white;
+    border: none;
+    padding: 2px 80px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.subscribe-form button:hover {
+    background-color: rgb(112, 0, 146);
+}
+

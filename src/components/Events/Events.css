@@ -1,0 +1,44 @@
+.events {
+    margin: 80px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.event img {
+    width: 100%;
+    border-radius: 10px; display: block;
+}
+
+.event {
+    flex-basis: 31%;
+}
+
+.caption {
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.heading {
+    align-items: center;
+    display: flex;
+    font-size: 32px;
+    flex-direction: column;
+    width: 100%;
+    order: -1;
+    margin-bottom: 20px;
+}
+
+.church-life {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold !important;
+}

@@ -1,0 +1,35 @@
+.video {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .video-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+    margin: 0 0 10px 0;
+  }
+ 
+  iframe {
+    max-width: 1200px;
+    height: 600px;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Maintain a responsive aspect ratio */
+    border: none; /* Removes default iframe border */
+  }
+
+  .video-description {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color:  rgb(75, 0, 173) !important;
+  }
+
+  .message-title {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+  }
