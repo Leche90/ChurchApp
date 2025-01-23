@@ -1,4 +1,5 @@
 import React from 'react'
+import './Vision.css'
 
 const Vision: React.FC = () => {
   return (
