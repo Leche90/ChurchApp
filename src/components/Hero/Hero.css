@@ -40,7 +40,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-left: 28px;
+    margin-left: 25px;
+    font-weight: 600;
 }
 
 .btn b {
