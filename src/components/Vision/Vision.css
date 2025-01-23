@@ -6,11 +6,23 @@
     margin-top: 60px;
 }
 
-.vision-h3 {
-    font-size: 25px;
+.vision {
+    font-size: 55px;
     color: #333;
-    font-weight: 300;
+    font-weight: 700;
     margin-bottom: 20px;
     align-items: center;
     text-align: center;
+    animation-name: vision;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
+
+@keyframes vision {
+    0% { background-color: rgb(0, 247, 255); left: 0px; top:0px;}
+    25% { background-color: rgb(238, 255, 0); left: 200px; top: 200px;}
+    50% { background-color: #b3ff00; left:200px; top: 0px;}
+    75% { background-color: #ffc400; left: 0px; top: 200px;}
+}
+
+
