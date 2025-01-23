@@ -8,17 +8,19 @@ const Events: React.FC = () => {
   return (
     <div className='events'>
       <h2 className='church-life'>OUR CHURCH LIFE</h2>
-        <div className="event">
-            <img src={event1} alt="Worship" className='event1-img'/>
-            <div className="caption">Worship</div>
-        </div>
-        <div className="event">
-            <img src={event2} alt="Word" className='event2-img'/>
-            <div className="caption">Word</div>
-        </div>
-        <div className="event">
-            <img src={event3} alt="Celebration" className='event3-img'/>
-            <div className="caption">Celebration</div>
+        <div className='event-container'>
+            <div className="event">
+                <img src={event1} alt="Worship" className='event1-img'/>
+                <div className="caption">Worship</div>
+            </div>
+            <div className="event">
+                <img src={event2} alt="Word" className='event2-img'/>
+                <div className="caption">Word</div>
+            </div>
+            <div className="event">
+                <img src={event3} alt="Celebration" className='event3-img'/>
+                <div className="caption">Celebration</div>
+            </div>
         </div>
     </div>
   )

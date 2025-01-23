@@ -1,57 +1,66 @@
 .evangelism-wrapper {
+    /* Centers the entire evangelism section both horizontally and vertically */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 100%; /* Ensures that it fits within the page size*/
-    /* overflow: hidden; /* prevents horizontal overflow */
-    /* padding: 20px; */
+    /* width: 100%; Ensures the wrapper fits the full page width */
+    /* overflow: hidden; Prevents horizontal scrolling */
+    /* padding: 20px; Adds padding around the content */
 }
 
 .evangelism-grid {
+    /* Creates a grid layout for the images */
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /*4 images per row */
-    grid-template-rows: repeat(2, 1fr); /*2 images per row */
-    gap: 0; /* No margin between images */
-    width: 100%;
-    max-width: 1200px;
+    grid-template-columns: repeat(4, 1fr); /* Defines 4 equal-width columns */
+    grid-template-rows: repeat(2, 1fr); /* Defines 2 equal-height rows */
+    gap: 0; /* Removes any spacing between the grid items */
+    width: 100%; /* Allows the grid to take up the full container width */
+    max-width: 1200px; /* Limits the maximum grid width for better readability */
 }
 
 .image-container {
+    /* Positions the container relative to enable effects on child elements */
     position: relative;
-    perspective: 1000px; /* Required for 3D effect */
+    perspective: 1000px; /* Adds a 3D perspective for hover animations */
 }
 
 .evangelism-img {
-    width: 100%; /*  */
+    /* Ensures images fill the container completely */
+    width: 100%; 
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Crops images to maintain their aspect ratio */
+    /* Adds smooth transitions for animations */
     transition: transform 0.6s ease, box-shadow 0.6s ease;
-    transform-style: preserve-3d;
+    transform-style: preserve-3d; /* Enables 3D transformations */
 }
 
 .evangelism-h2 {
-    font-size: 3rem;
-    color: #333;
-    text-align: center;
-    margin-top: 80px;
+    /* Styles the main heading of the evangelism section */
+    font-size: 3rem; /* Large font size for emphasis */
+    color: #333; /* Neutral dark color for readability */
+    text-align: center; /* Centers the heading */
+    margin-top: 80px; /* Adds space above the heading */
 }
 
 .evangelism-text {
-    font-size: 1.2rem;
-    margin-top: 20px;
-    color: #333;
-    line-height: 1.4;
-    text-align: center;
-    margin-bottom: 40px;
-    max-width: 1300px;
+    /* Styles the description text */
+    font-size: 1.2rem; /* Readable font size */
+    margin-top: 20px; /* Adds space above the text */
+    color: #333; /* Neutral dark color for readability */
+    line-height: 1.4; /* Improves readability by spacing out lines */
+    text-align: center; /* Centers the text */
+    margin-bottom: 40px; /* Adds space below the text */
+    max-width: 1300px; /* Limits text width to improve readability */
 }
 
 .image-container:hover .evangelism-img {
-    transform: rotateY(15deg) rotateX(10deg) scale(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /* Defines the hover effect for images */
+    transform: rotateY(15deg) rotateX(10deg) scale(1.1); /* Applies a 3D rotation and slight zoom */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth */
 }
 
-.image-container:active .evanglism-img {
+.image-container:active .evangelism-img {
+    /* Resets the image's transformation when clicked */
     transform: rotateY(0deg) rotateX(0deg) scale(1);
 }

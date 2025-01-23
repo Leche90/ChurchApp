@@ -25,11 +25,11 @@ const Navbar: React.FC = () => {
     <nav className={`container ${sticky ? 'sticky' : ''}`}>
         <img src={logo} alt="Logo" className='logo' />
         <ul>
-            <li><a href="/">HOME</a></li>
-            <li><a href="https://www.kingmakersinternationalministries.com/about">ABOUT</a></li>
-            <li><a href="https://www.kingmakersinternationalministries.com/teachings">TEACHINGS</a></li>
-            <li><a href="https://www.kingmakersinternationalministries.com/events">EVENTS</a></li>
-            <li><a href="https://www.kingmakersinternationalministries.com/contact">CONTACT</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="https://www.kingmakersinternationalministries.com/about">About</a></li>
+            <li><a href="https://www.kingmakersinternationalministries.com/teachings">Teachings</a></li>
+            <li><a href="https://www.kingmakersinternationalministries.com/events">Events</a></li>
+            <li><a href="https://www.kingmakersinternationalministries.com/contact">Contact</a></li>
             <button className="btn" onClick={handleClick}>GIVE</button>
         </ul>       
     </nav>

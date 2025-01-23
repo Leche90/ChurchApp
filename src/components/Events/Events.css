@@ -6,13 +6,25 @@
     flex-direction: column;
 }
 
+.event-container {
+    display: flex; /* Arrange items horizontally */
+    justify-content: space-between; /* Space between images */
+    gap: 20px; /* 20px space between each image*/
+    width: 100%; /* Ensure the container sapns full width */
+    max-width: 1200px; /* Optional: to give a max width */
+}
+
 .event img {
     width: 100%;
     border-radius: 10px; display: block;
 }
 
 .event {
-    flex-basis: 31%;
+    flex-basis: 1; /* Allow events to grow/ shrink as needed */
+    display: flex;
+    flex-direction: column; /* Stack image and caption vertically */
+    align-items: center; /* Center align the image and caption */
+    text-align: center;
 }
 
 .caption {
@@ -40,5 +52,5 @@
     color: #333;
     text-align: center;
     margin-bottom: 20px;
-    font-weight: bold !important;
+    font-weight: bold;
 }
