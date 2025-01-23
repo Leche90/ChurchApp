@@ -1,0 +1,41 @@
+.values-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fac4ff1e; /* Light background colour*/
+    box-sizing: border-box;
+}
+
+.values {
+    white-space: no-wrap;
+    font-size: 40px;
+    font-weight: 600;
+    color: #333;
+    animation: shake 1s ease-in-out 5; 
+}
+
+.values-text {
+    font-size: 15px;
+    margin-top: 5px;
+
+}
+
+@keyframes shake {
+    0% {        
+        transform: translateX(0);  /* Starting position */
+    }
+    25% {
+        transform: translateX(-5px);  /* Move left */ 
+    }
+    50% {
+        transform: translateX(5px);  /* Back to starting position */
+    }
+    75% {
+        transform: translateX(-3px);  /* Move right */ 
+    }
+    100% {
+        transform: translateX(3px);  /* Back to starting position */
+    }
+}
+    
+
+
