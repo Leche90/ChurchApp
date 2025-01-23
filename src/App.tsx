@@ -9,6 +9,7 @@ import Evangelism from './components/Evangelism/Evangelism'
 import Mission from './components/Mission/Mission'
 import Vision from './components/Vision/Vision'
 import Partner from './components/Partner/Partner'
+import Values from './components/Values/Values'
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Evangelism/>
         <Vision/>
         <Mission/>
+        <Values/>
         <Partner/>
       </div>
     </div>
