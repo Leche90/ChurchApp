@@ -2,8 +2,8 @@
     text-align: center;
     margin-top: 60px;
     padding: 20px;
-    background-color: #c4ffd62e; /* Light background colour*/
-    border-top: 8px solid #c60094; /* Top border (bolder) */
+    background-color: #fac4ff1e; /* Light background colour*/
+    border-top: 3px solid rgba(128, 0, 128, 0.374); /* Top border (bolder) */
     box-sizing: border-box;
 }
 

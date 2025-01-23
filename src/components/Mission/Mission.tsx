@@ -6,7 +6,7 @@ const Mission: React.FC = () => {
     <div className='mission-container'>
         <h3>Mission</h3>
         <p>
-            To reach out to the lost and brokenhearted, in Winnipeg, Canada, and inspire others to live a life of faith and hope.
+            To reach out, discover, train and release members to be like Jesus wherever we are.
         </p>
     </div>
   )
