@@ -6,7 +6,7 @@ const Vision: React.FC = () => {
     <div className='vision-container'>
       <div className='vision'>VISION</div>       
         <p className='vision-text'>
-            Raising royalties
+            Raising royalties.
         </p>
     </div>
   )
