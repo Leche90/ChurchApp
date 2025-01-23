@@ -24,7 +24,7 @@ const Evangelism: React.FC = () => {
   return (
         <div className='evangelism-wrapper'>
             <h2 className='evangelism-h2'>WINNIPEG IN FOCUS</h2>
-            <p className='evangelism-text'>In Winnipeg, we are actively answering the call to evangelize, reaching out to the lost and brokenhearted with the message of hope and salvation. Through personal connections, street outreach, and community events, we share the gospel with compassion, reflecting Christ’s love in every encounter.                    
+            <p className='evangelism-text'>We are actively answering the call to evangelize, reaching out to the lost and brokenhearted with the message of hope and salvation. Through personal connections, street outreach, and community events, we share the gospel with compassion, reflecting Christ’s love in every encounter.                    
             </p>
 
         {/* Image Grid Section */}

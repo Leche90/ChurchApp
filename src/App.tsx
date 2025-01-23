@@ -20,8 +20,8 @@ const App: React.FC = () => {
         <Leader/>
         <Video/>
         <Evangelism/>
-        <Mission/>
         <Vision/>
+        <Mission/>
         <Partner/>
       </div>
     </div>

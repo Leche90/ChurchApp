@@ -5,9 +5,9 @@ const Video: React.FC = () => {
   return (
     <div className='video'>
         <div className="video-main">
-            <h3 className="video-title">WATCH THE LATEST SERMON</h3>
+            <h3 className="video-title">Watch the Latest Sermon</h3>
             <p className='video-description'>
-              <span className="message-title">Revisiting the Old Plan</span>              
+              <span className="message-title">REVISITING THE OLD PLAN</span>              
             </p>
               <iframe
                 width="560"
