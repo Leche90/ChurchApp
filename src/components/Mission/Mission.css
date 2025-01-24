@@ -1,7 +1,7 @@
 .mission-container {
     text-align: center;
     padding: 20px;
-    background-color: #3f8000; /* Light background colour*/
+    background-color: rgba(0, 102, 108, 1); /* Light background colour*/
     box-sizing: border-box;
     color: white;
 }

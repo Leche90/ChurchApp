@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     justify-items: center;
-    margin: 10px 0 0 0;
+    margin: 13px 0 0 0;
 }
 
 .leader-img {
@@ -30,19 +30,19 @@
 
 .lead-pastor {
     font-size: 25px;
-    color: #333;
+    color: rgba(54, 69, 79, 1);
     font-weight: 300;
 }
 
 .pastor {
     font-size: 30px;
-    color: #333;
-    margin: 10px 0;
+    color: rgba(54, 69, 79, 1);
+    margin: 5px 0;
     width: 100%;
 }
 
 .leader p {
-    color: #333;
+    color: rgb(32, 40, 45);
     margin-bottom: 15px;
     font-size: 15px;
     line-height: 1.4;
