@@ -9,7 +9,7 @@
 
 h4 {
     font-size: 22px;
-    color: #333;
+    color: rgba(54, 69, 79, 1);
     position: relative;
     margin-top: 20px;
     position: relative;
@@ -33,7 +33,7 @@ h4 {
 .partner-left p,
 .partner-right p {
     font-size: 18px;
-    color: #333;
+    color: rgba(54, 69, 79, 1);
     line-height: 1.5;    
 }
 

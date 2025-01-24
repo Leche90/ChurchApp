@@ -1,15 +1,16 @@
 .mission-container {
     text-align: center;
     padding: 20px;
-    background-color: #edffc41e; /* Light background colour*/
+    background-color: #3f8000; /* Light background colour*/
     box-sizing: border-box;
+    color: white;
 }
 
 .mission {
     white-space: no-wrap;
     font-size: 40px;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
     animation: shake 1s ease-in-out 5; 
 }
 

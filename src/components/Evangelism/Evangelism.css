@@ -39,7 +39,7 @@
 .evangelism-h2 {
     /* Styles the main heading of the evangelism section */
     font-size: 38px; /* Large font size for emphasis */
-    color: #333; /* Neutral dark color for readability */
+    color: rgba(54, 69, 79, 1); /* Neutral dark color for readability */
     text-align: center; /* Centers the heading */
     margin-top: 60px; /* Adds space above the heading */
 }
@@ -48,7 +48,7 @@
     /* Styles the description text */
     font-size: 15px; /* Readable font size */
     margin-top: 10px; /* Adds space above the text */
-    color: #333; /* Neutral dark color for readability */
+    color: rgb(20, 25, 28); /* Neutral dark color for readability */
     line-height: 1.4; /* Improves readability by spacing out lines */
     text-align: center; /* Centers the text */
     margin-bottom: 40px; /* Adds space below the text */

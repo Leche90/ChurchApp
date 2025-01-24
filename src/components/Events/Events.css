@@ -32,6 +32,7 @@
 .caption {
     font-size: 22px;
     margin-top: 15px;
+    color: rgb(25, 31, 35);
 }
 
 .heading {
@@ -46,7 +47,7 @@
 
 .church-life {
     font-size: 32px;
-    color: #333;
+    color: rgba(54, 69, 79, 1);
     text-align: center;
     margin-bottom: 20px;
     font-weight: bold;
