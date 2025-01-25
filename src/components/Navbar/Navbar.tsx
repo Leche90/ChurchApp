@@ -1,30 +1,74 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react'; // Import necessary routes from react
 import './Navbar.css';
 import logo from '../../assets/logo.jpg';
-// import { Link } from'react-router-dom';
+import { Link } from'react-router-dom'; // Import link from react-router-dom for routing within the app
 
-const Navbar: React.FC = () => {  
-  const [sticky, setSticky] = useState(false); // State for sticky navigation bar
-  const [click, setClick] = useState(false); // State for menu button click
+const Navbar: React.FC = () => {  // nabvar functional component
+  const [sticky, setSticky] = useState(false); // State to track if the navbar is sticky (fixed at the top)
+  const [click, setClick] = useState(false); // State to track whether the mobile menu is open or closed
+  const [searchText, setSearchText] = useState(''); // State to track the search input text
 
-  const handleClick = () => setClick(!click); // Function to handle menu button click
+  const handleClick = () => setClick(!click); // Toggle the menu open/close when hamburger is clicked
 
-  useEffect(() => {
+  useEffect(() => { // useEffect hook to handle scroll events
     const handleScroll = () => {
-      window.scrollY > 50 ? setSticky(true) : setSticky(false);
+      window.scrollY > 50 ? setSticky(true) : setSticky(false); // If scrolled more than 50px, make navbar sticky
     };
     window.addEventListener('scroll', handleScroll); // Add event listener on scroll
     return () => {
       window.removeEventListener('scroll', handleScroll); // Remove event listener on scroll
     };
-  }, []);
+  }, []); // Empty dependency array means this effect runs only once when the component mounts
 
-  console.log('Navbar rendered');
+   // Handle search input change
+   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(event.target.value);
+  };
+
+    // Toggle focus for the search bar
+    const handleSearchFocus = () => {
+    setSearchText(searchText); // Trigger focus event
+  };
 
   return (
-    <nav className={`container ${sticky ? 'sticky' : ''}`}>
+    <nav className={`container ${sticky ? 'sticky' : ''}`}> 
+          {/* Logo as a link to the homepage */}
+      <Link to="/" className='logo-link'> 
         <img src={logo} alt="Logo" className='logo' />
-        <ul>
+      </Link>
+
+      {/* Search Bar */}
+      <div className={`search ${searchText.length > 0 ? 'focused' : ''}`}>
+        <input
+          type="text"
+          className="search-textbox"
+          placeholder="Search"
+          value={searchText}
+          onChange={handleSearchChange}
+          onFocus={handleSearchFocus}
+        />
+        {searchText.length > 0 && (
+          <button className="ico-btn clear-btn" onClick={() => setSearchText('')}>
+            <i className="material-icons ic_clear">&#xE14C;</i>
+          </button>
+        )}
+        {searchText.length === 0 && (
+          <button className="ico-btn search-btn">
+            <i className="material-icons ic_search">&#xE8B6;</i>
+          </button>
+        )}
+      </div>
+
+
+          {/* Hamburger icon and menu toggle for mobile */}
+      <div className="hamburger" onClick={handleClick}>
+        <div className={click ? 'bar toggle' : 'bar'}></div>
+        <div className={click ? 'bar toggle' : 'bar'}></div>
+        <div className={click ? 'bar toggle' : 'bar'}></div>
+      </div>
+
+      {/* Menu items and GIVE button */}
+        <ul className={click ? 'nav-links active' : 'nav-links'}>
             <li><a href="/">Home</a></li>
             <li><a href="https://www.kingmakersinternationalministries.com/about">About</a></li>
             <li><a href="https://www.kingmakersinternationalministries.com/teachings">Teachings</a></li>

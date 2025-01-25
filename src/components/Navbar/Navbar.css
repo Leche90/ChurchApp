@@ -1,19 +1,163 @@
 nav{
-    width: 100%;
-    background: white;
-    padding: 4px 0px;
-    position: fixed;
-    top: 0;
-    left: 0;
+    width: 100%; /* Make navbar span the full width of the screen */
+    background: white; /* Set background color to white */
+    padding: 4px 0px; /* Add padding for vertical spacing */
+    position: fixed; /* Fix navbar to the top of the screen */
+    top: 0; /* Position the navbar at the top */
+    left: 0; /* Align navbar to the left */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space out items */
+    z-index: 10; /* Ensure navbar appears above other content */
+    transition: 0.3s ease-in-out; /* Smooth transition for styling changes */
+}
+
+/* Sticky Navbar */
+.sticky {
+    position: fixed;  /* Keep navbar fixed at the top */
+    top: 0;  /* Position at the top */
+    left: 0;  /* Align left */
+    width: 100%;  /* Full width */
+    background-color: white;  /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Add subtle shadow for depth */
+    z-index: 1000;  /* Higher z-index to stay on top */
+}
+
+.search {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    z-index: 10;
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+    padding: 0 9px;
+    transition: all 0.3s cubic-bezier(0.21, 0.61, 0.36, 1);
+    border-radius: 20px;
+
+}
+
+.search.focused {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.search-textbox {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: rgb(20, 72, 63);
+    transition: all 0.5s cubic-bezier(0.21, 0.61, 0.36, 1);
+    width: 60px;
+}
+
+.search-textbox:focus {
+    width: 100%;
+}
+
+.ico-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 80%;
+    padding: 5px;
+    color: #f62f0c;
+}
+
+.ico-btn.search-btn {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
+    color: #141211;
+    cursor: pointer;
+}
+
+
+.ico-btn.clear-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s cubic-bezier(0.21, 0.61, 0.36, 1);
 }
 
 .logo {
     width: 80px;
 }
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;  /* Hide hamburger by default on larger screens */
+    flex-direction: column;  /* Stack bars vertically */
+    gap: 4px;  /* Add space between bars */
+    cursor: pointer;  /* Change cursor to pointer when hovered */
+}
+
+.bar {
+    width: 30px;  /* Set width of hamburger bars */
+    height: 3px;  /* Set height of hamburger bars */
+    background-color: rgba(54, 69, 79, 1);  /* Set color of the bars */
+    transition: 0.5s;  /* Smooth transition for animation */
+}
+
+/* Animation for Hamburger Menu when clicked */
+.bar.toggle:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);  /* Rotate the first bar to form an "X" */
+}
+
+.bar.toggle:nth-child(2) {
+  opacity: 0;  /* Hide the middle bar */
+}
+
+.bar.toggle:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);  /* Rotate the third bar to form an "X" */
+}
+
+/* Navbar Links Styling */
+.nav-links {
+    list-style-type: none;  /* Remove list styling */
+    display: flex;  /* Use flexbox to align navbar items horizontally */
+    gap: 10px;  /* Add space between items */
+    margin: 0;  /* Remove margin */
+    padding: 0;  /* Remove padding */
+  }
+
+.nav-links li {
+    font-size: 16px;  /* Set font size */
+    color: rgba(54, 69, 79, 1);  /* Set text color */
+    margin-left: 5px;
+    /* transition: transform 0.3s ease, color 0.3s ease;  /* Smooth transition for hover effect */
+  }
+
+  /* Hover Effect for Navbar Items */
+.nav-links li a:hover {
+    transform: translateY(-8px);  /* Move the item up when hovered */
+    color: #057da1;  /* Change color to tomato when hovered */
+  }
+
+  /* Active class for the navbar menu (for mobile view) */
+.nav-links.active {
+    display: flex;  /* Display the menu when active */
+    /* position: absolute;  /* Position the menu absolutely */
+    /* top: 60px;  /* Position below the navbar */
+    /* left: 0;  /* Align to the left */
+    /* width: 100%;  /* Full width */
+    /* background: white;  /* White background */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Add shadow for depth */
+}
+
+/* Navbar Link Styling */
+.nav-links li a {
+    display: block;  /* Make links block-level elements */
+    padding: 10px;  /* Add padding around the links */
+    color: rgba(54, 69, 79, 1);  /* Set text color */
+    text-decoration: none;  /* Remove underlines from links */
+  }
+
+/* Button Style */
+.btn {
+    padding: 10px 20px;  /* Add padding to button */
+    background-color: #ff6347;  /* Set background color to tomato */
+    color: white;  /* Set text color to white */
+    border: none;  /* Remove border */
+    cursor: pointer;  /* Change cursor to pointer on hover */
+    font-weight: bold;  /* Make text bold */
+    border-radius: 5px;  /* Round the corners of the button */
+  }
 
 nav ul li {
     display: inline-block;
@@ -21,9 +165,33 @@ nav ul li {
     margin: 5px 20px;
     font-size: 16px;
     color: rgba(54, 69, 79, 1);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.dark-nav {
-    background: rgb (255, 255, 255);
-    transition: 0.5s ease-in-out;
-}
+/* Media Queries for Mobile View */
+@media screen and (max-width: 768px) {
+    /* Show hamburger menu on mobile */
+    .hamburger {
+      display: flex;  /* Display the hamburger on mobile */
+    }
+  
+    /* Navbar links become a vertical column on mobile */
+    .nav-links {
+      display: none;  /* Hide navbar items by default */
+      flex-direction: column;  /* Stack items vertically */
+      gap: 15px;  /* Add space between items */
+      position: absolute;  /* Position absolutely */
+      top: 60px;  /* Below the navbar */
+      left: 0;  /* Align to the left */
+      right: 0;  /* Align to the right */
+      background: white;  /* Set background to white */
+      padding: 20px;  /* Add padding */
+    }
+  
+    /* Show the links when the menu is clicked */
+    .nav-links.active {
+      display: flex;  /* Show links when active */
+    }
+  }
+
+

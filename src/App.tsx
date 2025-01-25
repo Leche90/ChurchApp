@@ -2,12 +2,6 @@ import React from 'react'
 import './styles/tailwind.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import About from './pages/About'
-import Teachings from './pages/Teachings'
-import Events from './pages/Events'
-import Contact from './pages/Contact'
-import Give from './pages/Give'
-
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import Event from './components/Event/Event'
@@ -19,7 +13,11 @@ import Vision from './components/Vision/Vision'
 import Partner from './components/Partner/Partner'
 import Values from './components/Values/Values'
 
-
+import About from './pages/About'
+import Teachings from './pages/Teachings'
+import Events from './pages/Events'
+import Contact from './pages/Contact'
+import Give from './pages/Give'
 
 const App: React.FC = () => {
   return (
