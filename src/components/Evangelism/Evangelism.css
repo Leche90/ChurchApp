@@ -41,16 +41,16 @@
     font-size: 38px; /* Large font size for emphasis */
     color: rgba(54, 69, 79, 1); /* Neutral dark color for readability */
     text-align: center; /* Centers the heading */
-    margin-top: 60px; /* Adds space above the heading */
+    margin-top: 45px; /* Adds space above the heading */
 }
 
 .evangelism-text {
     /* Styles the description text */
     font-size: 15px; /* Readable font size */
-    margin-top: 10px; /* Adds space above the text */
+    margin-top: 8px; /* Adds space above the text */
     color: rgb(20, 25, 28); /* Neutral dark color for readability */
     line-height: 1.4; /* Improves readability by spacing out lines */
-    text-align: center; /* Centers the text */
+    text-align: justify; /* Centers the text */
     margin-bottom: 40px; /* Adds space below the text */
     max-width: 1300px; /* Limits text width to improve readability */
 }

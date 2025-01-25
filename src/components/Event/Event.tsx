@@ -1,10 +1,10 @@
 import React from 'react'
-import './Events.css'
+import './Event.css'
 import event1 from '../../assets/event1.jpg'
 import event2 from '../../assets/event2.jpg'
 import event3 from '../../assets/event3.jpg'
 
-const Events: React.FC = () => {
+const Event: React.FC = () => {
   return (
     <div className='events'>
       <h2 className='church-life'>OUR CHURCH LIFE</h2>
@@ -26,4 +26,4 @@ const Events: React.FC = () => {
   )
 }
 
-export default Events
+export default Event
