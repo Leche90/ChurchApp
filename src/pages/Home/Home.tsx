@@ -11,14 +11,10 @@ import Vision from '../components/Vision/Vision';
 import Partner from '../components/Partner/Partner';
 import Values from '../components/Values/Values';
 
-console.log('Home.tsx loaded');
-console.log('Hero component:', Hero);
-
 const Home: React.FC = () => {
   return (
     <div>
-      {console.log('Rendering Home page')}
-        <Hero />
+       <Hero />
         <Leader />
         <Video />
         <Evangelism />

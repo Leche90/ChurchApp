@@ -31,7 +31,7 @@ nav{
     padding: 0 9px;
     transition: all 0.3s cubic-bezier(0.21, 0.61, 0.36, 1);
     border-radius: 20px;
-
+    margin-left: 20px;
 }
 
 .search.focused {
@@ -45,7 +45,7 @@ nav{
     font-size: 16px;
     color: rgb(20, 72, 63);
     transition: all 0.5s cubic-bezier(0.21, 0.61, 0.36, 1);
-    width: 60px;
+    width: 80px; /* Adjust by percentage or px depending on choice */
 }
 
 .search-textbox:focus {
@@ -55,9 +55,9 @@ nav{
 .ico-btn {
     width: 30px;
     height: 30px;
-    border-radius: 80%;
+    border-radius: 20px;
     padding: 5px;
-    color: #f62f0c;
+    border: 1px;
 }
 
 .ico-btn.search-btn {
@@ -108,12 +108,13 @@ nav{
 }
 
 /* Navbar Links Styling */
-.nav-links {
+.nav-link {
     list-style-type: none;  /* Remove list styling */
     display: flex;  /* Use flexbox to align navbar items horizontally */
     gap: 10px;  /* Add space between items */
     margin: 0;  /* Remove margin */
     padding: 0;  /* Remove padding */
+    transition: transform 0.2s ease-in-out;
   }
 
 .nav-links li {
@@ -125,7 +126,7 @@ nav{
 
   /* Hover Effect for Navbar Items */
 .nav-links li a:hover {
-    transform: translateY(-8px);  /* Move the item up when hovered */
+    transform: translateY(-5px);  /* Move the item up when hovered */
     color: #057da1;  /* Change color to tomato when hovered */
   }
 
@@ -146,17 +147,6 @@ nav{
     padding: 10px;  /* Add padding around the links */
     color: rgba(54, 69, 79, 1);  /* Set text color */
     text-decoration: none;  /* Remove underlines from links */
-  }
-
-/* Button Style */
-.btn {
-    padding: 10px 20px;  /* Add padding to button */
-    background-color: #ff6347;  /* Set background color to tomato */
-    color: white;  /* Set text color to white */
-    border: none;  /* Remove border */
-    cursor: pointer;  /* Change cursor to pointer on hover */
-    font-weight: bold;  /* Make text bold */
-    border-radius: 5px;  /* Round the corners of the button */
   }
 
 nav ul li {
@@ -194,4 +184,22 @@ nav ul li {
     }
   }
 
+.nav-links .btn {
+    background: rgba(0, 102, 108, 1)  !important; ;
+    color: white;
+    padding: 8px 13px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    margin-left: 10px;
+}
 
+.nav-links .btn:hover {
+    background: rgb(158, 113, 0) !important;
+}

@@ -74,7 +74,8 @@ const Navbar: React.FC = () => {  // nabvar functional component
             <li><a href="https://www.kingmakersinternationalministries.com/teachings">Teachings</a></li>
             <li><a href="https://www.kingmakersinternationalministries.com/events">Events</a></li>
             <li><a href="https://www.kingmakersinternationalministries.com/contact">Contact</a></li>
-            <button className="btn" onClick={handleClick}>GIVE</button>
+            <a href='https://members.faithpays.org/donate/FP8588921' target="_blank" rel="noopener noreferrer">
+            <button className="btn" onClick={handleClick}>GIVE</button></a>
         </ul>       
     </nav>
   );

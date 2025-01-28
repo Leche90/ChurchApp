@@ -28,22 +28,17 @@
     max-width: 1000px;
 }
 
-.btn {
-    background: rgba(0, 102, 108, 1) !important; ;
-    color: white;
-    padding: 8px 13px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    outline: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 25px;
-    font-weight: 600;
+.hero-text .btn b {
+    margin-left: 5px; /* Adds space between 'US' and 'LIVE' */
+    color: aqua;
 }
 
-.btn b {
-    margin-left: 5px; /* Adds space between 'US' and 'LIVE' */
-  }
+.hero-text .btn {
+    color: aquamarine;
+    margin-top: 30px;
+    background-color: rgba(0, 102, 108, 1);
+}
+
+.hero-text .btn:hover {
+    background-color: rgb(14, 9, 38);
+}
