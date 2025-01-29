@@ -70,10 +70,10 @@ const Navbar: React.FC = () => {  // nabvar functional component
       {/* Menu items and GIVE button */}
         <ul className={click ? 'nav-links active' : 'nav-links'}>
             <li><a href="/">Home</a></li>
-            <li><a href="https://www.kingmakersinternationalministries.com/about">About</a></li>
-            <li><a href="https://www.kingmakersinternationalministries.com/teachings">Teachings</a></li>
-            <li><a href="https://www.kingmakersinternationalministries.com/events">Events</a></li>
-            <li><a href="https://www.kingmakersinternationalministries.com/contact">Contact</a></li>
+            <li><a href="http://localhost:5173/about">About</a></li>
+            <li><a href="http://localhost:5173/teachings">Teachings</a></li>
+            <li><a href="http://localhost:5173/events">Events</a></li>
+            <li><a href="http://localhost:5173/contact">Contact</a></li>
             <a href='https://members.faithpays.org/donate/FP8588921' target="_blank" rel="noopener noreferrer">
             <button className="btn" onClick={handleClick}>GIVE</button></a>
         </ul>       

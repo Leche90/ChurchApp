@@ -7,34 +7,15 @@
     margin-top: 90px;
 }
 
-h4 {
+.partner-us {
     font-size: 22px;
     color: rgba(54, 69, 79, 1);
-    position: relative;
-    margin-top: 20px;
-    position: relative;
-}
-
-.partner-left {
-    padding-left: 10%;
 }
 
 .partner-left,
 .partner-right {
     width: 40%;
     border-top: #333;
-}
-
-.partner-left h4,
-.partner-right h4{
-    margin-bottom: 10px;
-}
-
-.partner-left p,
-.partner-right p {
-    font-size: 18px;
-    color: rgba(54, 69, 79, 1);
-    line-height: 1.5;    
 }
 
 .partner-left a {
@@ -48,11 +29,13 @@ h4 {
     color: rgba(0, 102, 108, 1);
 }
 
-.partner-left p {
+.partner-text {
     align-items: center;
     justify-content: center;
     margin-bottom: 3px;
     margin-top: 1px;
+    font-size: 18px;
+    color: #333;
 }
 
 .subscribe-form {
@@ -76,12 +59,12 @@ h4 {
     background-color: rgb(239, 86, 31);
     color: white;
     border: none;
-    padding: 2px 80px;
+    padding: 2px 20px;
     font-size: 16px;
     cursor: pointer;
 }
 
 .subscribe-form button:hover {
-    background-color: rgb(229, 0, 0);
+    background-color: rgb(4, 78, 71);
 }
 
