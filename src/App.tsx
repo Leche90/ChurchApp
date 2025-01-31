@@ -8,10 +8,7 @@ import Event from './components/Event/Event';
 import Video from './components/Video/Video';
 import Leader from './components/Leader/Leader';
 import Evangelism from './components/Evangelism/Evangelism';
-import Mission from './components/Mission/Mission';
-import Vision from './components/Vision/Vision';
 import Partner from './components/Partner/Partner';
-import Values from './components/Values/Values';
 
 import About from './pages/About/About';
 import Teachings from './pages/Teachings/Teachings';
@@ -21,23 +18,22 @@ import SignUp from './pages/SignUp/SignUp';
 
 const App: React.FC = () => {
   return (
-    <Routes>
+    <>
+      {/* Navbar Component to appear on every page */}
+      <Navbar />
+      
+      {/* Main routing structure */}
+      <Routes>
       {/* Home Route (Displays Homepage content) */}
-      <Route path="/" element={
-        <>
-          <Navbar />
+      <Route path="/" element={        
           <div className='container mx-auto min-h-screen flex flex-col'>
             <Hero />
             <Event />
             <Leader />
             <Video />
             <Evangelism />
-            <Vision />
-            <Mission />
-            <Values />
             <Partner />
-          </div>
-        </>
+          </div>      
       } />
 
       {/* Individual Pages (like SignUp, About, etc.) */}
@@ -46,7 +42,8 @@ const App: React.FC = () => {
       <Route path="/events" element={<Events />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/signup" element={<SignUp />} />
-    </Routes>
+      </Routes>
+    </>
   );
 }
 
