@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'; // Import necessary routes from react
+import React, { useEffect, useState, useRef } from 'react'; // Import necessary routes from react
 import './Navbar.css';
 import logo from '../../assets/logo.jpg';
 import { Link } from'react-router-dom'; // Import link from react-router-dom for routing within the app
@@ -10,7 +10,8 @@ const Navbar: React.FC = () => {  // nabvar functional component
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to track dropdown visibility for search
   const [isEventsDropdownOpen, setIsEventsDropdownOpen] = useState(false); // State to track dropdown visibility for events dropdown
 
-  const handleClick = () => setClick(!click); // Toggle the menu open/close when hamburger is clicked
+  // Ref for dropdown menu
+  const eventsDropdownRef = useRef<HTMLUListElement | null>(null);  
 
   useEffect(() => { // useEffect hook to handle scroll events
     const handleScroll = () => {
@@ -42,6 +43,23 @@ const Navbar: React.FC = () => {  // nabvar functional component
     event.preventDefault(); // Prevent default link behavior
     setIsEventsDropdownOpen(!isEventsDropdownOpen);
   };
+
+  // Toggle the mobile menu (hamburger menu
+  const handleClick = () => setClick(!click);
+
+  // Detect clicks outside the dropdown to close it
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) =>{
+      if (eventsDropdownRef.current && !eventsDropdownRef.current.contains(event.target as Node)) {
+        setIsEventsDropdownOpen(false); // Close the dropdown if clicked outside
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+    }, []);
 
   return (
     <nav className={`container ${sticky ? 'sticky' : ''}`}> 
@@ -81,20 +99,22 @@ const Navbar: React.FC = () => {  // nabvar functional component
 
       {/* Menu items and GIVE button */}
         <ul className={click ? 'nav-links active' : 'nav-links'}>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/teachings">Teachings</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/teachings">Teachings</Link></li>
             <li onClick={toggleEventsDropdown}>
-              <a href='/events' onClick={(e) => e.preventDefault()}>
+              <Link to='/events' onClick={(e) => e.preventDefault()}>
               Events
-              <i className='fa fa-caret-down'></i></a>
-                <ul className={`events-dropdown ${isEventsDropdownOpen ? 'active' : ''}`}>
-                  <li><a href="/events/barbeque">Barbeque</a></li>
-                  <li><a href="/events/lorem">Lorem</a></li>
-                  <li><a href="/events/ipsum">Ipsum</a></li>
+              <i className='fa fa-caret-down'></i></Link>
+                <ul 
+                  ref={eventsDropdownRef}
+                  className={`events-dropdown ${isEventsDropdownOpen ? 'active' : ''}`}>
+                  <li><Link to="/events_barbeque">Barbeque</Link></li>
+                  <li><Link to="/events_lorem">Lorem</Link></li>
+                  <li><Link to="/events_ipsum">Ipsum</Link></li>
                 </ul>              
             </li>
-            <li><a href="http://localhost:5173/contact">Contact</a></li>
+            <li><Link to="/contact">Contact</Link></li>
             <a href='https://members.faithpays.org/donate/FP8588921' target="_blank" rel="noopener noreferrer">
             <button className="btn" onClick={handleClick}>GIVE</button></a>
         </ul>       

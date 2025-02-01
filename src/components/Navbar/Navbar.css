@@ -146,10 +146,10 @@ nav{
   filter: blur(0);
 }
 
-.nav-links:hover li a{
+.nav-links:hover li a {
   transform: scale(0.7);
   opacity: 0.2;
-  filter: blur(4px);
+  filter: blur(1px);
   background-color: rgba(4, 136, 151, 0.297);
 }
 
@@ -209,11 +209,11 @@ nav ul li {
 
 .events-dropdown li a:hover {
   transform: scale(1.2);
-  filter: blur(0);
+  filter: none;
 }
 
 .events-dropdown li a {
-  filter: blur(0);
+  filter: none;
 }
 
 .fa-caret-down {
