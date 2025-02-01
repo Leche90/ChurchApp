@@ -7,6 +7,8 @@ const Navbar: React.FC = () => {  // nabvar functional component
   const [sticky, setSticky] = useState(false); // State to track if the navbar is sticky (fixed at the top)
   const [click, setClick] = useState(false); // State to track whether the mobile menu is open or closed
   const [searchText, setSearchText] = useState(''); // State to track the search input text
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to track dropdown visibility for search
+  const [isEventsDropdownOpen, setIsEventsDropdownOpen] = useState(false); // State to track dropdown visibility for events dropdown
 
   const handleClick = () => setClick(!click); // Toggle the menu open/close when hamburger is clicked
 
@@ -30,6 +32,17 @@ const Navbar: React.FC = () => {  // nabvar functional component
     setSearchText(searchText); // Trigger focus event
   };
 
+  // Toggle dropdown visibility
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  // Toggle dropdown visibility when clicked
+  const toggleEventsDropdown = (event: React.MouseEvent) => {
+    event.preventDefault(); // Prevent default link behavior
+    setIsEventsDropdownOpen(!isEventsDropdownOpen);
+  };
+
   return (
     <nav className={`container ${sticky ? 'sticky' : ''}`}> 
           {/* Logo as a link to the homepage */}
@@ -42,7 +55,7 @@ const Navbar: React.FC = () => {  // nabvar functional component
         <input
           type="text"
           className="search-textbox"
-          placeholder="Search"
+          placeholder="Search..."
           value={searchText}
           onChange={handleSearchChange}
           onFocus={handleSearchFocus}
@@ -59,7 +72,6 @@ const Navbar: React.FC = () => {  // nabvar functional component
         )}
       </div>
 
-
           {/* Hamburger icon and menu toggle for mobile */}
       <div className="hamburger" onClick={handleClick}>
         <div className={click ? 'bar toggle' : 'bar'}></div>
@@ -70,9 +82,18 @@ const Navbar: React.FC = () => {  // nabvar functional component
       {/* Menu items and GIVE button */}
         <ul className={click ? 'nav-links active' : 'nav-links'}>
             <li><a href="/">Home</a></li>
-            <li><a href="http://localhost:5173/about">About</a></li>
-            <li><a href="http://localhost:5173/teachings">Teachings</a></li>
-            <li><a href="http://localhost:5173/events">Events</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/teachings">Teachings</a></li>
+            <li onClick={toggleEventsDropdown}>
+              <a href='/events' onClick={(e) => e.preventDefault()}>
+              Events
+              <i className='fa fa-caret-down'></i></a>
+                <ul className={`events-dropdown ${isEventsDropdownOpen ? 'active' : ''}`}>
+                  <li><a href="/events/barbeque">Barbeque</a></li>
+                  <li><a href="/events/lorem">Lorem</a></li>
+                  <li><a href="/events/ipsum">Ipsum</a></li>
+                </ul>              
+            </li>
             <li><a href="http://localhost:5173/contact">Contact</a></li>
             <a href='https://members.faithpays.org/donate/FP8588921' target="_blank" rel="noopener noreferrer">
             <button className="btn" onClick={handleClick}>GIVE</button></a>

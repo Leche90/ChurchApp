@@ -118,6 +118,7 @@ nav{
   }
 
 .nav-links li {
+  position: relative;
     font-size: 16px;  /* Set font size */
     color: rgba(54, 69, 79, 1);  /* Set text color */
     margin-left: 5px;
@@ -139,10 +140,16 @@ nav{
   transition: transform, 0.5s;
 }
 
+.nav-links .btn:hover ~ li a {
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0);
+}
+
 .nav-links:hover li a{
-  transform: scale(1.5);
+  transform: scale(0.7);
   opacity: 0.2;
-  filter: blur(5px);
+  filter: blur(4px);
   background-color: rgba(4, 136, 151, 0.297);
 }
 
@@ -172,6 +179,45 @@ nav ul li {
     font-size: 16px;
     color: rgba(54, 69, 79, 1);
     transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.events-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  z-index: 1000;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+}
+
+.events-dropdown.active {
+  display: block;
+}
+
+.events-dropdown li {
+  padding: 3px;
+}
+
+.events-dropdown li a {
+  color: #333;
+  display: block;
+}
+
+.events-dropdown li a:hover {
+  transform: scale(1.2);
+  filter: blur(0);
+}
+
+.events-dropdown li a {
+  filter: blur(0);
+}
+
+.fa-caret-down {
+  margin-left: 5px;
 }
 
 /* Media Queries for Mobile View */
