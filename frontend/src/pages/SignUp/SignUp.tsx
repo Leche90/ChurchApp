@@ -110,7 +110,7 @@ import './SignUp.css';
             [name]: value,
         });
         }
-    };
+    };    
     
     // Card validation using Luhn's algorithm
     const validateCard = (cardNumber: string) => {
@@ -250,8 +250,8 @@ import './SignUp.css';
         required
         >
         <option value='financial'>Financial Donation</option>
-        <option value='volunteer'>Volunteer/Service</option>
-        <option value='event-sponsorship'>Event Sponsorship</option>
+        <option value='volunteer'>Volunteering</option>
+        <option value='event-sponsorship'>Clothes/shoes Donation</option>
         <option value='other'>Other</option>
         </select>
         </label>

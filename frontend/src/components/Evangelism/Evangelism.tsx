@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useSate } from 'react';
 import './Evangelism.css';
 import evangelism1 from '../../assets/evangelism1.jpg';
 import evangelism2 from '../../assets/evangelism2.jpg';
@@ -18,9 +18,10 @@ const images = [
     evangelism6,
     evangelism7,
     evangelism8,  // Add more images here as needed, but remember to update the array length in the useEffect hook.
-]
+];
 
-const Evangelism: React.FC = () => {    
+const Evangelism: React.FC = () => {
+    // State to track which image is clicked (for zoom and carousel)    
   return (
         <div className='evangelism-wrapper'>
             <h2 className='evangelism-h2'>WINNIPEG IN FOCUS</h2>

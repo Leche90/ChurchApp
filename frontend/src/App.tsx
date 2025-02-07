@@ -12,9 +12,11 @@ import Partner from './components/Partner/Partner';
 
 import About from './pages/About/About';
 import Teachings from './pages/Teachings/Teachings';
-import Events from './pages/Events/Events';
 import Contact from './pages/Contact/Contact';
 import SignUp from './pages/SignUp/SignUp';
+import CommunityOutreach from './pages/Events/CommunityOutreach/CommunityOutreach';
+import Programs from './pages/Events/Programs/Programs';
+import Prisons from './pages/Events/Prisons/Prisons';
 
 const App: React.FC = () => {
   return (
@@ -24,9 +26,11 @@ const App: React.FC = () => {
       
       {/* Main routing structure */}
       <Routes>
+        {/* Hero route to display Hero separately */}
+        <Route path="/hero" element={<Hero />} />
       {/* Home Route (Displays Homepage content) */}
       <Route path="/" element={        
-          <div className='container mx-auto min-h-screen flex flex-col'>
+          <div className='container'>
             <Hero />
             <Event />
             <Leader />
@@ -39,9 +43,13 @@ const App: React.FC = () => {
       {/* Individual Pages (like SignUp, About, etc.) */}
       <Route path="/about" element={<About />} />
       <Route path="/teachings" element={<Teachings />} />
-      <Route path="/events" element={<Events />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/signup" element={<SignUp />} />
+
+      {/* Events pages */}
+      <Route path="/events/community-outreach" element={<CommunityOutreach />} />
+      <Route path="/events/programs" element={<Programs />} />
+      <Route path="/events/prisons" element={<Prisons />} />
       </Routes>
     </>
   );
