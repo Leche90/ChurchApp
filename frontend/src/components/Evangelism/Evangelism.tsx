@@ -1,4 +1,4 @@
-import React, { useSate } from 'react';
+import React from 'react';
 import './Evangelism.css';
 import evangelism1 from '../../assets/evangelism1.jpg';
 import evangelism2 from '../../assets/evangelism2.jpg';
