@@ -109,9 +109,9 @@ const Navbar: React.FC = () => {  // nabvar functional component
                 <ul 
                   ref={eventsDropdownRef}
                   className={`events-dropdown ${isEventsDropdownOpen ? 'active' : ''}`}>
-                  <li><Link to="/events_community_outreach">Community Outreach</Link></li>
-                  <li><Link to="/events_prisons_mission">Prisons Mission</Link></li>
-                  <li><Link to="/events_special_programs">Special Programs</Link></li>
+                  <li><Link to="/community_outreach">Community Outreach</Link></li>
+                  <li><Link to="/prisons_mission">Prisons Mission</Link></li>
+                  <li><Link to="/special_programs">Special Programs</Link></li>
                 </ul>              
             </li>
             <li><Link to="/contact">Contact</Link></li>

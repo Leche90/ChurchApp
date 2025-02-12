@@ -47,9 +47,9 @@ const App: React.FC = () => {
       <Route path="/signup" element={<SignUp />} />
 
       {/* Events pages */}
-      <Route path="/events/community-outreach" element={<CommunityOutreach />} />
-      <Route path="/events/programs" element={<Programs />} />
-      <Route path="/events/prisons" element={<Prisons />} />
+      <Route path="/community_outreach" element={<CommunityOutreach />} />
+      <Route path="/programs" element={<Programs />} />
+      <Route path="/prisons" element={<Prisons />} />
       </Routes>
     </>
   );
