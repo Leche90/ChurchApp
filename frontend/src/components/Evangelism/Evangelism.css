@@ -67,7 +67,7 @@
     transform: rotateY(0deg) rotateX(0deg) scale(1);
 }
 
-* 📱 Tablets & Small Laptops (max-width: 1024px) */
+/* 📱 Tablets & Small Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
     .evangelism-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns */
