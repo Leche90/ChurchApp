@@ -22,8 +22,9 @@
 .image-container {
     /* Positions the container relative to enable effects on child elements */
     position: relative;
-    perspective: 1000px; /* Adds a 3D perspective for hover animations */    margin: 1px;
-
+    perspective: 1000px; /* Adds a 3D perspective for hover animations */
+    margin: 1px;
+    overflow: hidden;
 }
 
 .evangelism-img {
@@ -64,4 +65,68 @@
 .image-container:active .evangelism-img {
     /* Resets the image's transformation when clicked */
     transform: rotateY(0deg) rotateX(0deg) scale(1);
+}
+
+* 📱 Tablets & Small Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .evangelism-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+
+    .evangelism-h2 {
+        font-size: 32px; /* Reduce heading size */
+        margin-top: 30px;
+    }
+
+    .evangelism-text {
+        font-size: 14px;
+        padding: 0 15px;
+        text-align: center; /* Center text for better readability */
+    }
+}
+
+/* 📲 Mobile Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .evangelism-grid {
+        grid-template-columns: repeat(1, 1fr); /* Single column */
+        grid-template-rows: auto;
+        gap: 15px;
+    }
+
+    .evangelism-h2 {
+        font-size: 28px;
+        margin-top: 20px;
+    }
+
+    .evangelism-text {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    /* Remove hover effects for better mobile UX */
+    .image-container:hover .evangelism-img {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* 📱 Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .evangelism-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .evangelism-h2 {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+
+    .evangelism-text {
+        font-size: 12px;
+        padding: 0 8px;
+        text-align: left; /* Align text to the left for better readability */
+    }
 }

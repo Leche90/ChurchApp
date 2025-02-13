@@ -1,5 +1,5 @@
 .events {
-    margin-top: 65%;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -50,4 +50,50 @@
     text-align: center;
     margin-bottom: 20px;
     font-weight: bold;
+}
+
+/* 📱 Tablet Screens (1024px and below) */
+@media (max-width: 1024px) {
+    .event-container {
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .event {
+        flex-basis: calc(50% - 15px); /* 2 items per row */
+    }
+
+    .church-life {
+        font-size: 28px;
+    }
+
+    .caption {
+        font-size: 18px;
+    }
+}
+
+/* 📱 Mobile Screens (768px and below) */
+@media (max-width: 768px) {
+    .event-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .event {
+        flex-basis: 100%; /* 1 item per row */
+    }
+
+    .event img {
+        max-width: 90%; /* Adjust width for smaller screens */
+        height: auto; /* Allow height to scale proportionally */        
+    }
+
+    .church-life {
+        font-size: 24px;
+    }
+
+    .caption {
+        font-size: 16px;
+    }
 }
