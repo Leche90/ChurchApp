@@ -1,3 +1,7 @@
+.hero-wrapper {
+    all: unset;
+}
+
 .hero {
     position: relative;
     width: 100%;    

@@ -30,16 +30,19 @@ const App: React.FC = () => {
       <Routes>
         {/* Hero route to display Hero separately */}
         <Route path="/hero" element={<Hero />} />
+
       {/* Home Route (Displays Homepage content) */}
-      <Route path="/" element={        
-          <div className='container'>
-            <Hero />
+      <Route path="/" element={
+        <>
+          <Hero />        
+          <div className='app-container'>
             <Event />
             <Leader />
             <Video />
             <Evangelism />
             <Partner />
-          </div>      
+          </div>
+        </>      
       } />
 
       {/* Individual Pages (like SignUp, About, etc.) */}
