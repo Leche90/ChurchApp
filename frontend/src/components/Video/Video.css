@@ -34,3 +34,63 @@
   .message-title {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
   }
+
+  /* Desktop (Min-width: 1025px) */
+  @media (min-width: 1025px) {
+    .video {
+        padding: 20px;
+    }
+
+    .video-title {
+        font-size: 25px;
+    }
+
+    .video-description {
+        font-size: 30px;
+    }
+}
+
+/* 📌 Tablets/ iPads (Max-width: 1024px) */
+@media (max-width: 1024px) {
+  .video {
+      flex-direction: column; /* Stack elements vertically */
+      padding: 15px;
+  }
+
+  .video-title {
+      font-size: 25px; /* Reduce title size */
+      margin-top: -30px;
+  }
+
+  iframe {
+      height: 350px; /* Reduce height */
+  }
+
+  .video-description {
+      font-size: 24px; /* Smaller text for mobile readability */
+      margin-bottom: 15px;
+      margin-top: 0px;
+  }
+}
+
+/* 📌 Mobile Phones (Max-width: 480px) */
+@media (max-width: 480px) {
+  .video {
+      padding: 10px;
+      margin-top: 15px;
+  }
+
+  .video-title {
+      font-size: 14px;
+      margin-top: 1px;
+  }
+
+  iframe {
+      height: 250px;
+  }
+
+  .video-description {
+      font-size: 15px;
+      margin-top: -1px;
+  }
+}

@@ -265,3 +265,91 @@ nav ul li {
 .nav-links .btn:hover {
     background: rgb(158, 113, 0) !important;
 }
+
+@media (max-width: 480px) {
+  nav {
+      padding: 8px 15px;
+  }
+
+  .logo {
+      width: 60px;
+  }
+
+  .search {
+      display: none; /* Hide search bar on small screens */
+  }
+
+  .hamburger {
+      display: flex;
+  }
+
+  .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: white;
+      flex-direction: column;
+      text-align: center;
+      padding: 15px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .nav-links li {
+      margin: 10px 0;
+  }
+}
+
+/* 📊 Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  nav {
+      padding: 10px 20px;
+  }
+
+  .logo {
+      width: 70px;
+  }
+
+  .search {
+      margin-left: 10px;
+  }
+
+  .nav-links {
+      gap: 10px;
+  }
+
+  .nav-links li a {
+      font-size: 14px;
+      padding: 8px;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: white;
+      text-align: center;
+      padding: 15px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .nav-links li {
+      margin: 10px 0;
+  }
+}

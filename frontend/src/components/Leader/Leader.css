@@ -55,31 +55,110 @@
     margin-top: -25px;
 }
 
-/* ✅ Mobile Responsiveness */
-@media (max-width: 768px) {
+/* 🌍 Desktop & Large Screens (min-width: 1025px) */
+@media (min-width: 1025px) {
     .leader {
-        flex-direction: column; /* Stack elements vertically */
-        text-align: center;
-        gap: 30px; /* More spacing for clarity */
-    }
-
-    .leader-left, .leader-right {
-        flex-basis: 100%; /* Full width on mobile */
-    }
-
-    .leader-right {
-        margin-top: 0; /* Remove extra margin */
+        max-width: 1200px;
+        margin: auto;
     }
 
     .pastor {
-        font-size: 24px; /* Reduce text size on small screens */
+        font-size: 35px;
+    }
+
+    .leader .pastor-paragraph {
+        font-size: 15px;
+    }
+}
+
+/* 📱 Tablets & Small Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .leader {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .leader-left, .leader-right {
+        flex-basis: 100%; /* Full width */
+    }
+
+    .leader-right {
+        margin-top: auto;
+    }
+
+    .pastor {
+        font-size: 28px; /* Adjust text size */
+        margin-top: -18px;
+        margin-bottom: 5px;
+    }
+
+    .lead-pastor {
+        font-size: 20px;
+        margin-top: 0px;
+    }
+
+    .leader .pastor-paragraph {
+        font-size: 15px; /* Adjust readability */
+        padding: 0 10px;
+        margin-top: auto;
+    }
+}
+
+/* 📲 Mobile Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .leader {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .leader-left, .leader-right {
+        flex-basis: 100%; /* Full width */
+    }
+
+    .leader-right {
+        margin-top: auto;
+    }
+
+    .pastor {
+        font-size: 24px; /* Reduce text size */
+        margin-top: -15px;
     }
 
     .lead-pastor {
         font-size: 18px;
+        margin-top: auto;
     }
 
-    .leader p {
-        font-size: 14px; /* Adjust readability */
+    .leader .pastor-paragraph {
+        font-size: 13px;
+        padding: 0 8px;
+        margin-top: auto;
+    }
+}
+
+/* 📱 Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .leader {
+        gap: 30px;
+    }
+
+    .pastor {
+        font-size: 17px;
+        margin-top: auto;
+    }
+
+    .lead-pastor {
+        font-size: 13px;
+        margin-top: auto;
+    }
+
+    .leader .pastor-paragraph {
+        font-size: 11px;
+        line-height: 1.6;
+        padding: 0 5px;
+        margin-top: auto;
+        margin-bottom: -30px;
     }
 }

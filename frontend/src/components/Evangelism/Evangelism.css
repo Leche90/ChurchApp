@@ -68,7 +68,7 @@
 }
 
 /* 📱 Tablets & Small Laptops (max-width: 1024px) */
-@media (max-width: 1024px) {
+@media (min-width: 1025px) {
     .evangelism-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns */
         grid-template-rows: auto;
@@ -88,7 +88,7 @@
 }
 
 /* 📲 Mobile Phones (max-width: 768px) */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .evangelism-grid {
         grid-template-columns: repeat(1, 1fr); /* Single column */
         grid-template-rows: auto;
@@ -97,12 +97,14 @@
 
     .evangelism-h2 {
         font-size: 28px;
-        margin-top: 20px;
+        margin-top: 40px;
     }
 
     .evangelism-text {
-        font-size: 13px;
+        font-size: 15px;
         padding: 0 10px;
+        margin-top: -15px;
+        line-height: 1.6;
     }
 
     /* Remove hover effects for better mobile UX */
@@ -121,12 +123,13 @@
 
     .evangelism-h2 {
         font-size: 24px;
-        margin-top: 15px;
+        margin-top: 55px;
     }
 
     .evangelism-text {
-        font-size: 12px;
+        font-size: 11px;
         padding: 0 8px;
         text-align: left; /* Align text to the left for better readability */
+        margin-top: -14px;
     }
 }

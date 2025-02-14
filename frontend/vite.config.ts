@@ -6,7 +6,13 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': './src',
-    },
+      '@': './src'
+    }
   },
+  server: {
+    headers: {
+      "Cache-Control": "public, max-age=3600, must-revalidate"
+    }
+  }
+
 });

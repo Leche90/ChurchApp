@@ -3,6 +3,8 @@ import './styles/tailwind.css';
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+
 import Hero from './components/Hero/Hero';
 import Event from './components/Event/Event';
 import Video from './components/Video/Video';
@@ -51,6 +53,9 @@ const App: React.FC = () => {
       <Route path="/programs" element={<Programs />} />
       <Route path="/prisons" element={<Prisons />} />
       </Routes>
+
+      {/* Footer Component to appear on every page */}
+      <Footer />
     </>
   );
 }

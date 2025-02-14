@@ -6,8 +6,8 @@ import evangelism3 from '../../assets/evangelism3.jpg';
 import evangelism4 from '../../assets/evangelism4.jpg';
 import evangelism5 from '../../assets/evangelism5.jpg';
 import evangelism6 from '../../assets/evangelism6.jpg';
-import evangelism7 from '../../assets/evangelism7.jpg';
-import evangelism8 from '../../assets/evangelism8.jpg';
+// import evangelism7 from '../../assets/evangelism7.jpg';
+// import evangelism8 from '../../assets/evangelism8.jpg';
 
 const images = [
     evangelism1,
@@ -16,8 +16,8 @@ const images = [
     evangelism4,
     evangelism5,
     evangelism6,
-    evangelism7,
-    evangelism8,  // Add more images here as needed, but remember to update the array length in the useEffect hook.
+    // evangelism7,
+    // evangelism8,  // Add more images here as needed, but remember to update the array length in the useEffect hook.
 ];
 
 const Evangelism: React.FC = () => {
