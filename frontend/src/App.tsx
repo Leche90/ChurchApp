@@ -6,7 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 
 import Hero from './components/Hero/Hero';
-import Event from './components/Event/Event';
+import Church from './components/Church/Church';
 import Video from './components/Video/Video';
 import Leader from './components/Leader/Leader';
 import Evangelism from './components/Evangelism/Evangelism';
@@ -36,7 +36,7 @@ const App: React.FC = () => {
         <>
           <Hero />        
           <div className='app-container'>
-            <Event />
+            <Church />
             <Leader />
             <Video />
             <Evangelism />

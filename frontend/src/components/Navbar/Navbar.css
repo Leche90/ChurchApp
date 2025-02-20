@@ -1,55 +1,85 @@
 nav{
     width: 100%; /* Make navbar span the full width of the screen */
-    background: white; /* Set background color to white */
-    padding: 4px 0px; /* Add padding for vertical spacing */
-    position: fixed; /* Fix navbar to the top of the screen */
-    top: 0; /* Position the navbar at the top */
-    left: 0; /* Align navbar to the left */
+    background: #fff; /* Set background color to white */
+    padding: 10px 100px; /* Add padding for vertical spacing */
+    position: fixed !important; /* Fix navbar to the top of the screen */
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Vertically center items */
     justify-content: space-between; /* Space out items */
-    z-index: 10; /* Ensure navbar appears above other content */
-    transition: 0.3s ease-in-out; /* Smooth transition for styling changes */
+    z-index: 1000; /* Ensure navbar appears above other content */
+    transition: 0.5s ease-in-out; /* Smooth transition for styling changes */
+    top: 0;
+    left: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.container.sticky {
+  background-color: rgb(13, 55, 57);
 }
 
 /* Sticky Navbar */
-.sticky {
+/* .sticky {
     position: fixed;  /* Keep navbar fixed at the top */
-    top: 0;  /* Position at the top */
-    left: 0;  /* Align left */
-    width: 100%;  /* Full width */
-    background-color: white;  /* White background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Add subtle shadow for depth */
-    z-index: 1000;  /* Higher z-index to stay on top */
-}
+    /* top: 0;  /* Position at the top */
+    /* left: 0;  /* Align left */
+    /* width: 100%;  /* Full width */
+    /* background-color: rgb(189, 18, 18);  /* White background */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Add subtle shadow for depth */
+    /* z-index: 1000;  /* Higher z-index to stay on top */
+/*} */
 
-.search {
+  /* 🔹 Search Bar Container */
+.search-bar {
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0.12);
     border-radius: 2px;
-    padding: 0 9px;
-    transition: all 0.3s cubic-bezier(0.21, 0.61, 0.36, 1);
-    border-radius: 20px;
-    margin-left: 20px;
+    padding: 5 10px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    /* margin-left: 20px; */
+    max-width: 100%;
+    width: 220px;
 }
 
-.search.focused {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-.search-textbox {
-    background: transparent;
+  /* 🔹 Search Input Field */
+.search-input {
+    flex: 1;
     border: none;
     outline: none;
-    font-size: 16px;
-    color: rgb(20, 72, 63);
-    transition: all 0.5s cubic-bezier(0.21, 0.61, 0.36, 1);
-    width: 80px; /* Adjust by percentage or px depending on choice */
+    background: transparent;
+    font-size: 30px;
+    color: #057da1;
+    transition: width 0.3s ease-in-out; 
 }
 
-.search-textbox:focus {
-    width: 100%;
+  /* 🔹 Search Button */
+.search-btn {
+    background: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.search-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* 🔹 Clear Button */
+.clear-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgb(188, 19, 0);
+  margin-right: 5px;
 }
 
 .ico-btn {

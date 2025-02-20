@@ -6,8 +6,8 @@ const Hero: React.FC = () => {
       <div className='hero-wrapper'>
         <div className='hero'>
           <div className="hero-text">
-            <h1>Welcome to the Kingmakers' Family</h1>
-              <p>At Kingmakers, we are committed to 'Raising Royalties', empowering people to step into their divine purpose and embrace the royalty within them. We believe every person is called to reign in life, guided by faith, love, and the wisdom of God. We invite you to come and fellowship with us.</p>
+            <h1>Kingmakers' Family</h1>
+              <p>Rooted in Christ, we stand as one—growing in faith, walking in love, and shining His light to the world. At Kingmakers, every heart matters, every soul has purpose, and together, we reign in His grace. We invite you to come and fellowship with us.</p>
               <button className='btn'>JOIN US<b>LIVE</b></button>        
           </div>
         </div>

@@ -95,6 +95,18 @@ const Contact: React.FC = () => {
           <button type='submit' className='submit-btn'>Send Message</button>
         </form>
       </div>
+
+        {/* Embedded Google Map */}
+      <div className='map-container'>
+        <h3 className='location'>Our Location</h3>
+        <iframe
+          title='Church Location'
+          width='100%'
+          height='400'                    
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2731.8014322254736!2d-97.16316332421374!3d49.92670097138127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea7157fae4ae5f%3A0x4a4f6b3b4c4b4c7!2s582%20Burrows%20Ave%2C%20Winnipeg%2C%20MB!5e0!3m2!1sen!2sca!4v1707630980000!5m2!1sen!2sca"
+          allowFullScreen
+          ></iframe>
+      </div>
     </div>
   );
 };

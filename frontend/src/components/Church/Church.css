@@ -1,31 +1,61 @@
-.events {
+.churchs {
     margin-top: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.event-container {
+.church-container {
     display: flex; /* Arrange items horizontally */
     justify-content: space-between; /* Space between images */
-    gap: 20px; /* 20px space between each image*/
+    flex-wrap: wrap;
     width: 100%; /* Ensure the container sapns full width */
     max-width: 1200px; /* Optional: to give a max width */
 }
 
-.event img {
+.church img {
     width: 100%; /* Take full width of the parent */
-    max-width: 300px; /* Optional: max width for consistent sizing */
-    border-radius: 3px; /* Optional: rounded coners. Adjust according to test */
+    max-width: 330px; /* Optional: max width for consistent sizing */
     object-fit: cover;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
 }
 
-.event {
-    flex-basis: 1; /* Allow events to grow/ shrink as needed */
-    display: flex;
-    flex-direction: column; /* Stack image and caption vertically */
-    align-items: center; /* Center align the image and caption */
+.church {
+    flex: 1; /* Allow events to grow/ shrink as needed */   
     text-align: center;
+    position: relative;
+    max-width: 330px;
+}
+
+.middle {
+    transition: .2s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.church:hover img {
+    opacity: 0.3;
+}
+
+.church:hover .middle {
+    opacity: 1;
+}
+
+.image-text {
+    background-color: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    margin-bottom: 65px;
+    background-color: rgba(0, 0, 0, 0.068);
+    padding: 10px 20px;
 }
 
 .caption {
@@ -54,12 +84,14 @@
 
 /* 📱 Tablet Screens (1024px and below) */
 @media (max-width: 1024px) {
-    .event-container {
+    .church-container {
         gap: 15px;
         margin-top: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .event {
+    .church {
         flex-basis: calc(50% - 15px); /* 2 items per row */
     }
 
@@ -75,17 +107,17 @@
 
 /* 📱 Mobile Screens (768px and below) */
 @media (max-width: 768px) {
-    .event-container {
+    .church-container {
         flex-direction: column; /* Stack items vertically */
         align-items: center;
         margin-top: 3px;
     }
 
-    .event {
+    .church {
         flex-basis: 100%; /* 1 item per row */
     }
 
-    .event img {
+    .church img {
         max-width: 90%; /* Adjust width for smaller screens */
         height: auto; /* Allow height to scale proportionally */
     }

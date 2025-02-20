@@ -1,13 +1,58 @@
 import React, { useEffect, useState, useRef } from 'react'; // Import necessary routes from react
 import './Navbar.css';
 import logo from '../../assets/logo.jpg';
-import { Link } from'react-router-dom'; // Import link from react-router-dom for routing within the app
+import { Link, useNavigate } from'react-router-dom'; // Import link from react-router-dom for routing within the app
 
 const Navbar: React.FC = () => {  // nabvar functional component
   const [sticky, setSticky] = useState(false); // State to track if the navbar is sticky (fixed at the top)
   const [click, setClick] = useState(false); // State to track whether the mobile menu is open or closed
   const [searchText, setSearchText] = useState(''); // State to track the search input text
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to track dropdown visibility for search
+  const navigate = useNavigate(); //React router to navigate
+
+  const menuItems = [
+    { title: 'Home', link: '/' },
+    {title: 'About', link: '/about' },
+    {title: 'Teachings', link: '/teachings' },
+    {title: 'Community Outreach', link: '/community_outreach' },
+    { title: 'Prisons Mission', link: '/prisons_mission' },
+    { title: 'Give', link: '/give' },
+    { title: 'Partnership', link: '/signup' },
+    { title: 'Contact', link: '/contact' }
+  ]
+
+    // Handles search input
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchText(event.target.value);
+    };
+
+    // Handles search submission
+  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Prevent page reload
+  
+    // Find a matching menu item
+  const matchedItem = menuItems.find(item =>
+    item.title.toLowerCase().includes(searchText.toLowerCase()));
+
+    if (matchedItem) {
+      navigate(matchedItem.link); // Navigate to the matched item's link
+      setSearchText(''); // Clear search input
+    } else {
+      alert('No matching item found'); // Display alert if no match is found
+    }
+  };
+
+  // Toggle mobile menu
+  const toggleMenu = () => {
+    setClick(!click);
+  };
+
+  // Close mobile menu when clicked outside the dropdown menu
+  const handleClickOutsideDropdown = (event: MouseEvent) => {
+    if (eventsDropdownRef.current &&!eventsDropdownRef.current.contains(event.target as Node)) {
+      setIsEventsDropdownOpen(false);
+    }
+  };
+
   const [isEventsDropdownOpen, setIsEventsDropdownOpen] = useState(false); // State to track dropdown visibility for events dropdown
 
   // Ref for dropdown menu
@@ -15,19 +60,23 @@ const Navbar: React.FC = () => {  // nabvar functional component
 
   useEffect(() => { // useEffect hook to handle scroll events
     const handleScroll = () => {
-      window.scrollY > 50 ? setSticky(true) : setSticky(false); // If scrolled more than 50px, make navbar sticky
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+
+        if (window.scrollY >= heroBottom) {
+          setSticky(true);
+          } else {
+          setSticky(false);
+          }
+      }  
     };
     window.addEventListener('scroll', handleScroll); // Add event listener on scroll
-    return () => {
+    return () =>
       window.removeEventListener('scroll', handleScroll); // Remove event listener on scroll
-    };
+
   }, []); // Empty dependency array means this effect runs only once when the component mounts
-
-   // Handle search input change
-   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchText(event.target.value);
-  };
-
+ 
     // Toggle focus for the search bar
     const handleSearchFocus = () => {
     setSearchText(searchText); // Trigger focus event
@@ -35,7 +84,7 @@ const Navbar: React.FC = () => {  // nabvar functional component
 
   // Toggle dropdown visibility
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsEventsDropdownOpen(!isEventsDropdownOpen);
   };
 
   // Toggle dropdown visibility when clicked
@@ -62,33 +111,40 @@ const Navbar: React.FC = () => {  // nabvar functional component
     }, []);
 
   return (
-    <nav className={`container ${sticky ? 'sticky' : ''}`}> 
+    <nav key={sticky ? 'sticky' : 'not-sticky'} className={`container ${sticky ? 'sticky' : ''}`}> 
           {/* Logo as a link to the homepage */}
       <Link to="/" className='logo-link'> 
         <img src={logo} alt="Logo" className='logo' />
       </Link>
 
       {/* Search Bar */}
-      <div className={`search ${searchText.length > 0 ? 'focused' : ''}`}>
+      <form className="search-bar" onSubmit={handleSearchSubmit}>
+        {/* Search input */}
         <input
           type="text"
-          className="search-textbox"
-          placeholder="Search..."
+          className="search-input"
+          placeholder="I am looking for ..."
           value={searchText}
           onChange={handleSearchChange}
-          onFocus={handleSearchFocus}
+          // onFocus={handleSearchFocus}
         />
+
+        {/* Clear button (shows when input has text) */}
         {searchText.length > 0 && (
-          <button className="ico-btn clear-btn" onClick={() => setSearchText('')}>
-            <i className="material-icons ic_clear">&#xE14C;</i>
+          <button type="button" className='clear-btn' onClick={() => setSearchText('')}>
+            ✖
           </button>
-        )}
-        {searchText.length === 0 && (
-          <button className="ico-btn search-btn">
-            <i className="material-icons ic_search">&#xE8B6;</i>
+          )}
+          
+          {/* Search button */}
+          <button type="submit" className="search-btn">
+            <img
+              src="https://img.icons8.com/ios-filled/50/000000/search.png"
+              alt="Search Icon"
+              className="search-icon"
+            />
           </button>
-        )}
-      </div>
+        </form>          
 
           {/* Hamburger icon and menu toggle for mobile */}
       <div className="hamburger" onClick={handleClick}>

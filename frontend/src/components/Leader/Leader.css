@@ -59,7 +59,7 @@
 @media (min-width: 1025px) {
     .leader {
         max-width: 1200px;
-        margin: auto;
+        margin-top: 90px;
     }
 
     .pastor {
