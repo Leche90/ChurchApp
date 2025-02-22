@@ -1,10 +1,10 @@
-.partner {
+.partner-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 90px;
+    margin-top: 60px;
 }
 
 .partner-us {
@@ -12,10 +12,30 @@
     color: rgba(54, 69, 79, 1);
 }
 
-.partner-left,
+.partner-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+    padding: 30px;
+    background-color: rgb(0, 77, 77);
+    /* border: 2px solid #00796b; */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* .partner-left,
 .partner-right {
-    width: 40%;
     border-top: #333;
+} */
+
+.partner-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600px;
 }
 
 .partner-left a {
@@ -34,7 +54,7 @@
     justify-content: center;
     margin-bottom: 3px;
     margin-top: 1px;
-    font-size: 18px;
+    font-size: 16x;
     color: #333;
 }
 

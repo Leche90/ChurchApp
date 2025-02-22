@@ -12,18 +12,19 @@
 .evangelism-grid {
     /* Creates a grid layout for the images */
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Defines 4 equal-width columns */
+    grid-template-columns: repeat(3, 1fr); /* Defines 4 equal-width columns */
     grid-template-rows: repeat(2, 1fr); /* Defines 2 equal-height rows */
-    gap: 0; /* Removes any spacing between the grid items */
+    gap: 2px; /* Removes any spacing between the grid items */
     width: 100%; /* Allows the grid to take up the full container width */
-    max-width: 1200px; /* Limits the maximum grid width for better readability */    
+    max-width: 1200px; /* Limits the maximum grid width for better readability */
 }
 
 .image-container {
     /* Positions the container relative to enable effects on child elements */
     position: relative;
     perspective: 1000px; /* Adds a 3D perspective for hover animations */
-    margin: 1px;
+    margin: 0px;
+    padding: 0px;
     overflow: hidden;
 }
 
@@ -47,12 +48,12 @@
 
 .evangelism-text {
     /* Styles the description text */
-    font-size: 15px; /* Readable font size */
-    margin-top: 8px; /* Adds space above the text */
+    font-size: 16px; /* Readable font size */
+    margin-top: -25px; /* Adds space above the text */
+    margin-bottom: 30px;
     color: rgb(20, 25, 28); /* Neutral dark color for readability */
-    line-height: 1.4; /* Improves readability by spacing out lines */
-    text-align: justify; /* Centers the text */
-    margin-bottom: 40px; /* Adds space below the text */
+    line-height: 1.6; /* Improves readability by spacing out lines */
+    text-align: left; /* Centers the text */
     max-width: 1300px; /* Limits text width to improve readability */
 }
 
@@ -68,11 +69,11 @@
 }
 
 /* 📱 Tablets & Small Laptops (max-width: 1024px) */
-@media (min-width: 1025px) {
+@media (max-width: 1025px) {
     .evangelism-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-columns: repeat(3, 1fr); /* 2 columns */
         grid-template-rows: auto;
-        gap: 10px;
+        gap: 3px;
     }
 
     .evangelism-h2 {
@@ -88,9 +89,9 @@
 }
 
 /* 📲 Mobile Phones (max-width: 768px) */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .evangelism-grid {
-        grid-template-columns: repeat(1, 1fr); /* Single column */
+        grid-template-columns: repeat(2, 1fr); /* Single column */
         grid-template-rows: auto;
         gap: 15px;
     }

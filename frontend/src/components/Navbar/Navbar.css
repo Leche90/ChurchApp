@@ -16,10 +16,10 @@ nav{
   background-color: #ffffff;
   transition: background-color 0.5s ease-in-out;
 }
-
+/* 
 .container.sticky {
   background-color: rgb(13, 55, 57);
-}
+} */
 
 /* Sticky Navbar */
 /* .sticky {
@@ -52,24 +52,27 @@ nav{
     outline: none;
     background: transparent;
     font-size: 30px;
-    color: #057da1;
     transition: width 0.3s ease-in-out; 
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: none;
 }
 
   /* 🔹 Search Button */
 .search-btn {
-    background: none;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    padding: 5px;
-}
-
-.search-icon {
   width: 30px;
   height: 30px;
   object-fit: contain;
+  background-color: none;
+  border: none;
+  color: #939393;
+  cursor: pointer;
+  background: none;
+  font-size: 20px;
+  outline: none;
+  padding: 5px;
 }
 
 /* 🔹 Clear Button */
@@ -77,9 +80,14 @@ nav{
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  color: rgb(188, 19, 0);
+  font-size: 18px;
+  color: rgb(3, 69, 56);
   margin-right: 5px;
+  transition: color 0.3s ease;
+}
+
+.clear-btn:hover {
+  color: rgb(224, 0, 0);
 }
 
 .ico-btn {
@@ -120,7 +128,6 @@ nav{
 .bar {
     width: 30px;  /* Set width of hamburger bars */
     height: 3px;  /* Set height of hamburger bars */
-    background-color: rgba(54, 69, 79, 1);  /* Set color of the bars */
     transition: 0.5s;  /* Smooth transition for animation */
 }
 
@@ -177,10 +184,10 @@ nav{
 }
 
 .nav-links:hover li a {
-  transform: scale(0.7);
+  transform: scale(0.9);
   opacity: 0.2;
   filter: blur(1px);
-  background-color: rgba(4, 136, 151, 0.297);
+  /* background-color: rgba(4, 136, 151, 0.297); */
 }
 
 .nav-links li a:hover {
@@ -221,7 +228,9 @@ nav ul li {
   list-style: none;
   padding: 0;
   margin: 0;
-  min-width: 150px;
+  min-width: 200px;
+  align-items: center;
+  justify-content: center;
 }
 
 .events-dropdown.active {
@@ -238,7 +247,7 @@ nav ul li {
 }
 
 .events-dropdown li a:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   filter: none;
 }
 
@@ -277,7 +286,7 @@ nav ul li {
   }
 
 .nav-links .btn {
-    background: rgba(0, 102, 108, 1)  !important; ;
+    background: rgb(2, 80, 84)  !important; ;
     color: white;
     padding: 8px 13px;
     border: none;

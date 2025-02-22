@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from 'react'; // Import necessary 
 import './Navbar.css';
 import logo from '../../assets/logo.jpg';
 import { Link, useNavigate } from'react-router-dom'; // Import link from react-router-dom for routing within the app
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar: React.FC = () => {  // nabvar functional component
   const [sticky, setSticky] = useState(false); // State to track if the navbar is sticky (fixed at the top)
@@ -37,7 +39,7 @@ const Navbar: React.FC = () => {  // nabvar functional component
       navigate(matchedItem.link); // Navigate to the matched item's link
       setSearchText(''); // Clear search input
     } else {
-      alert('No matching item found'); // Display alert if no match is found
+      alert('No matching search found'); // Display alert if no match is found
     }
   };
 
@@ -132,17 +134,12 @@ const Navbar: React.FC = () => {  // nabvar functional component
         {/* Clear button (shows when input has text) */}
         {searchText.length > 0 && (
           <button type="button" className='clear-btn' onClick={() => setSearchText('')}>
-            ✖
+            <i className="fas fa-times"></i>
           </button>
           )}
           
           {/* Search button */}
-          <button type="submit" className="search-btn">
-            <img
-              src="https://img.icons8.com/ios-filled/50/000000/search.png"
-              alt="Search Icon"
-              className="search-icon"
-            />
+          <button type="submit" className="search-btn"><i className="fa fa-search"></i>
           </button>
         </form>          
 
