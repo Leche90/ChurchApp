@@ -2,9 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 60px;
+    padding: 20px 40px;
+    margin-top: 80px;
 }
 
 .partner-us {
@@ -17,36 +16,50 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
-    max-width: 900px;
+    width: 100%;
+    max-width: 1200px;
     padding: 30px;
-    background-color: rgb(0, 77, 77);
+    background-color: rgba(220, 220, 220, 0.03);
     /* border: 2px solid #00796b; */
-    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* .partner-left,
-.partner-right {
-    border-top: #333;
-} */
-
-.partner-title {
-    font-size: 20px;
+.partner-title1 {
+    font-size: 22px;
     color: #333;
     margin-bottom: 10px;
     font-weight: 600px;
 }
 
-.partner-left a {
-    color: rgba(0, 102, 108, 1);
-    text-decoration: none;
-    font-size: 18px;
+.partner-title2 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 600px;
 }
 
-.partner-left a:hover {
+.partner-right {
+    background: rgb(102, 51, 0);
+    padding: 5px 30px;
+    text-align: center;
+    width: 450px;
+    flex-grow: 0;
+}
+
+.partner-left {
+    background: rgb(153, 204, 51);
+    padding: 5px 30px;
+    text-align: center;
+    width: 350px;
+}
+
+.partner-left.partner-link a:hover {
     text-decoration: underline;
-    color: rgba(0, 102, 108, 1);
+    color: rgb(239, 86, 31);
+}
+
+.scripture {
+    color: #fff;
 }
 
 .partner-text {
@@ -58,33 +71,17 @@
     color: #333;
 }
 
-.subscribe-form {
-    display: flex;
-    justify-content: center;
-}
-
-.subscribe-form input {
-    padding: 10px;
-    border: 1px solid hsl(0, 0%, 87%);
-    border-radius: 4px;
-    width: 200px;
+.prayer-request-button {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    padding: 10px 20px;
+    text-decoration: none;
     font-size: 16px;
-    flex: 0.5;
-    margin-left: -20%;
-    justify-content: center;
-    align-items: center;
+    border-radius: none;
+    display: inline-block;
 }
 
-.subscribe-form button {
-    background-color: rgb(239, 86, 31);
-    color: white;
-    border: none;
-    padding: 2px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.subscribe-form button:hover {
-    background-color: rgb(4, 78, 71);
+.prayer-request-button:hover {
+    background-color: rgb(212, 127, 0);
 }
 

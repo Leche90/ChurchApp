@@ -31,7 +31,8 @@ const About: React.FC = () => {
        {/* Vision and Mission Section */}
        <div className='about-right'>
           <div className='vision'>
-            <h2 className='vision-heading'>VISION</h2>
+            <h2 className='vision-heading'>VISION
+            </h2>
             <p className='vision-text'>
               Raising royalties.
             </p>
@@ -48,17 +49,17 @@ const About: React.FC = () => {
 
      <div className='values-container'>
         <div className='values'>OUR CORE VALUES</div>       
-          <p className='values-text'>
+          <div className='values-text'>
               <ul>
-                <ol>Righteousness</ol>
-                <ol>Prayer</ol>
-                <ol>Royalty</ol>
-                <ol>Excellence</ol>
-                <ol>Accountability</ol>
-                <ol>Love</ol>
-                <ol>Family</ol>
+                <ol>1. Righteousness</ol>
+                <ol>2. Prayer</ol>
+                <ol>3. Royalty</ol>
+                <ol>4. Excellence</ol>
+                <ol>5. Accountability</ol>
+                <ol>6. Love</ol>
+                <ol>7. Family</ol>
               </ul>
-          </p>
+          </div>
         </div>
 
         <div className='started-container'></div>

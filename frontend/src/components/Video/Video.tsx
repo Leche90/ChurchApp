@@ -7,7 +7,7 @@ const Video: React.FC = () => {
         <div className="video-main">
             <h3 className="video-h3">Watch the Latest Sermon</h3>
             <p className='video-description'>
-              <span className="message-title">THE VALUE OF TIME</span>              
+              <span className="message-title">"THE VALUE OF TIME"</span>              
             </p>
               <iframe
                 width="560"

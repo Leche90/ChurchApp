@@ -20,7 +20,7 @@ const Event: React.FC = () => {
                 <img src={church2} alt="Word" className='church2-img'/>
                 <div className="caption">Word</div>
                   <div className='middle'>
-                      <div className='image-text'>WORD</div>
+                    <div className='image-text'>WORD</div>
                   </div>
             </div>
             <div className="church">

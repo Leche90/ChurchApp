@@ -6,16 +6,26 @@ const Partner: React.FC = () => {
     <div className='partner-container'>
       <div className='partner-card'>
         <div className="partner-left">
-            <h4 className='partner-title'>PARTNER WITH US</h4>
+            <h4 className='partner-title1'>PARTNER WITH US</h4>
             <p className='partner-text'>Do you desire to support the ministry?</p>
-            <a href ="http://localhost:5173/signup" target="_blank" rel="noopener noreferrer"> Join Our Ministry Partnership </a>            
+            <a href ="http://localhost:5173/signup" target="_blank" rel="noopener noreferrer" className='partner-link'> Join our ministry partnership </a>            
         </div>
         <div className="partner-right">
-            <h4 className='partner-title'>SUBMIT YOUR PRAYER REQUESTS</h4>
-            <div className='subscribe-form'>
-                <input type="email" placeholder="Email Address" />
-                <button>SUBMIT</button>
-            </div>
+            <h4 className='partner-title2'>HAVING A PRAYER REQUEST?</h4>
+            
+            <p className='scripture'>
+              "Yes, ask me for anything in my name, and I will do it!"
+            <span className='bible-ref'> John 14:14 (NLT) </span> </p>
+
+
+            <a
+              href='https://forms.gle/form'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='prayer-request-button'
+            >
+              Submit Request
+            </a>
         </div>
       </div>
     </div>
