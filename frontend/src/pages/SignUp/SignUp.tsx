@@ -98,13 +98,11 @@ import './SignUp.css';
             const currentMonth = new Date().getMonth() + 1; // Get current month (1-12)    
             // Validate month (01-12)
             if (month && (parseInt(month, 10) > 12 || parseInt(month, 10) < 1))
-                return;
-            
+                return;            
     
             // Validate year (not less than current year)
-            if (year && parseInt(year, 10) < currentYear) {
-                return;
-            }
+            if (year && parseInt(year, 10) < currentYear)
+                return;        
     
             // Validate if the year is the current year, the month must not be in the past
             if (year && parseInt(year, 10) === currentYear && month && parseInt(month, 10) < currentMonth) {
