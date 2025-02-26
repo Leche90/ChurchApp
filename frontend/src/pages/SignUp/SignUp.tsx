@@ -108,7 +108,7 @@ import './SignUp.css';
             if (year && parseInt(year, 10) === currentYear && month && parseInt(month, 10) < currentMonth) {
                 return;
             }
-        }
+        
     
         // For all other input types, update the value
         setFormData({
