@@ -82,11 +82,11 @@ import './SignUp.css';
         }
         
         //Update form for other input fields
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-        }
+        // setFormData({
+        //     ...formData,
+        //     [name]: value,
+        // });
+        // }
         // Account and Routing Number validation: only numbers allowed
         if ((name === 'accountNumber' || name === 'routingNumber') && /\D/.test(value)) {
             return; // Revert the value if it contains anything other than digits
