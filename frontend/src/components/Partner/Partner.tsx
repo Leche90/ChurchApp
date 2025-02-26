@@ -7,11 +7,12 @@ const Partner: React.FC = () => {
       <div className='partner-card'>
         <div className="partner-left">
             <h4 className='partner-title1'>PARTNER WITH US</h4>
-            <p className='partner-text'>Do you desire to support the ministry?</p>
-            <a href ="http://localhost:5173/signup" target="_blank" rel="noopener noreferrer" className='partner-link'> Join our ministry partnership </a>            
+            <p className='partner-text'>Are you passionate about advancing the work of the church?
+            Become a valued partner in our ministry today.</p>
+            <a href ="http://localhost:5173/signup" target="_blank" rel="noopener noreferrer" className='partner-link'> Join us </a>            
         </div>
         <div className="partner-right">
-            <h4 className='partner-title2'>HAVING A PRAYER REQUEST?</h4>
+            <h4 className='partner-title2'>PRAYER REQUEST?</h4>
             
             <p className='scripture'>
               "Yes, ask me for anything in my name, and I will do it!"
