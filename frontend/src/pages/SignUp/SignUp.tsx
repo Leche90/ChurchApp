@@ -107,8 +107,7 @@ import './SignUp.css';
             // Validate if the year is the current year, the month must not be in the past
             if (year && parseInt(year, 10) === currentYear && month && parseInt(month, 10) < currentMonth) {
                 return;
-            }
-        
+            }        
     
         // For all other input types, update the value
         setFormData({

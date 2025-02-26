@@ -20,8 +20,10 @@
     max-width: 1200px;
     padding: 30px;
     background-color: rgba(220, 220, 220, 0.03);
-    /* border: 2px solid #00796b; */
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.176);
+    background-image: url('../../assets/boho.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.427);
 }
 
 .partner-title1 {
@@ -29,6 +31,7 @@
     color: #000000;
     margin-bottom: 10px;
     font-weight: 600px;
+    margin-top: 15px;
 }
 
 .partner-title2 {
@@ -36,28 +39,40 @@
     color: #000000;
     margin-bottom: 10px;
     font-weight: 600px;
+    margin-top: 15px;
 }
 
-.partner-right {
-    background: rgb(230, 230, 230);
-    padding: 15px 30px;
-    text-align: center;
-    width: 400px;
-    flex-grow: 0;
-    border-radius: 10px;
-}
-
-.partner-left {
-    background: rgb(230, 230, 230);
+.partner-left, .partner-right {
+    background: rgb(236, 236, 236);
     padding: 15px 30px;
     text-align: center;
     width: 400px;
     border-radius: 10px;
     flex-grow: 0;
+    /* box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.192); */
+    position: relative;
+}
+
+/* "Pin" effect at the top */
+.partner-left::before,
+.partner-right::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: url('../../assets/pushpin.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 50px;
+    transform: translate(-100%);
 }
 
 .scripture {
     color: #000000;
+    margin-top: 3px;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
 }
 
 .partner-text {
@@ -65,6 +80,8 @@
     justify-content: center;
     font-size: 16x;
     color: #000;
+    margin-top: 3px;
+    text-align: left;
 }
 
 .prayer-request-button {
@@ -77,6 +94,10 @@
     display: inline-block;
 }
 
+.prayer-request-button:hover {
+    color: rgb(69, 255, 255);
+}
+
 .partner-link {
     color: #fff;
     text-decoration: none;
@@ -84,8 +105,89 @@
     padding: 12px 20px;
     font-size: 16px;
     border-radius: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .partner-link:hover {
     color: rgb(69, 255, 255);
+}
+
+/* Default styles (for large screens) */
+
+/* 🔹 Laptops & Tablets (Medium screens: 768px - 1199px) */
+@media screen and (max-width: 1199px) {
+    .partner-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .partner-left, .partner-right {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+/* 🔹 Tablets (Small screens: 481px - 767px) */
+@media screen and (max-width: 767px) {
+    .partner-container {
+        padding: 15px;
+    }
+
+    .partner-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .partner-left, .partner-right {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .partner-title1, .partner-title2 {
+        font-size: 18px;
+    }
+
+    .partner-text, .scripture {
+        font-size: 14px;
+    }
+}
+
+/* 🔹 Mobile Phones (Extra small screens: 480px and below) */
+@media screen and (max-width: 480px) {
+    .partner-container {
+        padding: 10px;
+    }
+
+    .partner-card {
+        padding: 10px;
+        border-width: 4px;
+    }
+
+    .partner-left, .partner-right {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .partner-title1, .partner-title2 {
+        font-size: 16px;
+    }
+
+    .partner-text, .scripture {
+        font-size: 12px;
+    }
+
+    .prayer-request-button, .partner-link {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .partner-left::before,
+.partner-right::before { 
+    left: 30px;
+    width: 25px;
+    height: 25px;
+    }
 }
