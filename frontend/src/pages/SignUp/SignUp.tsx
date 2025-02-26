@@ -65,20 +65,27 @@ import './SignUp.css';
     
     // Function to handle form input changes
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value, type, checked } = e.target;
+        const { name, value, type, } = e.target;
     
         // If the input is a checkbox, update its checked status
         if (type === 'checkbox') {
         setFormData({
             ...formData,
-            [name]: checked,
+            [name]: (e.target as HTMLInputElement).checked,
         });
 
         } else {
         // Bank Name validation: only alphabet characters
         if (name === 'bankName' && !/^[A-Za-z\s]*$/.test(value)) {
-            return; // Revert the value if it contains anything other than letters or spaces
-        }    
+            return; // Prevent updating if invalid
+        }
+        
+        //Update form for other input fields
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+        }
         // Account and Routing Number validation: only numbers allowed
         if ((name === 'accountNumber' || name === 'routingNumber') && /\D/.test(value)) {
             return; // Revert the value if it contains anything other than digits
@@ -544,11 +551,11 @@ import './SignUp.css';
     </section>
 
     {/* Submit Button */}
-    <button type='submit' className='submit-btn'>Become a Partner</button>
+    <button type='submit' className='submit-btn'>Submit</button>
     </form>
     </div>
 
-    );
+    );   
 
     };
 
