@@ -99,7 +99,7 @@ import './SignUp.css';
             // Validate month (01-12)
             if (month && (parseInt(month, 10) > 12 || parseInt(month, 10) < 1))
                 return;
-            }
+            
     
             // Validate year (not less than current year)
             if (year && parseInt(year, 10) < currentYear) {
