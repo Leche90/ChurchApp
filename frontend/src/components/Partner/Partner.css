@@ -26,7 +26,7 @@
 
 .partner-title1 {
     font-size: 22px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 10px;
     font-weight: 600px;
 }
@@ -39,8 +39,8 @@
 }
 
 .partner-right {
-    background: rgb(102, 51, 0);
-    padding: 5px 30px;
+    background: rgb(153, 204, 51);
+    padding: 15px 30px;
     text-align: center;
     width: 450px;
     flex-grow: 0;
@@ -68,12 +68,12 @@
     margin-bottom: 3px;
     margin-top: 1px;
     font-size: 16x;
-    color: #333;
+    color: #000000;
 }
 
 .prayer-request-button {
-    background-color: rgb(255, 255, 255);
-    color: #000000;
+    background-color: rgb(239, 86, 31);
+    color: #ffffff;
     padding: 10px 20px;
     text-decoration: none;
     font-size: 16px;
@@ -82,6 +82,6 @@
 }
 
 .prayer-request-button:hover {
-    background-color: rgb(212, 127, 0);
+    background-color: rgb(239, 86, 31);
 }
 
