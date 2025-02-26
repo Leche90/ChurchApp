@@ -88,7 +88,7 @@ import './SignUp.css';
         // });
         // }
         // Account and Routing Number validation: only numbers allowed
-        if ((name === 'accountNumber' || name === 'routingNumber') && /\D/.test(value)) {
+        if ((name === 'accountNumber' || name === 'routingNumber') && /\D/.test(value)) 
             return; // Revert the value if it contains anything other than digits
         
         // Special validation for expiryDate input (MM/YY)
