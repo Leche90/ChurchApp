@@ -97,7 +97,7 @@ import './SignUp.css';
             const currentYear = new Date().getFullYear() % 100; // Get last two digits of the current year (e.g., 25 for 2025)
             const currentMonth = new Date().getMonth() + 1; // Get current month (1-12)    
             // Validate month (01-12)
-            if (month && (parseInt(month, 10) > 12 || parseInt(month, 10) < 1)) {
+            if (month && (parseInt(month, 10) > 12 || parseInt(month, 10) < 1))
                 return;
             }
     
