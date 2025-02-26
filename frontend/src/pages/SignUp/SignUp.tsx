@@ -69,12 +69,14 @@ import './SignUp.css';
     
         // If the input is a checkbox, update its checked status
         if (type === 'checkbox') {
-        setFormData({
-            ...formData,
+        setFormData((prev) => ({
+            ...prev,
             [name]: (e.target as HTMLInputElement).checked,
-        });
+        }));
+        return;
+      }
 
-        } else {
+        
         // Bank Name validation: only alphabet characters
         if (name === 'bankName' && !/^[A-Za-z\s]*$/.test(value)) {
             return; // Prevent updating if invalid
