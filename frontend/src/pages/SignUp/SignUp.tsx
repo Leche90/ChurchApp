@@ -75,7 +75,6 @@ import './SignUp.css';
         }));
         return;
       }
-
         
         // Bank Name validation: only alphabet characters
         if (name === 'bankName' && !/^[A-Za-z\s]*$/.test(value)) {
