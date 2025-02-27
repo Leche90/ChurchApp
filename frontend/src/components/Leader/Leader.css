@@ -39,6 +39,17 @@
     margin-top: -5px;
 }
 
+.effect {
+    background-image: url('../../assets/lead.jpg');
+    background-size: 90%;
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    background-repeat: no-repeat;
+    z-index: -10;
+    background-position: center-center;
+}
+
 .pastor {
     font-size: 35px;
     color: rgba(54, 69, 79, 1);

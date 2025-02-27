@@ -48,7 +48,7 @@ const About: React.FC = () => {
      </div>
 
      <div className='values-container'>
-        <div className='values'>OUR CORE VALUES</div>       
+        <div className='values'>Our Core Values</div>       
           <div className='values-text'>
               <ul>
                 <ol>1. Righteousness</ol>
