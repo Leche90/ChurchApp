@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Leader.css'
 import leader from '../../assets/leader.jpg'
 
 const Leader: React.FC = () => {
+  useEffect
+
   return (
       <div className="leader-container">
         <div className="effect"></div>
@@ -24,4 +26,4 @@ const Leader: React.FC = () => {
   )
 }
 
-export default Leader;
+export default Leader

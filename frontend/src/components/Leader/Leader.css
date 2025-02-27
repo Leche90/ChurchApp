@@ -1,11 +1,18 @@
+.leader-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
 .leader {
-    margin: 70px auto;
+    /* margin: 70px auto; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
     gap: 15px; /* Adds space between elements */
-    padding: 0 5%; /* Adds some padding to prevent edge-cutting */
+    padding: 80px 5%; /* Adds some padding to prevent edge-cutting */
+    z-index: 1;
 }
 
 /* Left section (Image) */
@@ -41,13 +48,15 @@
 
 .effect {
     background-image: url('../../assets/lead.jpg');
-    background-size: 90%;
-    width: 100vw;
-    height: 100vw;
-    position: fixed;
+    background-position: center;
     background-repeat: no-repeat;
-    z-index: -10;
-    background-position: center-center;
+    position: absolute;
+    z-index: -1;
+    top: 0px; /* Moves 40px downward */    
+    /* left: 0; */
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
 }
 
 .pastor {
