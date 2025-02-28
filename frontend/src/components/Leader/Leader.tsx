@@ -1,13 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Leader.css'
 import leader from '../../assets/leader.jpg'
 
 const Leader: React.FC = () => {
-  useEffect
+    const effectRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (!effectRef.current) return;
+
+        const scrollY = window.scrollY * -0.2; // Slower parallax movement
+        const maxTranslate = -100; // Limit max movement
+
+        effectRef.current.style.transform = `translate3d(0, ${Math.max(scrollY, maxTranslate)}px, 0)`;
+      };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll); // Cleanup an unmount
+  }, []);
 
   return (
       <div className="leader-container">
-        <div className="effect"></div>
+        <div className="effect" ref={effectRef}></div>
           <div className='leader'>
             <div className='leader-left'>
               <img src={leader} alt='Leader' className='leader-img' />
@@ -26,4 +40,4 @@ const Leader: React.FC = () => {
   )
 }
 
-export default Leader
+export default Leader;

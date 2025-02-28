@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Church.css'
 import church1 from '../../assets/church1.jpg'
 import church2 from '../../assets/church2.jpg'

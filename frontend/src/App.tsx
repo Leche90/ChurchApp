@@ -7,10 +7,10 @@ import Footer from './components/Footer/Footer';
 
 import Hero from './components/Hero/Hero';
 import Church from './components/Church/Church';
+import Partner from './components/Partner/Partner';
 import Video from './components/Video/Video';
 import Leader from './components/Leader/Leader';
 import Evangelism from './components/Evangelism/Evangelism';
-import Partner from './components/Partner/Partner';
 
 import About from './pages/About/About';
 import Teachings from './pages/Teachings/Teachings';
@@ -38,9 +38,9 @@ const App: React.FC = () => {
           <div className='app-container'>
             <Church />
             <Leader />
-            <Video />
-            <Evangelism />
             <Partner />
+            <Video />
+            <Evangelism />            
           </div>
         </>      
       } />

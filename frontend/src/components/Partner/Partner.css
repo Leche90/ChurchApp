@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 40px;
-    margin-top: 80px;
+    padding: 20px 20px;
+    margin-top: 90px;
 }
 
 .partner-us {
@@ -54,7 +54,7 @@
     margin-top: 15px;
 }
 
-.partner-left, .partner-right {
+.partner-left {
     background: rgb(236, 236, 236);
     padding: 15px 30px;
     text-align: center;
@@ -64,6 +64,18 @@
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.192);
     position: relative;
 }
+
+.partner-right {
+    background: rgb(236, 236, 236);
+    padding: 15px 30px;
+    text-align: center;
+    width: 400px;
+    border-radius: 10px;
+    flex-grow: 0;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.192);
+    position: relative;
+}
+
 
 /* "Pin" effect at the top */
 .partner-left::before,
@@ -103,7 +115,6 @@
     text-decoration: none;
     font-size: 16px;
     border-radius: none;
-    display: inline-block;
 }
 
 .prayer-request-button:hover {
