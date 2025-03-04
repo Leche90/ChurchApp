@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 100%; Ensures the wrapper fits the full page width */
+    width: 100%; /*Ensures the wrapper fits the full page width */
     /* overflow: hidden; Prevents horizontal scrolling */
     /* padding: 20px; Adds padding around the content */
 }
@@ -15,7 +15,7 @@
     grid-template-columns: repeat(4, 1fr); /* Defines 4 equal-width columns */
     grid-template-rows: repeat(2, 1fr); /* Defines 2 equal-height rows */
     gap: 2px; /* Removes any spacing between the grid items */
-    width: 100%; /* Allows the grid to take up the full container width */
+    width: 90%; /* Allows the grid to take up the full container width */
     max-width: 1200px; /* Limits the maximum grid width for better readability */
 }
 
@@ -43,7 +43,7 @@
     font-size: 38px; /* Large font size for emphasis */
     color: rgba(54, 69, 79, 1); /* Neutral dark color for readability */
     text-align: center; /* Centers the heading */
-    margin-top: 45px; /* Adds space above the heading */
+    margin-top: 80px; /* Adds space above the heading */
 }
 
 .evangelism-text {

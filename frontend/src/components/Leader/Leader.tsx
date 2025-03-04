@@ -21,7 +21,6 @@ const Leader: React.FC = () => {
 
   return (
       <div className="leader-container">
-        <div className="effect" ref={effectRef}></div>
           <div className='leader'>
             <div className='leader-left'>
               <img src={leader} alt='Leader' className='leader-img' />
