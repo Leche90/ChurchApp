@@ -15,7 +15,7 @@ import Evangelism from './components/Evangelism/Evangelism';
 import About from './pages/About/About';
 import Teachings from './pages/Teachings/Teachings';
 import Contact from './pages/Contact/Contact';
-import SignUp from './pages/SignUp/SignUp';
+import Partnership from './pages/Partnership/Partnership';
 import CommunityOutreach from './pages/Events/CommunityOutreach/CommunityOutreach';
 import Programs from './pages/Events/Programs/Programs';
 import Prisons from './pages/Events/Prisons/Prisons';
@@ -49,7 +49,7 @@ const App: React.FC = () => {
       <Route path="/about" element={<About />} />
       <Route path="/teachings" element={<Teachings />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="/partnership" element={<Partnership />} />
 
       {/* Events pages */}
       <Route path="/community_outreach" element={<CommunityOutreach />} />

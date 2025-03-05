@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './SignUp.css';
+import './Partnership.css';
     
     // Define the type for the country data returned from the API
     interface Country {
@@ -9,7 +9,7 @@ import './SignUp.css';
     };
     }
     
-    const SignUp: React.FC = () => {
+    const Partnership: React.FC = () => {
     // Initial form state
 
     const [formData, setFormData] = useState({
@@ -557,4 +557,4 @@ import './SignUp.css';
 
     };
 
-    export default SignUp;
+    export default Partnership;

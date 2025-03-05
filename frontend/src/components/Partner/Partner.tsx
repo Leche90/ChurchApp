@@ -8,7 +8,7 @@ const Partner: React.FC = () => {
         <div className="partner-left">
             <h4 className='partner-title1'>PARTNER WITH US</h4>
             <p className='partner-text'>Are you passionate about advancing the work of the church?
-            Become a <b>valued Partner.</b></p>
+            Become our <b>valued Partner.</b></p>
             <a href ="http://localhost:5173/signup" target="_blank" rel="noopener noreferrer" className='partner-link'> Join </a>            
         </div>
         <div className="partner-right">
