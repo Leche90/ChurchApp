@@ -9,7 +9,7 @@ const Partner: React.FC = () => {
             <h4 className='partner-title1'>PARTNER WITH US</h4>
             <p className='partner-text'>Are you passionate about advancing the work of the church?
             Become a <b>valued Partner.</b></p>
-            <a href ="http://localhost:5173/signup" target="_blank" rel="noopener noreferrer" className='partner-link'> Join us </a>            
+            <a href ="http://localhost:5173/signup" target="_blank" rel="noopener noreferrer" className='partner-link'> Join </a>            
         </div>
         <div className="partner-right">
             <h4 className='partner-title2'>PRAYER REQUEST?</h4>
@@ -25,7 +25,7 @@ const Partner: React.FC = () => {
               rel='noopener noreferrer'
               className='prayer-request-button'
             >
-              Submit Request
+              Submit
             </a>
         </div>
       </div>

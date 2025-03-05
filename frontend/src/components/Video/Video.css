@@ -22,7 +22,7 @@
   iframe {
     max-width: 1200px;
     height: 500px;
-    width: 100%;
+    width: 85%;
     aspect-ratio: 16 / 9; /* Maintain a responsive aspect ratio */
     border: none; /* Removes default iframe border */
   }

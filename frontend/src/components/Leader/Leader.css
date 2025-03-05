@@ -5,7 +5,7 @@
     justify-content: space-between;
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
     gap: 15px; /* Adds space between elements */
-    padding: 30px 5%; /* Adds some padding to prevent edge-cutting */
+    padding: 10px 5%; /* Adds some padding to prevent edge-cutting */
     z-index: 1;
     position: relative;
 }
