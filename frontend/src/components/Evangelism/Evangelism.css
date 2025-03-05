@@ -15,7 +15,7 @@
     grid-template-columns: repeat(4, 1fr); /* Defines 4 equal-width columns */
     grid-template-rows: repeat(2, 1fr); /* Defines 2 equal-height rows */
     gap: 2px; /* Removes any spacing between the grid items */
-    width: 90%; /* Allows the grid to take up the full container width */
+    width: 100%; /* Allows the grid to take up the full container width */
     max-width: 1200px; /* Limits the maximum grid width for better readability */
 }
 
