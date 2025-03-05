@@ -4,378 +4,190 @@ import './Partnership.css';
     
     // Define the type for the country data returned from the API
     interface Country {
-    name: {
-        common: string; // We are only interested in the 'common' name of each country
-    };
-    }
+        name: { common: string }; 
+    } // We are only interested in the 'common' name of each country
     
     const Partnership: React.FC = () => {
-    // Initial form state
+    // Initial form state - contains the fields for the form
 
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        address: '',
-        country: '',
-        supportTypes: [],
-        donationAmount: '',
-        contributionFrequency: '',
-        donationMethod: '',
-        receiveUpdates: false,
-        receiveEvents: false,
-        prayerRequest: '',
+        firstName: "",
+        lastName: "",
+        username: "",
+        email: "",
+        phone: "",
+        address: "",
+        country: "",
+        password: "",
+        confirmPassword: "",
+        securityQuestion: "",
+        securityAnswer: "",
+        verificationCode:"", // Verification code for email verification
+        supportTypes: [] as string[],
+        donationMethod: "",
+        donationFrequency: "",
+        confirmDonation: "",
         confirmCashDonation: false, // New state for Cash confirmation checkbox
-        cardNumber: '',
-        expiryDate: '', // Combined expiry date field
-        cvv: '',
-        paypalEmail: '',
-        bankName: '',
-        accountNumber: '',
-        routingNumber: '',
-        wireTransferDetails: '',
     });
-    
-    // State to store the list of countries fetched from the API
-    const [countries, setCountries] = useState<string[]>([]);
+
+    // Country list and password error state
+    const [countries, setCountries] = useState<string[]>([]); // Set country list
     const [loading, setLoading] = useState<boolean>(true); // Loading state while fetching countries
-    const [cardError, setCardError] = useState<string>(''); // Error message for card validation
-    
-    // useEffect to fetch countries when the component is mounted
+    const [passwordError, setPasswordError] = useState<string>(""); // Error state for password mismatch
+    const [emailError, setEmailError] = useState<string>(""); // Error state for email mismatch
+
+    // Fetch countries from the API
     useEffect(() => {
         const fetchCountries = async () => {
-        try {
-            // Fetch country data from the API and type the response as an array of Country objects
-            const response = await axios.get<Country[]>('https://restcountries.com/v3.1/all');    
-            // Extract the 'common' name of each country and store them in the 'countries' state
-            const countryNames = response.data.map((country) => country.name.common);    
-            // Sort the country names alphabetically
-            countryNames.sort((a, b) => a.localeCompare(b));    
-            // Update the state with the sorted country names
-            setCountries(countryNames);
-            setLoading(false); // Set loading to false once data is fetched
-        } catch (err) {
-            console.error('Error fetching countries', err);
-            setLoading(false); // In case of error, stop loading
-        }
-        };    
-        fetchCountries(); // Call the fetchCountries function when component mounts
-    }, []); // Empty dependency array ensures this runs once when the component mounts
+            try {
+                const response = await axios.get<Country[]>("https://restcountries.com/v3.1/all");
+                const countryNames = response.data.map((country) => country.name.common);
+                countryNames.sort((a, b) => a.localeCompare(b));
+                setCountries(countryNames);
+            } catch (err) {
+                console.error("Error fecthing contries", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchCountries();
+    }, []);
     
-    // Function to handle form input changes
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value, type, } = e.target;
-    
-        // If the input is a checkbox, update its checked status
-        if (type === 'checkbox') {
-        setFormData((prev) => ({
-            ...prev,
-            [name]: (e.target as HTMLInputElement).checked,
-        }));
-        return;
-      }
-        
-        // Bank Name validation: only alphabet characters
-        if (name === 'bankName' && !/^[A-Za-z\s]*$/.test(value)) {
-            return; // Prevent updating if invalid
-        }
-        
-        //Update form for other input fields
-        // setFormData({
-        //     ...formData,
-        //     [name]: value,
-        // });
-        // }
-        // Account and Routing Number validation: only numbers allowed
-        if ((name === 'accountNumber' || name === 'routingNumber') && /\D/.test(value))
-            return; // Revert the value if it contains anything other than digits
-        
-        // Special validation for expiryDate input (MM/YY)
-        if (name === 'expiryDate') {
-            const [month, year] = value.split('/');
-            const currentYear = new Date().getFullYear() % 100; // Get last two digits of the current year (e.g., 25 for 2025)
-            const currentMonth = new Date().getMonth() + 1; // Get current month (1-12)    
-            // Validate month (01-12)
-            if (month && (parseInt(month, 10) > 12 || parseInt(month, 10) < 1))
-                return;            
-    
-            // Validate year (not less than current year)
-            if (year && parseInt(year, 10) < currentYear)
-                return;        
-    
-            // Validate if the year is the current year, the month must not be in the past
-            if (year && parseInt(year, 10) === currentYear && month && parseInt(month, 10) < currentMonth) {
-                return;
-            }        
-    
-        // For all other input types, update the value
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-        }
-    };    
-    
-    // Card validation using Luhn's algorithm
-    const validateCard = (cardNumber: string) => {
-        let sum = 0;
-        let shouldDouble = false;
-        for (let i = cardNumber.length - 1; i >= 0; i--) {
-        let digit = parseInt(cardNumber.charAt(i));
-        if (shouldDouble) {
-            if ((digit *= 2) > 9) digit -= 9;
-        }
-        sum += digit;
-        shouldDouble = !shouldDouble;
-        }
-        return sum % 10 === 0;
-    };
-    
-    // Function to handle form submission
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault(); // Prevent the default form submission behavior    
-        // Perform card validation if the method is 'Debit/ Credit Card'
-        if (formData.donationMethod === 'online' && !validateCard(formData.cardNumber)) {
-        setCardError('Invalid card details'); // Set error message for invalid card
-        return;
+    // Handle form input change
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value, type, checked } = e.target as HTMLInputElement;
+
+        // Handle support type checkboxes
+        if (type === "checkbox") {
+            const updatedSupportTypes = checked? [...formData.supportTypes, name]
+            : formData.supportTypes.filter((item) => item !== name);
+
+            setFormData((prev) => ({ ...prev, supportTypes: updatedSupportTypes }));
+            return;
+    }
+
+    // Handle regular input changes
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    // Password Validation to check if passwords match
+    if (name === "confirmPassword" && value !== formData.password) {
+        setPasswordError("Passwords do not match!");
+    } else {
+        setPasswordError("");        
+    }
+
+    // Email verification using regular expression
+    if (name === "email") {
+        const emailRegex = /^[^s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for email validation
+        if (!emailRegex.test(value)) {
+            setEmailError("Please enter a valid email address");
         } else {
-        setCardError(''); // Clear error message if card is valid
-        }    
-        console.log('Form Submitted:', formData); // Log the form data to the console (You could replace this with an API call)
+            setEmailError("");
+        }      
+     }
+  };
+
+    // Handle donation method change
+    const handleDonationMethodChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectMethod = e.target.value;
+        setFormData((prev) => ({ ...prev, donationMethod: selectMethod }));
+
+        // If "card" is selected, redirect to the link
+        if (selectMethod === "card") {
+            window.location.href = "https:members.faithpays.org/donate/FP8588921";
+        }
     };
-    
+
+    // Render the form data
     return (
-    <div className='form-container'>
-    <h2 className='form-title'>Partnership Form</h2>
-    <form onSubmit={handleSubmit} className='partner-form'>
+        <div className="partnership-container">
+            <h2>Partnership Form</h2>
+            <form>
+                <label>First Name</label>
+                <input type='text' name='firstName' value={formData.firstName} onChange={handleChange} required />
 
-            {/* Personal Information Section */}
-    <section className='section'>
-    <h3>Personal Information</h3>    
-            {/* First Name */}
-    <label>
+                <label>Last Name</label>
+                <input type='text' name='lastName' value={formData.lastName} onChange={handleChange} required />
 
-        First Name:
-    <input
-        type="text"
-        name="firstName"
-        value={formData.firstName}
-        onChange={handleChange}
-        placeholder='First Name'
-        required
-        />
-    </label>    
-        {/* Last Name */}
-    <label>
+                <label>Email Address</label>
+                <input type='email' name='email' value={formData.email} onChange={handleChange} required />
 
-        Last Name:
-    <input
-        type="text"
-        name="lastName"
-        value={formData.lastName}
-        onChange={handleChange}
-        placeholder='Last Name'
-        required
-        />
-    </label>    
-        {/* Email Address */}
-    <label>
+                <label>Phone Number</label>
+                <input type='tel' name='phone' value={formData.phone} onChange={handleChange} required />
 
-        Email Address:
-    <input
-        type="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        placeholder='Your Email Address'
-        required
-        />
-    </label>    
-            {/* Phone Number */}
-    <label>
+                <label>Address</label>
+                <input type='text' name='address' value={formData.address} onChange={handleChange} required />
 
-        Phone Number:
-    <input
-        type="text"
-        name="phone"
-        value={formData.phone}
-        onChange={handleChange}
-        placeholder='Phone Number'
-        />
-    </label>    
-            {/* Street Address */}
-    <label>
+                <label>Country</label>
+                <select name='country' value={formData.country} onChange={handleChange} required>
+                  <option value=""> Select Country</option>
+                  {loading ? <option>Loading...</option> : countries.map((country) => <option key={country}>{country}</option>)}
+                </select>
 
-        Street Address:
-    <input
-        type="text"
-        name="address"
-        value={formData.address}
-        onChange={handleChange}
-        placeholder='Street, City, State'
-        required
-        />
-    </label>    
-            {/* Country Selection */}
-    <label>
+                <label>Password</label>
+                <input type='password' name='password' value={formData.password} onChange={handleChange} required />
 
-        Country:
-    <select
-        name="country"
-        value={formData.country}
-        onChange={handleChange}
-        disabled={loading}
-        required
-    >
-    <option value=''>Select Country</option>
-        {loading ? (
-    <option>Loading countries...</option>
-        ) : (
-        countries.map((country, index) => (
-    <option key={index} value={country}>
-        {country}
-    </option>
-        ))
-    )}
-    </select>
-    </label>
-    </section>    
-        {/* Partnership Details Section */}
-    <section className='section'>
-    <h3>Partnership Details</h3>    
-        {/* Support Type Selection */}
-    <label>
+                <label>Confirm Password</label>
+                <input type='password' name='confirmPassword' value={formData.confirmPassword} onChange={handleChange} required />
+                {passwordError && <p className="error">{passwordError}</p>}
 
-        How would you like to support the church?
-    <select
-        name="supportTypes"
-        value={formData.supportTypes}
-        onChange={handleChange}
-        required
-        >
-        <option value='financial'>Financial Donation</option>
-        <option value='volunteer'>Volunteering</option>
-        <option value='event-sponsorship'>Clothes/shoes Donation</option>
-        <option value='other'>Other</option>
-        </select>
-        </label>
-    
-     
-          {/* Donation Amount */}
-    <label>
+                <label>Security Question</label>
+                <input type="text" name='securityQuestion' value={formData.securityQuestion} onChange={handleChange} required />
 
-        Donation Amount:
-    <input
-        type="number"
-        name="donationAmount"
-        value={formData.donationAmount}
-        onChange={handleChange}
-        placeholder='Enter Donation Amount'
-        required
-    />
-    </label>
+                <label>Security Answer</label>
+                <input type="text" name="securityAnswer" value={formData.securityAnswer} onChange={handleChange} required />
 
-    {/* Contribution Frequency */}
-    <label>
+                <label>How would you like to support the church?</label>
+                <div>
+                    <input type="checkbox" name="Financial donation" onChange={handleChange} /> Financial Donation
 
-    Contribution Frequency:
-    <select
-        name="contributionFrequency"
-        value={formData.contributionFrequency}
-        onChange={handleChange}
-        required
-        >
-        <option value='one-time'>One-time Donation</option>
-        <option value='monthly'>Monthly</option>
-        <option value='quarterly'>Quarterly</option>
-        <option value='bi-annually'>Bi-Annually</option>
-        <option value='annually'>Annually</option>
-    </select>
-    </label>
+                    <input type="checkbox" name="Volunteering" onChange={handleChange} /> Volunteering 
 
-            {/* Donation Method */}
-    <label>
+                    <input type="checkbox" name="Clothes/Shoes/Food" onChange={handleChange} /> Clothes/Shoes/Food
 
-        Donation Method:
-    <select
-        name="donationMethod"
-        value={formData.donationMethod}
-        onChange={handleChange}
-        required
-    >
-        <option value='' disabled>Select Donation Method</option>
-        <option value='online'>Debit/ Credit Card</option>
-        <option value='bank-transfer'>Bank Transfer</option>
-        <option value='wire-transfer'>Wire Transfer</option>
-        <option value='paypal'>PayPal</option>
-        <option value='cash'>Cash</option>
-    </select>
-    </label>
-    
-    {/* Conditional form for PayPal */}
+                    <input type="checkbox" name="Other" onChange={handleChange} /> Other             
+                    </div>
 
-    {formData.donationMethod === 'paypal' && (
-    <div>
-    <label>
+                    {formData.supportTypes.includes("Other") && (
+                        <input type="text" name="customDonation" placeholder="Please specify" onChange={handleChange} />
+                    )}
 
-        PayPal Email:
-    <input
-        type="email"
-        name="paypalEmail"
-        value={formData.paypalEmail}
-        onChange={handleChange}
-        required
-        />
-    </label>
-    </div>
+                    {formData.supportTypes.includes("Financial donation") && (
+                        <>
+                          <label>Donation Method</label>
+                          <select name="donationMethod" value={formData.donationMethod} onChange={handleDonationMethodChange}>
+                            <option value="" disabled>Select Method</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="wire">Bank/Wire Transfer</option>                            
+                            <option value="cash">Cash</option>
+                            </select>                
+                        </>
+                    )}
 
-    )}
+                    {(formData.donationMethod === "wire" || formData.donationMethod === "cash") && (
+                        <div>
+                            <p>
+                                Please contact the church at <b>431-123-4567</b> or email{" "}
+                                <a href="mailto:kingmakersinternationalministries@gmail.com">kingmakersinternationalministries@gmail.com</a>
+                            </p>
+                            <input type="checkbox" name="confirmCashDonation" onChange={handleChange} required />
+                            <label>I have read the advisory message and understand that I need to contact the church for delivery instructions</label>
+                        </div>
+                    )}
 
-    {/* Conditional form for Cash */}
+                    <label>Donation Frequency:</label>
+                    <select name="donationFrequency" value={formData.donationFrequency} onChange={handleChange}>
+                        <option value="" disabled>Select Frequency</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Quarterly">Quarterly</option>
+                        <option value="Bi-annually">Bi-annually</option>
+                        <option value="Annually">Annually</option>
+                    </select>
 
-    {formData.donationMethod === 'cash' && (
-    <div>
-    <label>
+                    <button type="submit">Submit</button>            
+            </form>
+        </div>
+    );
+};   
 
-        Donation Amount:
-    <input
-        type="number"
-        name="donationAmount"
-        value={formData.donationAmount}
-        onChange={handleChange}
-        placeholder="Enter Cash Donation Amount"
-        required
-        />
-    </label>
-    <p>
-    <strong>For Cash donations, please contact us to arrange the most convenient delivery method:</strong>
-    </p>
-    <p>Call us at: <a href="tel:4311234567">431-123-4567</a></p>
-    <p>Or email us at: <a href="mailto:kingmakersinternationalministries@gmail.com">kingmakersinternationalministries@gmail.com</a></p>
-    <label>
-    <input
-        type="checkbox"
-        name="confirmCashDonation"
-        checked={formData.confirmCashDonation}
-        onChange={handleChange}
-        required
-        />
-
-        I have read the advisory message and understand that I need to contact the church for delivery instructions.
-    </label>
-    </div>
-
-    )}
-    </section>   
-
-    {/* Submit Button */}
-    <button type='submit' className='submit-btn'>Submit</button>
-    </form>
-    </div>
-
-    );   
-
-    };
-
-    export default Partnership;
+export default Partnership;
