@@ -20,11 +20,19 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 // MongoDB Connection
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/churchDB';
+const MONGO_URI = process.env.MONGO_URI;
+
+if (!MONGO_URI) {
+    console.error("MongoDB is not defined in environment variables");
+    process.exit(1); // Exit process with error
+}
 
 mongoose.connect(MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error("MongoDB Conection Error:", err));
+    .catch(err => {
+        console.error("MongoDB Conection Error:", err);
+        process.exit(1); // Exit process with 
+    });
 
     // Set up port
 const PORT = process.env.PORT || 5000;

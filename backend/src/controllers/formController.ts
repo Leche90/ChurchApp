@@ -1,25 +1,12 @@
 import { Request, Response } from 'express';
+import Form from '../models/formModel';
 
-// Sample data model (in real implementation, you would interact with a database)
-interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  address: string;
-  country: string;
-  password: string;
-}
-
-export const submitForm = (req: Request, res: Response): void => {
-  const formData: FormData = req.body;
-
-  // In a real app, you would save the form data to a database (e.g., MongoDB)
-  console.log('Form data received:', formData);
-
-  // Respond to the client
-  res.status(201).json({
-    message: 'Form submitted successfully',
-    data: formData
-  });
+export const submitForm = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const newForm = new Form(req.body); // Create a new form entry
+    await newForm.save(); // Save to MongoDB
+    res.status(201).json({ message: 'Form submitted successfully', data: newForm });
+  } catch (error) {
+    res.status(500).json({ message: 'Error submitting form', error });
+  }
 };
