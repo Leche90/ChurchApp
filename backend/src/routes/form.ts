@@ -5,7 +5,7 @@ import { validateForm, handleValidationErrors } from '../controllers/validation'
 const router: Router = express.Router();
 
 // POST route to handle form submission with validation
-router.post('/', [...validateForm, handleValidationErrors, submitForm]);
+router.post('/', validateForm, handleValidationErrors, submitForm);
 
 //GET route to retrieve all forms
 router.get('/', getAllForms); // Add this route to fetch all forms

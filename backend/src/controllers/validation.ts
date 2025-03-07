@@ -21,11 +21,11 @@ export const validateForm = [
 ];
 
 // Handle validation errors
-export const handleValidationErrors = (req: Request, res: Response, next: NextFunction) => {
+export const handleValidationErrors = (req: Request, res: Response, next: NextFunction): void => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         // Fixing the 'errors' name (used 'error' instead of 'errors' in the response)
-        return res.status(400).json({ errors: errors.array() });
+        res.status(400).json({ errors: errors.array() });
     }
     next();
 };
