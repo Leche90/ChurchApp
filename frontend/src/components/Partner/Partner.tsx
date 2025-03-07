@@ -18,7 +18,6 @@ const Partner: React.FC = () => {
               "Yes, ask me for anything in my name, and I will do it!"
             <span className='bible-ref'> John 14:14 (NLT) </span> </p>
 
-
             <a
               href='https://forms.gle/form'
               target='_blank'
