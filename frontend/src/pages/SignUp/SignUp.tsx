@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp: React.FC = () => {
   const [formData, setFormData] = useState ({
@@ -15,6 +16,9 @@ const SignUp: React.FC = () => {
   const [passwordError, setPasswordError] = useState('');
   const [formError, setFormError] = useState('');
 
+  // Initialise the navigate function
+  const navigate = useNavigate();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));    
@@ -29,11 +33,12 @@ const SignUp: React.FC = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/register', formData);
+      await axios.post('http://localhost:5000/api/signup', formData);
       alert('Registration successful! Please log in');
       // Redirect to login page
     } catch (error) {
       setFormError('Error during registration. Please try again.');
+      console.error(error); // For debugging purposes
     }
   };
 
@@ -42,10 +47,7 @@ const SignUp: React.FC = () => {
       <h2>Become a Partner</h2>
       <form onSubmit={handleSubmit}>
         <label>First Name</label>
-        <input type='text' name='firstName' value={formData.firstName} onChange={handleChange} required />
-
-        <label>First Name</label>
-        <input type='text' name='firstName' value={formData.firstName} onChange={handleChange} required />
+        <input type='text' name='firstName' value={formData.firstName} onChange={handleChange} required />        
 
         <label>Last Name</label>
         <input type='text' name='lastName' value={formData.lastName} onChange={handleChange} required />
@@ -58,7 +60,7 @@ const SignUp: React.FC = () => {
 
         <label>Confirm Password</label>
         <input type='password' name='confirmPassword' value={formData.confirmPassword} onChange={handleChange} required />
-        {passwordError && <p>{passwordError}}</p>
+        {passwordError && <p>{passwordError}</p>}
         
         // Security Question and answer
         <label>Security Question</label>
@@ -77,7 +79,7 @@ const SignUp: React.FC = () => {
           <option value='countryVisit'>Which country would you love to visit but haven’t yet?</option>
         </select>
 
-        <label>Security Answer<label>
+        <label>Security Answer</label>
         <input type='text' name='securityAnswer' value={formData.securityAnswer} onChange={handleChange} required/>
 
         <button type='submit'>Sign Up</button>
