@@ -10,6 +10,9 @@ export default defineConfig({
     }
   },
   server: {
+    proxy: {
+      '/api': 'http://localhost:5000',
+    },
     headers: {
       "Cache-Control": "public, max-age=3600, must-revalidate"
     }
