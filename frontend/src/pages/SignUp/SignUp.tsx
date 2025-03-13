@@ -43,50 +43,68 @@ const Signup: React.FC = () => {
   };
 
   return (
-    <div className='signup-container'>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        <label>First Name</label>
-        <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
+    <div className="signup-container">
+      <h1 className="signup-title">Sign Up</h1>
+      <form onSubmit={handleSubmit} className="signup-form">
+        <div className="form-group">
+          <label htmlFor="firstName" className="form-label">First Name</label>
+          <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className="form-input" required />
+        </div>
 
-        <label>Last Name</label>
-        <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
+        <div className="form-group">
+          <label htmlFor="lastName" className="form-label">Last Name</label>
+          <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="form-input" required />
+        </div>
 
-        <label>Email</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+        <div className="form-group">
+          <label htmlFor="email" className="form-label">Email</label>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} className="form-input" required />
+        </div>
 
-        <label>Phone Number</label>
-        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+        <div className="form-group">
+          <label htmlFor="phone" className="form-label">Phone Number</label>
+          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="form-input" required />
+        </div>
 
-        <label>Password</label>
-        <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+        <div className="form-group">
+          <label htmlFor="password" className="form-label">Password</label>
+          <input type="password" name="password" value={formData.password} onChange={handleChange} className="form-input" required />
+        </div>
 
-        <label>Confirm Password</label>
-        <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required />
+        <div className="form-group">
+          <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+          <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} className="form-input" required />
+        </div>
 
-        <label>Security Question</label>
-        <select name="securityQuestion" value={formData.securityQuestion} onChange={handleChange} required>
-          <option value='' disabled>Select a question</option>
-          <option value='firstSchool'>What was the name of your first school?</option>
-          <option value='parkVisit'>What was the name of the park you visited most often as a child?</option>
-          <option value='firstJob'>In which city did you get your first job?</option>
-          <option value='firstDate'>Where did you go on your first date?</option>
-          <option value='schoolTeacher'>What’s the name of your first school teacher?</option>
-          <option value='favoriteBook'>What is your favorite book?</option>
-          <option value='childhoodGame'>What was the name of your favorite childhood game?</option>
-          <option value='favoriteTeacher'>What was the name of your favorite teacher?</option>
-        </select>
+        <div className="form-group">
+          <label htmlFor="securityQuestion" className="form-label">Security Question</label>
+          <select name="securityQuestion" value={formData.securityQuestion} onChange={handleChange} className="form-input" required>
+            <option value='' disabled>Select a question</option>
+            <option value='firstSchool'>What was the name of your first school?</option>
+            <option value='parkVisit'>What was the name of the park you visited most often as a child?</option>
+            <option value='firstJob'>In which city did you get your first job?</option>
+            <option value='firstDate'>Where did you go on your first date?</option>
+            <option value='schoolTeacher'>What’s the name of your first school teacher?</option>
+            <option value='favoriteBook'>What is your favorite book?</option>
+            <option value='childhoodGame'>What was the name of your favorite childhood game?</option>
+            <option value='favoriteTeacher'>What was the name of your favorite teacher?</option>
+          </select>
+        </div>
 
-        <label>Security Answer</label>
-        <input type="text" name="securityAnswer" value={formData.securityAnswer} onChange={handleChange} required />
+        <div className="form-group">
+          <label htmlFor="securityAnswer" className="form-label">Security Answer</label>
+          <input type="text" name="securityAnswer" value={formData.securityAnswer} onChange={handleChange} className="form-input" required />
+        </div>
 
-        <button type="submit">Sign Up</button>
+        <button type="submit" className="signup-btn">Sign Up</button>
       </form>
 
-      <div className='caveat'>
-        <p className='caveat-p'>Please, we are collecting your information as it is our custom to pray for our partners and send appreciate them</p>
+      <div className="caveat-container">
+        <p className="caveat-text">
+          We value your partnership with us. Your information will be used solely for documentation purposes, to ensure we can support you in prayer, and to express our gratitude for your involvement in our community.
+        </p>
       </div>
-    </div>    
+    </div>
   );
 };
 
