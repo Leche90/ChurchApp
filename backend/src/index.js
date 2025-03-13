@@ -1,11 +1,11 @@
-require('dotenv').config();
+require('dotenv').config();  // This loads environment variables from the .env file
+const mongoose = require('mongoose');
+const connectDB = require('./config/db');
 const express = require('express');
 const cors = require('cors');
-const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
-const mongoose = require('mongoose'); 
 
-// Connect to MongoDB
+// Connect to MongoDB using the URI from the .env file
 connectDB();
 
 const app = express();
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173' }));
 
 // MongoDB connection (using Mongoose)
-const dbURI = process.env.MONGO_URI || 'mongodb+srv://KIMWebApp:KMIMPassApp2025@kimapp-cluster.vwfo8.mongodb.net/churchApp';
+const dbURI = process.env.MONGO_URI;  // Ensure MONGO_URI is pulled from environment variables
 mongoose.connect(dbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
