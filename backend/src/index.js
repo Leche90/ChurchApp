@@ -5,8 +5,8 @@ const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 
-// Connect to MongoDB using the URI from the .env file
-connectDB();
+// // MongoDB connection (using Mongoose)
+const MONGO_URI = process.env.MONGO_URI; 
 
 const app = express();
 
@@ -14,9 +14,8 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173' }));
 
-// MongoDB connection (using Mongoose)
-const dbURI = process.env.MONGO_URI;  // Ensure MONGO_URI is pulled from environment variables
-mongoose.connect(dbURI, {
+// Ensure MONGO_URI is pulled from environment variables
+mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
