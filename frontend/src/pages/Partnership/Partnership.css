@@ -1,172 +1,105 @@
-  .form-container {  
-    max-width: 1000px;  
-    margin: 2rem auto;  
-    padding: 2rem;  
-    background-color: #ffffff;  
-    border-radius: 12px;  
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 150px;
-  }
-   
-  .form-title {  
-    font-size: 2rem;  
-    font-weight: 700;  
-    color: #111827;  
-    text-align: center;  
-    margin-bottom: 1.5rem;  
-  }
-   
-  .partner-form {  
-    display: flex;  
-    flex-direction: column;  
-    gap: 1.5rem;  
-  }
-   
-  .section {  
-    background-color: #f9fafb;  
-    padding: 1.5rem;  
-    border-radius: 8px;  
-    border: 1px solid #e5e7eb;  
-  }
-   
-  .section h3 {  
-    font-size: 1.25rem;  
-    font-weight: 600;  
-    color: #111827;  
-    margin-bottom: 1rem;  
-  }
-   
-  label {  
-    display: block;  
-    font-size: 0.875rem;  
-    font-weight: 500;  
-    color: #374151;  
-    margin-bottom: 0.5rem;  
-  }
-   
-  input[type="text"],  
-  input[type="email"],  
-  input[type="number"],  
-  input[type="tel"],  
-  textarea,
-  
-  select {  
-    width: 100%;  
-    padding: 0.75rem;  
-    border: 1px solid #e5e7eb;  
-    border-radius: 6px;  
-    font-size: 0.875rem;  
-    color: #333;
-  
-    background-color: #ffffff;  
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;  
-  }
-   
-  input[type="text"]:focus,  
-  input[type="email"]:focus,  
-  input[type="number"]:focus,  
-  input[type="tel"]:focus,  
-  textarea:focus,
-  
-  select:focus {  
-    outline: none;  
-    box-shadow: 0 0 0 3px rgba(12, 90, 87, 0.1);  
-  }
-   
-  textarea {
-  
-    resize: vertical;
-  
-    min-height: 100px;
-  
-  }
-   
-  select {  
-    appearance: none;  
-    background-image: url('/src/assets/arrow-icon.svg');  
-    background-repeat: no-repeat;  
-    background-position: right 0.75rem center;  
-    background-size: 1rem;  
-  }
-   
-  input[type="checkbox"] {  
-    width: 1rem;  
-    height: 1rem;  
-    margin-right: 0.5rem;  
-    accent-color: #026859;
-  
-  }
-   
-  .checkbox-label {  
-    display: flex;  
-    align-items: center;  
-    font-size: 0.875rem;  
-    color: #374151;  
-  }
-   
-  .submit-btn {  
-    background-color: rgb(0, 77, 77);  
-    color: #ffffff;  
-    font-size: 1rem;  
-    font-weight: 600;  
-    padding: 0.75rem 1.5rem;  
-    border: none;  
-    border-radius: 6px;  
-    cursor: pointer;  
-    transition: background-color 0.3s ease, transform 0.2s ease;  
-  }
-   
-  .submit-btn:hover {  
-    background-color: #06352e;  
-    transform: translateY(-2px);  
-  }
-   
-  .submit-btn:active {  
-    transform: translateY(0);  
-  }
-   
-  .error {  
-    color: #eb2222;  
-    font-size: 0.875rem;  
-    margin-top: 0.5rem;  
-  }
-   
-  /* Conditional Form Sections */
-  
-  .conditional-section {  
-    margin-top: 1rem;  
-    padding: 1rem;  
-    background-color: #ffffff;  
-    border: 1px solid #e5e7eb;  
-    border-radius: 6px;  
-  }
-   
-  /* Responsive Design */  
-  @media (max-width: 768px) {  
-    .form-container {  
-      padding: 1rem;  
-    }
-   
-    .form-title {  
-      font-size: 1.5rem;  
-    }
-   
-    .section {  
-      padding: 1rem;  
-    }
-   
-    input[type="text"],  
-    input[type="email"],  
-    input[type="number"],  
-    input[type="tel"],  
-    textarea,
+/* General container styling */
+.partnership-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    select {  
-      padding: 0.5rem;  
-    }
-   
-    .submit-btn {  
-      width: 100%;  
-    }  
+/* Heading style */
+.partnership-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form styling */
+.partnership-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label styling */
+.partnership-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Input styling */
+.partnership-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.partnership-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.partnership-checkbox {
+  margin-right: 10px;
+}
+
+/* Button styling */
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive design for small screens */
+@media screen and (max-width: 768px) {
+  .partnership-container {
+      padding: 10px;
   }
-   
+
+  .partnership-heading {
+      font-size: 1.5rem;
+  }
+
+  .partnership-form {
+      gap: 10px;
+  }
+
+  .submit-button {
+      font-size: 1rem;
+      padding: 10px;
+  }
+}

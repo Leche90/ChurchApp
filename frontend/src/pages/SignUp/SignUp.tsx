@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SignUp.css';
 
 const Signup: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -22,8 +23,9 @@ const Signup: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Form submitted');
 
-    const response = await fetch('http://localhost:5000/signup', {
+    const response = await fetch('http://localhost:5000/api/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,8 +35,7 @@ const Signup: React.FC = () => {
 
     const data = await response.json();
     if (response.ok) {
-      alert('Signup successful! Redirecting to login...');
-      // After successful signup, you can redirect them to the login page
+      // Redirect to the login page after successful signup      
       window.location.href = '/login';
     } else {
       alert(`Signup failed: ${data.message || 'Something went wrong!'}`);
