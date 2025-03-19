@@ -3,7 +3,7 @@ import './Leader.css'
 import leader from '../../assets/leader.jpg'
 
 const Leader: React.FC = () => {
-    const effectRef = useRef<HTMLDivElement | null>(null);
+    const effectRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
       const handleScroll = () => {

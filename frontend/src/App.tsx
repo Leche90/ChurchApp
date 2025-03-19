@@ -6,8 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import LayoutWrapper from './LayoutWrapper';
 
 // Importing pages
-import SignUp from './pages/SignUp/SignUp';
-import Login from './pages/Login/Login';
+import Partnership from './pages/Partnership/Partnership';
 
 // Other imports for sections/components
 import Hero from './components/Hero/Hero';
@@ -19,17 +18,14 @@ import Evangelism from './components/Evangelism/Evangelism';
 import About from './pages/About/About';
 import Teachings from './pages/Teachings/Teachings';
 import Contact from './pages/Contact/Contact';
-import Partnership from './pages/Partnership/Partnership';
 import CommunityOutreach from './pages/Events/CommunityOutreach/CommunityOutreach';
-import PrisonsMission from './pages/Events/Prisons/Prisons';
+import Prisons from './pages/Events/Prisons/Prisons';
 import Programs from './pages/Events/Programs/Programs';
 
 const App: React.FC = () => {
   return (
     <Routes>
-      {/* Routes for Signup and Login without Navbar and Footer */}
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/login" element={<Login />} />
+      {/* Routes for Signup and Login without Navbar and Footer */}      
       <Route path='/partnership' element={<Partnership />} />
 
       {/* Routes with LayoutWrapper (Navbar and Footer) */}

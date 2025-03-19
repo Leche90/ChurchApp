@@ -1,13 +1,14 @@
+.leader-container {
+    margin-top: 10%;
+}
+
 .leader {
-    /* margin: 70px auto; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    gap: 15px; /* Adds space between elements */
-    padding: 10px 5%; /* Adds some padding to prevent edge-cutting */
-    z-index: 1;
-    position: relative;
+    gap: 30px; /* Adds space between elements */
+    padding: 20px 3%; /* Adds some padding to prevent edge-cutting */
 }
 
 /* Left section (Image) */
@@ -19,149 +20,43 @@
 
 /* Right section (Text) */
 .leader-right {
-    flex-basis: 56%;
+    flex-basis: 54%;
     display: flex;
     flex-direction: column;
     justify-items: center;
-    margin: 15px 0 0 0;
+    /* margin: 15px 0 0 0; */
 }
 
 /* Image styling */
 .leader-img {
     width: 100%;
     border-radius: 3px;
-    height: auto;
-    max-height: 100%;
     transform-style: preserve-3d;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 100%;
 }
 
 .lead-pastor {
-    font-size: 22px;
-    color: rgba(54, 69, 79, 1);
+    font-size: 30px;
+    color: rgb(54, 69, 79);
     font-weight: 300;
-    margin-top: -5px;
+    margin-top: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .pastor {
-    font-size: 35px;
-    color: rgba(54, 69, 79, 1);
-    width: 100%;
+    font-size: 40px;
+    color: rgb(69, 0, 133);
     margin-top: -25px;
 }
 
 /* Text styling */
-.leader .pastor-paragraph {
+.pastor-paragraph {
     color: rgb(32, 40, 45);
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.8;
     text-align: justify;
-    margin-top: -25px;
+    margin-top: -20px;
 }
 
-/* 🌍 Desktop & Large Screens (min-width: 1025px) */
-@media (min-width: 1025px) {
-    .leader {
-        max-width: 1200px;
-        margin-top: 90px;
-    }
-
-    .pastor {
-        font-size: 35px;
-    }
-
-    .leader .pastor-paragraph {
-        font-size: 15px;
-    }
-}
-
-/* 📱 Tablets & Small Laptops (max-width: 1024px) */
-@media (max-width: 1024px) {
-    .leader {
-        flex-direction: column; /* Stack elements */
-        text-align: center;
-        gap: 30px;
-    }
-
-    .leader-left, .leader-right {
-        flex-basis: 100%; /* Full width */
-    }
-
-    .leader-right {
-        margin-top: auto;
-    }
-
-    .pastor {
-        font-size: 28px; /* Adjust text size */
-        margin-top: -18px;
-        margin-bottom: 5px;
-    }
-
-    .lead-pastor {
-        font-size: 20px;
-        margin-top: 0px;
-    }
-
-    .leader .pastor-paragraph {
-        font-size: 15px; /* Adjust readability */
-        padding: 0 10px;
-        margin-top: auto;
-    }
-}
-
-/* 📲 Mobile Phones (max-width: 768px) */
-@media (max-width: 768px) {
-    .leader {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .leader-left, .leader-right {
-        flex-basis: 100%; /* Full width */
-    }
-
-    .leader-right {
-        margin-top: auto;
-    }
-
-    .pastor {
-        font-size: 24px; /* Reduce text size */
-        margin-top: -15px;
-    }
-
-    .lead-pastor {
-        font-size: 18px;
-        margin-top: auto;
-    }
-
-    .leader .pastor-paragraph {
-        font-size: 13px;
-        padding: 0 8px;
-        margin-top: auto;
-    }
-}
-
-/* 📱 Small Phones (max-width: 480px) */
-@media (max-width: 480px) {
-    .leader {
-        gap: 30px;
-    }
-
-    .pastor {
-        font-size: 17px;
-        margin-top: auto;
-    }
-
-    .lead-pastor {
-        font-size: 13px;
-        margin-top: auto;
-    }
-
-    .leader .pastor-paragraph {
-        font-size: 11px;
-        line-height: 1.6;
-        padding: 0 5px;
-        margin-top: auto;
-        margin-bottom: -30px;
-    }
-}

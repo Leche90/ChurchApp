@@ -36,13 +36,14 @@ nav{
 .search-bar {
     display: flex;
     align-items: center;
-    border-radius: 2px;
-    padding: 5 10px;
-    transition: all 0.3s ease-in-out;
+    border-radius: 30px;
+    padding: 10 15px;
+    transition: width 0.3s ease-in-out;
     border-radius: 5px;
     /* margin-left: 20px; */
     max-width: 100%;
     width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
   /* 🔹 Search Input Field */
@@ -51,8 +52,9 @@ nav{
     border: none;
     outline: none;
     background: transparent;
-    font-size: 30px;
-    transition: width 0.3s ease-in-out; 
+    font-size: 15px;
+    transition: width 0.3s ease-in-out;
+    padding: 15px; 
 }
 
 .search-input:focus {
@@ -165,7 +167,7 @@ nav{
   /* Hover Effect for Navbar Items */
 .nav-links li a:hover {
     transform: scale(2);  /* Move the item up when hovered */
-    color: #057da1;  /* Change color to tomato when hovered */
+    color: #D4AF37;  /* Change color when hovered */
     opacity: 1; /* Change opacity when hovered */
     filter: blur(0);  /* Remove any blur effect */
     text-decoration: none; 
@@ -195,7 +197,7 @@ nav{
   opacity: 1;
   filter: blur(0);
   text-decoration: none;
-  color: #057da1;
+  color: #4B0082;
   background-color: rgba(244, 243, 243, 0.267);
   border-radius: 20px;
 }
@@ -286,7 +288,7 @@ nav ul li {
   }
 
 .nav-links .btn {
-    background: rgb(2, 80, 84)  !important; ;
+    background: #4B0082  !important; ;
     color: white;
     padding: 8px 13px;
     border: none;

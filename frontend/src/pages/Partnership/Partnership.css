@@ -1,105 +1,161 @@
-/* General container styling */
+/* Partnership Form Container */
 .partnership-container {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 40px auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading style */
 .partnership-heading {
   text-align: center;
   font-size: 2rem;
+  font-weight: bold;
+  color: #4a90e2;
   margin-bottom: 20px;
-  color: #333;
 }
 
-/* Form styling */
+/* Form Styling */
 .partnership-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Label styling */
 .partnership-label {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 500;
   color: #333;
-  margin-bottom: 5px;
 }
 
-/* Input styling */
-.partnership-input {
-  padding: 10px;
-  border: 1px solid #ccc;
+.partnership-p {
+  font-weight: 500;
+}
+
+.partnership-input,
+.partnership-select,
+.partnership-checkbox {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
+  color: #333;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.partnership-input:focus,
+.partnership-select:focus {
+  border-color: #4a90e2;
 }
 
 .partnership-select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box;
+  cursor: pointer;
 }
 
-/* Error message styling */
-.error-message {
-  color: red;
-  font-size: 0.875rem;
-  margin-top: 5px;
-}
-
-/* Checkbox group styling */
+/* Checkbox Group */
 .checkbox-group {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .partnership-checkbox {
-  margin-right: 10px;
+  width: auto;
+  margin-top: 5px;
 }
 
-/* Button styling */
+.partnership-checkbox + label {
+  margin-left: 5px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Error Message Styling */
+.error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+/* Submit Button */
 .submit-button {
-  background-color: #4CAF50;
+  background-color: #4a90e2;
   color: white;
-  padding: 12px;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
   border: none;
   border-radius: 4px;
-  font-size: 1.125rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .submit-button:hover {
-  background-color: #45a049;
+  background-color: #357ab7;
 }
 
-/* Responsive design for small screens */
-@media screen and (max-width: 768px) {
-  .partnership-container {
-      padding: 10px;
-  }
+.submit-button:disabled {
+  background-color: #b0c4e3;
+  cursor: not-allowed;
+}
 
-  .partnership-heading {
-      font-size: 1.5rem;
-  }
+/* Contact Info Section */
+.contact-info {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
 
-  .partnership-form {
-      gap: 10px;
-  }
+.contact-info p {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
 
-  .submit-button {
-      font-size: 1rem;
-      padding: 10px;
-  }
+.contact-info a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Custom Donation Input */
+.partnership-input[placeholder] {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* File Upload */
+input[type="file"] {
+  border: none;
+  background-color: #f4f7fc;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+/* reCAPTCHA Container */
+#captcha-container {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Styling the reCAPTCHA iframe */
+.grecaptcha-badge {
+  position: relative !important;
+  bottom: 0;
+  right: 0;
+  z-index: 20; /* Makes sure the badge is above other content */
+}
+
+.privacy-p {
+  font-size: 16px;
+  margin-bottom: -35px;
 }

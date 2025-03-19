@@ -1,5 +1,5 @@
 .churchs {
-    margin-top: 70px;
+    margin-top: 7%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -8,9 +8,27 @@
 .church-container {
     display: flex; /* Arrange items horizontally */
     justify-content: space-between; /* Space between images */
-    flex-wrap: wrap;
-    width: 100%; /* Ensure the container sapns full width */
+    width: 100%; /* Ensure the container spans full width */
     max-width: 1200px; /* Optional: to give a max width */
+    gap: 0px;
+}
+
+.church {
+    text-align: center;
+    position: relative;
+    max-width: 1200px; /* Optional: max width for consistent sizing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    max-width: 1200px;
+}
+
+/* Image container */
+.image-container {
+    position: relative; /* Ensure the container is positioned relative for the overlay */
+    display: flex; /* Ensure the container wraps the image */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
 }
 
 .church img {
@@ -20,13 +38,26 @@
     opacity: 1;
     transition: .5s ease;
     backface-visibility: hidden;
+    display: block; /* Remove extra space below the image */
 }
 
-.church {
-    flex: 1; /* Allow events to grow/ shrink as needed */   
-    text-align: center;
-    position: relative;
-    max-width: 330px;
+/* Black overlay using a pseudo-element (initially hidden) */
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+    z-index: 1; /* Place the overlay above the image */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth transition for overlay opacity */
+}
+
+/* Hover effect for the image container */
+.church:hover .image-container::before {
+    opacity: 0.8; /* Show the black overlay on hover */
 }
 
 .middle {
@@ -38,10 +69,7 @@
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
-}
-
-.church:hover img {
-    opacity: 0.3;
+    padding: 30px;
 }
 
 .church:hover .middle {
@@ -75,58 +103,9 @@
 }
 
 .church-life {
-    font-size: 32px;
+    font-size: 39px;
     color: rgba(54, 69, 79, 1);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-weight: bold;
-}
-
-/* 📱 Tablet Screens (1024px and below) */
-@media (max-width: 1024px) {
-    .church-container {
-        gap: 15px;
-        margin-top: 5px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .church {
-        flex-basis: calc(50% - 15px); /* 2 items per row */
-    }
-
-    .church-life {
-        font-size: 28px;
-        margin-top: 3px;
-    }
-
-    .caption {
-        font-size: 18px;
-    }
-}
-
-/* 📱 Mobile Screens (768px and below) */
-@media (max-width: 768px) {
-    .church-container {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center;
-        margin-top: 3px;
-    }
-
-    .church {
-        flex-basis: 100%; /* 1 item per row */
-    }
-
-    .church img {
-        max-width: 90%; /* Adjust width for smaller screens */
-        height: auto; /* Allow height to scale proportionally */
-    }
-
-    .church-life {
-        font-size: 20px;
-    }
-
-    .caption {
-        font-size: 16px;
-    }
 }

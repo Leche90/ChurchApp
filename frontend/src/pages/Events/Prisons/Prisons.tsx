@@ -1,10 +1,11 @@
 import React from 'react';
+import './Prisons.css'; // Make sure to import the CSS file
 
 const Prisons: React.FC = () => {
   return (
-    <div>
-      <h1>Lorem Event</h1>
-      <p>Details about the Lorem event go here.</p>
+    <div className="coming-soon-container">
+      <h1 className="coming-soon-text">Coming Soon!</h1>
+      <p className="coming-soon-subtext">Stay tuned for something exciting!</p>
     </div>
   );
 };

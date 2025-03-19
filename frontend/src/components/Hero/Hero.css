@@ -4,9 +4,9 @@
 
 .hero {
     position: relative;
-    width: 100%;    
+    width: 100%;   
     height: 100vh; /* Take up the full viewport height */
-    background: linear-gradient(rgba(8, 0, 58, 0.831), rgba(54, 69, 79, 1)), 
+    background: linear-gradient(to bottom, rgba(1, 128, 39, 0.9), rgba(5, 45, 39, 0.2)), 
                 url('../../assets/hero.jpg') no-repeat center center;
     background-size: cover; /* Ensure the background covers the area */
     color: white;
@@ -67,33 +67,34 @@
     }
 }
 
-.hero-text p {
-    font-size: 16px;
+.hero-p {
+    font-size: 20px;
     margin-top: -35px;
     margin-left: 80px;
     margin-right: 80px;
     line-height: 1.6;
     padding-left: 80px;
     padding-right: 80px;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
 }
 
 .hero-text .btn b {
     margin-left: 5px; /* Adds space between 'US' and 'LIVE' */
-    color: aqua;
+    color: #ffffff;
 }
 
 .hero-text .btn {
-    color: aquamarine;
+    color: #ffffff;
     margin-top: 50px;
-    background-color: rgb(0, 77, 77);
+    background-color: rgb(75, 0, 130);
 }
 
 .hero-text .btn:hover {
-    background-color: rgb(7, 56, 58);
+    background-color: rgb(212, 175, 55); 
 }
 
 .btn{
-    background: #007bff;
+    /* background: #D4AF37; */
     color: white;
     padding: 10px 20px;
     border: none;

@@ -7,12 +7,12 @@ const Video: React.FC = () => {
         <div className="video-main">
             <h3 className="video-h3">Watch the Latest Sermon</h3>
             <p className='video-description'>
-              <span className="message-title">"THE VALUE OF TIME"</span>              
+              <span className="message-title">"RETURNING TO BUILD"</span>              
             </p>
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/JhSVPYnqVsk?rel=0"
+                src="https://www.youtube.com/embed/kDP_r82gpD8?rel=0"
                 title="YouTube video player"
                 style={{ border: "none"  }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
