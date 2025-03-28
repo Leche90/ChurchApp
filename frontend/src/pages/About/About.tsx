@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import about_bgd from '../../assets/about_bgd.png'
+import about from '../../assets/about.jpg'
 import about_left from '../../assets/about_left.jpg'
 
 const About: React.FC = () => {
@@ -51,13 +51,13 @@ const About: React.FC = () => {
         <div className='values'>Our Core Values</div>       
           <div className='values-text'>
               <ul>
-                <ol>1. Righteousness</ol>
-                <ol>2. Prayer</ol>
-                <ol>3. Royalty</ol>
-                <ol>4. Excellence</ol>
-                <ol>5. Accountability</ol>
-                <ol>6. Love</ol>
-                <ol>7. Family</ol>
+                <ol>Righteousness</ol>
+                <ol>Prayer</ol>
+                <ol>Royalty</ol>
+                <ol>Excellence</ol>
+                <ol>Accountability</ol>
+                <ol>Love</ol>
+                <ol>Family</ol>
               </ul>
           </div>
         </div>
@@ -76,7 +76,7 @@ const About: React.FC = () => {
 
           <p>Today, we invite you to be a part of this incredible journey. At Kingmakers, we believe that every believer is called to reign, and together, we are building a legacy of faith, victory, and transformation.
           </p>
-        </div>
+        </div>        
     </div>
   )
 }

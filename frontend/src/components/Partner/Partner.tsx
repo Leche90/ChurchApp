@@ -1,16 +1,11 @@
 import React from 'react'
 import './Partner.css'
+import treesImage from '/home/lleche/ChurchApp/frontend/src/assets/trees.jpg'
 
 const Partner: React.FC = () => {
   return (
-    <div className='partner-container'>
+    <div className='partner-container' style={{ backgroundImage: `url(${treesImage})`}}>
       <div className='partner-card'>
-        <div className="partner-left">
-            <h4 className='partner-left-title'>PARTNER WITH US</h4>
-            <p className='partner-left-text'>Are you passionate about advancing the work of the church?
-            Become our <b>valued Partner.</b></p>
-            <a href ="http://localhost:5173/partnership" target="_blank" rel="noopener noreferrer" className='partner-left-button'> Join </a>            
-        </div>
         <div className="partner-right">
             <h4 className='partner-right-title'>PRAYER REQUEST?</h4>
             

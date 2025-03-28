@@ -9,18 +9,15 @@ import LayoutWrapper from './LayoutWrapper';
 import Partnership from './pages/Partnership/Partnership';
 
 // Other imports for sections/components
-import Hero from './components/Hero/Hero';
-import Church from './components/Church/Church';
+import Home from './components/Home/Home';
 import Partner from './components/Partner/Partner';
-import Video from './components/Video/Video';
-import Leader from './components/Leader/Leader';
-import Evangelism from './components/Evangelism/Evangelism';
 import About from './pages/About/About';
 import Teachings from './pages/Teachings/Teachings';
 import Contact from './pages/Contact/Contact';
 import CommunityOutreach from './pages/Events/CommunityOutreach/CommunityOutreach';
 import Prisons from './pages/Events/Prisons/Prisons';
 import Programs from './pages/Events/Programs/Programs';
+// import Modal from './components/Modal/Modal';
 
 const App: React.FC = () => {
   return (
@@ -31,13 +28,9 @@ const App: React.FC = () => {
       {/* Routes with LayoutWrapper (Navbar and Footer) */}
       <Route path="/" element={
         <LayoutWrapper>
-          <Hero />
           <div className="app-container">
-            <Church />
-            <Leader />
+            <Home />
             <Partner />
-            <Video />
-            <Evangelism />
           </div>
         </LayoutWrapper>
       } />

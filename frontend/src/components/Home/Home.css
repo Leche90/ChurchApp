@@ -1,0 +1,545 @@
+.hero {
+  position: relative;
+  width: 100%;   
+  height: 100vh; /* Take up the full viewport height */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), 
+              url('../../assets/hero.jpg') no-repeat center center;
+  background-size: cover; /* Ensure the background covers the area */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px; /* Remove any margin */
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+.hero-text {
+  text-align: center;
+  width: 100%;
+  animation: fadeIn 1.5s ease-in-out;
+  /* margin-top: 4%; */
+}
+
+.hero-text h1 {
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 100px;
+  letter-spacing: -2px;
+
+  /* Modern 3D Effect */
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  
+  /* Create a multi-layered text shadow to simulate depth */
+  text-shadow: 
+      -1px -1px 0px #353535, 
+      2px 2px 0px #353535, 
+      4px 4px 5px rgba(0, 0, 0, 0.2),
+      6px 6px 15px rgba(0, 0, 0, 0.2);
+  
+  /* 3D Bounce Animation */
+  animation: bounce3D 2s infinite ease-in-out;
+}
+
+/* Keyframes for Bouncing & Depth Effect */
+@keyframes bounce3D {
+  0%, 100% {
+      transform: translateY(0) rotateX(0deg) rotateY(0deg);
+      text-shadow: 
+          /* -1px -1px 0px #007056,  */
+          2px 2px 0px #222, 
+          4px 4px 5px rgba(0, 0, 0, 0.1),
+          6px 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+      transform: translateY(-15px) rotateX(0deg) rotateY(0deg) scale(1.05);
+      text-shadow: 
+          /* -2px -2px 0px #007056,  */
+          3px 3px 0px #222, 
+          /* 6px 6px 10px rgba(0, 0, 0, 0.5), */
+          8px 8px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.hero-p {
+  font-size: 18px;
+  margin-top: -35px;
+  margin-left: 80px;
+  margin-right: 80px;
+  line-height: 1.6;
+  padding-left: 80px;
+  padding-right: 80px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.join-btn b {
+  margin-left: 5px; /* Adds space between 'US' and 'LIVE' */
+  color: #ffffff;
+}
+
+.join-btn {
+  margin-top: 50px;
+  background-color: #4B0082;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.join-btn:hover {
+  background-color: #5A1A9A;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(91, 26, 154, 0.7); /* Matching glow */
+  transform: translateY(-3px);
+  animation: pulse 1.5s infinite alternate;
+}
+
+.join-btn a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+.service-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.service-header {
+  font-size: 35px;
+  font-weight: 500px;
+  color: #313131;
+  margin-bottom: 20px;
+}
+
+/* Grid for Service Cards */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Single column by default */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px; /* Optional max-width to control card size */
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 3px;
+  color: #333;
+  background-color: #F9F9F9;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.service-h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.service-card-time {
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -15px;
+}
+
+.church-container {
+  padding: 20px;
+  width: 100%;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.church-card {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.church-heading {
+  font-size: 35px;
+  font-weight: 600px;
+  color: #313131;
+  margin-top: 5px;
+}
+
+.church-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  justify-items: center;
+}
+
+.church-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.church-img {
+  width: 100%;
+  height: 100%;  
+  object-fit: cover;
+  /* opacity: 1; */
+  transition: transform 0.5s ease;
+  /* backface-visibility: hidden; */
+}
+/* 
+.middle {
+  display: flex;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  position: absolute;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 30px;
+} */
+
+/* Black overlay using a pseudo-element (initially hidden) */
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+  z-index: 1; /* Place the overlay above the image */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth transition for overlay opacity */
+}
+
+.image-text {
+  background-color: none;
+  font-size: 30px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+
+.caption {
+  font-size: 25px;
+  margin-top: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Container for teachings */
+.teachings-container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #f9f8fa;
+  margin-top: 70px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Header for teachings */
+.teachings-header {
+  text-align: center;
+  font-size: 37px;
+  font-weight: 600;
+  color: #313131;
+  margin-bottom: 2rem;
+  margin-top: 5px;
+}
+
+/* Flex container for the grid of cards */
+.teachings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 1100px; /* Optional max-width to control card size */
+  margin: 0 auto;
+}
+
+/* Each card styling */
+.teachings-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden;
+  border-radius: 8px;  
+  background: linear-gradient(to bottom, rgba(235, 235, 235, 0.9), rgba(225, 225, 225, 0.9)), 
+              url('../../assets/wordfor.jpg') center/cover no-repeat;
+}
+
+.teachings-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3 ease-in-out;
+}
+
+/* Image Styling */
+.teachings-img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 1rem;
+  /* border: 3px solid #42007b; */
+  margin-top: 20px;
+} /* #82C44B */
+
+.teaching-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.teachings-title {
+  font-size: 23px;
+  font-weight: 500;
+  color: #222222;
+  margin-top: -25px;
+  position: relative;
+}
+
+.teaching-pastor {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: -7px;
+  margin-bottom: 10px;
+  color: #111111;  
+}
+
+.teaching-link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 30px;
+  background-color: #4B0082;
+  transition: background-color 0.2s ease, color 0.3s ease;
+}
+
+.teaching-link:hover {
+  background-color: #5A1A9A; /* 15% lighter */
+  box-shadow: 0 0 15px rgba(91, 26, 154, 0.7); /* Matching glow */
+}
+
+.teaching-link:active {
+  transform: translateY(2px);
+}
+
+.leader-container {
+  position: relative;
+  overflow: visible;
+  margin-top: 100px;
+  padding-left: 7%;
+  padding-right: 7%;
+  background-image: url('/frontend/src/assets/pst.jpg');
+  background: rgba(14, 32, 2, 0.8); /* Dark overlay for better contrast */
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 4rem;
+  height: 550px; /* Adjust the height to suit your layout preferred*/
+  z-index: 2;
+}
+
+.leader-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.leader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 30px; /* Adds space between elements */
+  padding: 20px 3%; /* Adds some padding to prevent edge-cutting */
+  z-index: 3;
+  overflow: visible;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Left section (Image) */
+.leader-left {
+  flex-basis: 40%;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Right section (Text) */
+.leader-right {
+  flex-basis: 54%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+/* Image styling */
+.leader-img {
+  width: 90%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.lead-pastor {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  margin-top: 0px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pastor {
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  margin-top: -25px;
+}
+
+/* Text styling */
+.pastor-paragraph {
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: justify;
+  margin-top: -20px;
+}
+
+.events-container {
+  background-color: #F9F5FF; 
+  margin-top: 7rem;
+  width: 100%;
+}
+
+.events-header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.events-h2 {
+  font-weight: 700;
+  font-size: 37px;
+  color: #1a202c;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.events-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.events-card:hover {
+  transform: translate3d(3px, -5px, 5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.events-date {
+  /* display: flex; */
+  align-items: center;
+  font-size: 1rem;
+  color: #4B0082;
+  font-weight: 500;
+}
+
+.comm-header {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.comm-p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* New Registration / Donation Link Section */
+.register-section {
+  text-align: center;
+  padding: 1rem;
+  background-color: #F9F9F9; /* Light blue background for the registration section */
+  border-radius: 8px; /* Rounded corners */
+  margin-top: 6rem;
+}
+
+.register-h3 {
+  font-size: 37px;
+  font-weight: bold;
+  color: #4B0082;
+  margin-top: 1rem;
+}
+
+.register-p {
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin-top: -15px;
+}
+
+.registration-link {
+  font-size: 1.1rem;
+  color: #2d3748; /* Blue color for the link */
+  font-weight: 400;
+  text-decoration: underline;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.registration-link:hover {  
+  transform: translateY(1px);
+}

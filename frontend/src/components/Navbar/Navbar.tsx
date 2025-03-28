@@ -7,8 +7,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar: React.FC = () => {  // nabvar functional component
   const [sticky, setSticky] = useState(false); // State to track if the navbar is sticky (fixed at the top)
-  const [click, setClick] = useState(false); // State to track whether the mobile menu is open or closed
-  const [searchText, setSearchText] = useState(''); // State to track the search input text
+  const [click, setClick] = useState(false); // State to track whether the mobile menu is open or closed  
   const navigate = useNavigate(); //React router to navigate
 
   const menuItems = [
@@ -18,30 +17,8 @@ const Navbar: React.FC = () => {  // nabvar functional component
     {title: 'Community Outreach', link: '/community_outreach' },
     { title: 'Prisons Mission', link: '/prisons_mission' },
     { title: 'Give', link: '/give' },
-    { title: 'Partnership', link: '/signup' },
     { title: 'Contact', link: '/contact' }
-  ]
-
-    // Handles search input
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setSearchText(event.target.value);
-    };
-
-    // Handles search submission
-  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); // Prevent page reload
-  
-    // Find a matching menu item
-  const matchedItem = menuItems.find(item =>
-    item.title.toLowerCase().includes(searchText.toLowerCase()));
-
-    if (matchedItem) {
-      navigate(matchedItem.link); // Navigate to the matched item's link
-      setSearchText(''); // Clear search input
-    } else {
-      alert('No matching search found'); // Display alert if no match is found
-    }
-  };
+  ]    
 
   // Toggle mobile menu
   const toggleMenu = () => {
@@ -79,12 +56,7 @@ const Navbar: React.FC = () => {  // nabvar functional component
 
   }, []); // Empty dependency array means this effect runs only once when the component mounts
  
-    // Toggle focus for the search bar
-    const handleSearchFocus = () => {
-    setSearchText(searchText); // Trigger focus event
-  };
-
-  // Toggle dropdown visibility
+    // Toggle dropdown visibility
   const toggleDropdown = () => {
     setIsEventsDropdownOpen(!isEventsDropdownOpen);
   };
@@ -118,31 +90,7 @@ const Navbar: React.FC = () => {  // nabvar functional component
       <Link to="/" className='logo-link'> 
         <img src={logo} alt="Logo" className='logo' />
       </Link>
-
-      {/* Search Bar */}
-      <form className="search-bar" onSubmit={handleSearchSubmit}>
-        {/* Search input */}
-        <input
-          type="text"
-          className="search-input"
-          placeholder="I am looking for ..."
-          value={searchText}
-          onChange={handleSearchChange}
-          // onFocus={handleSearchFocus}
-        />
-
-        {/* Clear button (shows when input has text) */}
-        {searchText.length > 0 && (
-          <button type="button" className='clear-btn' onClick={() => setSearchText('')}>
-            <i className="fas fa-times"></i>
-          </button>
-          )}
-          
-          {/* Search button */}
-          <button type="submit" className="search-btn"><i className="fa fa-search"></i>
-          </button>
-        </form>          
-
+ 
           {/* Hamburger icon and menu toggle for mobile */}
       <div className="hamburger" onClick={handleClick}>
         <div className={click ? 'bar toggle' : 'bar'}></div>
@@ -169,7 +117,7 @@ const Navbar: React.FC = () => {  // nabvar functional component
             </li>
             <li><Link to="/contact">Contact</Link></li>
             <a href='https://members.faithpays.org/donate/FP8588921' target="_blank" rel="noopener noreferrer">
-            <button className="btn" onClick={handleClick}>GIVE</button></a>
+            <button className="give-btn" onClick={handleClick}>GIVE</button></a>
         </ul>       
     </nav>
   );

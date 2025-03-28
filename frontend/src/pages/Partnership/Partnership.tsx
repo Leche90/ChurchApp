@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Partnership.css';
-// import ReCAPTCHA from 'react-google-recaptcha';
 
-// Global object for grecaptcha
-declare global {
-    interface Window {
-        grecaptcha: any;
-    }
-}
 
 // Define the type for the country data returned from the API
 interface Country {
@@ -37,8 +30,7 @@ const Partnership: React.FC = (): JSX.Element => {
     const [loading, setLoading] = useState<boolean>(true); // Loading state while fetching countries    
     const [emailError, setEmailError] = useState<string>(""); // Error state for email mismatch
     const [isSubmitted, setIsSubmitted] = useState(false); // State to handle form submission status
-    const [captchaToken, setCaptchaToken] = useState<string | null>(null); // Store reCAPTCHA token
-    const [captchaError, setCaptchaError] = useState<string | null>(null); // Store reCAPTCHA error
+
 
     // Fetch countries from the API
     useEffect(() => {
@@ -91,73 +83,7 @@ const Partnership: React.FC = (): JSX.Element => {
         }
     };
 
-    // Handle form submission
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        if (!captchaToken) {
-            alert("Please complete the reCAPTCHA");
-            return;
-        }
-
-        // Check if the CAPTCHA token is expired (you can add server-side verification)
-        if (isCaptchaExpired(captchaToken)) {
-            setCaptchaError("The reCAPTCHA token has expired. Please complete the CAPTCHA again.");
-            // Optionally, you can reset the token and ask the user to complete the CAPTCHA again.
-            setCaptchaToken(null); // Clear the old token
-            return;
-        }
-
-        setIsSubmitted(true); // Start submitting the form
-
-        try {
-            // Submit reCAPTCHA token to backend for verification
-            const response = await fetch('/verify-captcha', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ token: captchaToken })
-            });
-
-            const data = await response.json();
-            if (data.success) {
-                console.log('reCAPTCHA verified, proceed with form submission');
-
-                // Proceed with form submission logic
-                const formDataToSend = { ...formData, captchaToken: captchaToken };
-                await axios.post('/api/submit', formDataToSend);
-                setIsSubmitted(true); // Form successfully submitted
-            } else {
-                setCaptchaError("reCAPTCHA verification failed. Please try again.");
-            }
-        } catch (err) {
-            console.error('Error during form submission', err);
-            setCaptchaError("An error occurred while submitting the form. Please try again.");
-        } finally {
-            setIsSubmitted(false); // Stop submitting the form
-        }
-    };
-
-     // Helper function to check if CAPTCHA token is expired (this logic can be enhanced)
-     const isCaptchaExpired = (token: string): boolean => {
-        // Typically, you will need to validate this server-side.
-        // reCAPTCHA tokens have an expiration time (2 minutes by default)
-        const tokenExpirationTime = 120; // Token expires after 2 minutes
-        const tokenTime = Date.now() / 1000; // Current time in seconds
-
-        // You would typically store the token's creation time when it's generated and check its expiration
-        // Assuming `captchaTokenTime` is a timestamp when the token was first received
-        const captchaTokenTime = localStorage.getItem("captchaTokenTime");
-
-        if (captchaTokenTime) {
-            const timePassed = tokenTime - Number(captchaTokenTime);
-            return timePassed > tokenExpirationTime;
-        }
-
-        return false;
-    };
-
+   
 
     // Handle donation method change
     const handleDonationMethodChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -170,37 +96,6 @@ const Partnership: React.FC = (): JSX.Element => {
         }
     };
    
-     // Handle captcha change
-     const handleCaptchaChange = (value: string | null) => {
-        setCaptchaToken(value); // Store the reCAPTCHA token
-        localStorage.setItem("captchaTokenTime", (Date.now() / 1000).toString()); // Store token time
-    };
-
-    // Load reCAPTCHA v3 script and generate token on form submission
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://www.google.com/recaptcha/api.js?render=6LdqovQqAAAAALrtVgVzP3czr6ut5F9-PKXcuwrV'; // Your reCAPTCHA v3 site key
-        script.async = true;
-        document.body.appendChild(script);
-
-        // Cleanup function to remove the script when the component unmounts
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
-
-    // Generate reCAPTCHA token on form submission
-    const generateRecaptchaToken = async () => {
-        if (!window.grecaptcha) {
-            console.error('reCAPTCHA not loaded');
-            return;
-        }
-
-        const token = await window.grecaptcha.execute('6LdqovQqAAAAALrtVgVzP3czr6ut5F9-PKXcuwrV', { action: 'submit_form' });
-        setCaptchaToken(token);
-        localStorage.setItem("captchaTokenTime", (Date.now() / 1000).toString()); // Store token time
-    };
-        
     // Render the form data
     return (
         <div className="partnership-container">
@@ -282,10 +177,7 @@ const Partnership: React.FC = (): JSX.Element => {
                     This message aims to inform you about how we collect, use, and protect your personal information. We are committed to protecting your privacy and ensuring the security of your data, as outlined in our comprehensive privacy policy. 
                     </p>
                 </div>
-
-                {/* Captcha */}
-                <div id="captcha-container"></div>               
-
+                
                 <button className="submit-button" type="submit">{isSubmitted ? "Submitted!" : "Submit"}</button>
             </form>
         </div>
