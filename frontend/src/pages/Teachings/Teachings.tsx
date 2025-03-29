@@ -1,15 +1,118 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Play } from 'lucide-react'
 import './Teachings.css'
-
-// Import images
 import teachingsImage from '../../assets/teachings.jpg'
 import preacherImage from '../../assets/preacher.jpg'
 import scripturesImage from '../../assets/scriptures.jpg'
+import timeImage from '../../assets/time.jpg'
+import planImage from '../../assets/plan.jpg'
+import strategicImage from '../../assets/strategic.jpg'
+import praiseImage from '../../assets/praise.jpg'
+import handImage from '../../assets/hand.jpg'
+import burdenImage from '../../assets/burden.jpg'
+
+const youtubeLinks: { [key: number]: string } = {
+  1: 'https://www.youtube.com/embed/3aCfFoH_PE4?rel=0&modestbranding=1',
+  2: 'https://www.youtube.com/embed/JhSVPYnqVsk?start=4&rel=0&modestbranding=1',
+  3: 'https://www.youtube.com/embed/AuY62wY46As?rel=0&modestbranding=1',
+  4: 'https://www.youtube.com/embed/WMbTKbN17D4?rel=0&modestbranding=1',
+  5: 'https://www.youtube.com/embed/YKfhkEJJ6qk?rel=0&modestbranding=1',
+  6: 'https://www.youtube.com/embed/_4D-XgUy1q4?rel=0&modestbranding=1'
+};
 
 interface TeachingProps {}
 
 const Teachings: React.FC<TeachingProps> = () => {
+
+  // Modal state to control visibility
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [currentVideo, setCurrentVideo] = useState<number | null>(null);
+
+  // Sermons array
+  const sermons = [
+  {
+    id: 1,
+    title: 'The Hand of God',
+    preacher: 'Pastor Afam Eze',
+    duration: '38 Minutes',
+    image: handImage
+  },
+  {
+    id: 2,
+    title: 'The Value of Time',
+    preacher: 'Pastor Afam Eze',
+    duration: '42 Minutes',
+    image: timeImage
+  },
+  {
+    id: 3,
+    title: "Bearing Each Other's Burdens",
+    preacher: "Pastor Afam Eze",
+    duration: "44 Minutes",
+    image: burdenImage
+  },
+  {
+    id: 4,
+    title: 'Revisiting the Old Plan',
+    preacher: 'Pastor Afam Eze',
+    duration: '41 Minutes',
+    image: planImage
+  },
+  {
+    id: 5,
+    title: 'Strategic Planning',
+    preacher: 'Pastor Afam Eze',
+    duration: '37 Minutes',
+    image: strategicImage
+  },
+  {
+    id: 6,
+    title: 'Returning to Praise the Lord',
+    preacher: 'Pastor Afam Eze',
+    duration: '38 Minutes',
+    image: praiseImage
+  },
+];
+
+  // Function to handle video modal opening and closing
+  const handlePlayClick = (sermonId: number) => {
+    setCurrentVideo(sermonId); // Set the video to the clicked sermon
+    setIsModalOpen(true); // Open the modal
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+    setCurrentVideo(null); // Reset the video to null
+  };
+
+    // Series array
+  const series = [
+    {
+      id: 1,
+      title: 'Kingmakers International Ministries',
+      description: 'A series of sermons and events to help you grow in faith and live out God’s plan for your life.',
+      image: scripturesImage
+    },
+    {
+      id: 2,
+      title: 'Faith Foundations',
+      description: 'A six-part series exploring the fundamentals of Christian faith.',
+      image: scripturesImage
+    },
+    {
+      id: 3,
+      title: 'Living in Faith',
+      description: 'A series of teachings on how to live a life of faith in today’s world.',
+      image: scripturesImage
+    },
+    {
+      id: 4,
+      title: 'Growing in Faith',
+      description: 'A series of teachings on how to grow in faith and live in God’s presence.',
+      image: scripturesImage
+    }  
+  ]
+
   return (
     <div className="teachings-container">
       <div className="teachings-hero-section" style={{ backgroundImage: `url(${teachingsImage})` }}>
@@ -20,29 +123,28 @@ const Teachings: React.FC<TeachingProps> = () => {
             <p className="headings-title-p">Growing in faith through God's Word</p>
           </div>
         </div>
-      </div>
+      </div>    
 
       {/* Latest Sermons */}
       <div className="sermons-section">
         <div className="sermons-container">
-          <h2 className="section-title">Teachings</h2>
+          <h2 className="sermons-h2">Sermons</h2>
           <div className="sermons-grid">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="sermon-card">
+            {sermons.map((sermon) => (
+              <div key={sermon.id} className="sermon-card">
                 <div className="sermon-image-container">
-                  <img src={preacherImage} alt="Preacher" className="sermon-image" />
-                  <button className="play-button">
-                    <Play className="play-icon" />
+                  {/* Hover effect to show play button */}
+                  <img src={sermon.image} alt="Preacher" className="sermon-image" />
+                  <button className="series-play-button" onClick={() => handlePlayClick(sermon.id)}>
+                    <Play className="series-play-icon" />
                   </button>
                 </div>
-                <div className="sermon-details">
-                  <div className="sermon-date">March 10, 2025</div>
-                  <h3 className="sermon-title">Walking in Faith</h3>
-                  <p className="sermon-author">Pastor Afam Eze</p>
+                <div className="sermon-details">       
+                  <h3 className="sermon-title">{sermon.title}</h3>
+                  <p className="sermon-precher">{sermon.preacher}</p>
                   <div className="sermon-meta">
-                    <span className="sermon-time">47 Minutes</span>
-                    <span className="sermon-separator">•</span>
-                    <span className="sermon-series">Series: Faith Foundations</span>
+                    <span className="sermon-time">{sermon.duration}</span>
+                    {/* <span className="sermon-separator">•</span>                     */}
                   </div>
                 </div>
               </div>
@@ -51,21 +153,40 @@ const Teachings: React.FC<TeachingProps> = () => {
         </div>
       </div>
 
+      {/* Modal for playing YouTube video */}
+      {isModalOpen && currentVideo !== null && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}
+        >
+          <button className="modal-close-button" onClick={closeModal}>
+            X
+          </button>
+          <iframe
+            src={youtubeLinks[currentVideo]}
+            title={sermons.find(s => s.id === currentVideo)?.title || "Sermon"}
+            className="video-iframe"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+      )}
+
       {/* Series Section */}
       <div className="series-section">
         <div className="series-container">
-          <h2 className="section-h2">Sermon Series</h2>
+          <h2 className="series-h2">Series</h2>
           <div className="series-grid">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="series-card">
+            {series.map((series) => (
+              <div key={series.id} className="series-card">
                 <div className="series-content">
                   <div className="series-image-container">
                     <img className="series-image" src={scripturesImage} alt="Series" />
                   </div>
                   <div className="series-details">
-                    <h3 className="series-title">Faith Foundation</h3>
-                    <p className="series-description">A six-part series exploring the fundamentals of Christian faith.</p>
-                    <button className="view-series-button">View Series →</button>
+                    <h3 className="series-title">{series.title}</h3>
+                    <p className="series-description">{series.description}</p>
+                    <button className="view-series-button">View Series</button>
                   </div>
                 </div>
               </div>

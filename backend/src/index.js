@@ -1,12 +1,9 @@
-require('dotenv').config();  // This loads environment variables from the .env file
+require('dotenv').config();
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const express = require('express');
 const cors = require('cors');
-const authRoutes = require('./routes/authRoutes');
-
-// // MongoDB connection (using Mongoose)
-const MONGO_URI = process.env.MONGO_URI; 
+const donationRoutes = require('./routes/donationRoutes');
 
 const app = express();
 
@@ -14,18 +11,8 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173' }));
 
-// Ensure MONGO_URI is pulled from environment variables
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log('MongoDB connected');
-}).catch((err) => {
-  console.log('Error connecting to MongoDB:', err);
-});
-
 // Routes
-app.use('/api/auth', authRoutes);
+app.use('/api/donations', donationRoutes);
 
 // Default route
 app.get('/', (req, res) => {

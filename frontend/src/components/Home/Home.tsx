@@ -9,7 +9,6 @@ import Strong from '/home/lleche/ChurchApp/frontend/src/assets/Strong.jpg'
 import Rebuild from '/home/lleche/ChurchApp/frontend/src/assets/Rebuild.jpg'
 import Survive from '/home/lleche/ChurchApp/frontend/src/assets/Survive.jpg'
 import pst from '/home/lleche/ChurchApp/frontend/src/assets/pst.jpg'
-import wordfor from 'home/lleche/ChurchApp/frontend/src/assets/wordfor.jpg'
 
 
     // Defining the event type
@@ -37,17 +36,14 @@ const Home: React.FC = () => {
   }, []);
 
   // Dynamic titles for each teacing
-  const teachings = [
+  const word = [
     { title: 'Staying Strong in the Face of Opposition', 
-      pastor: 'Pastor Afam Eze',
       youtubeLink: 'https://www.youtube.com/watch?v=EF2LijgjMmM&t=22s?rel=0',
       image: Strong },
     { title: 'Returning to Build',
-      pastor: 'Pastor Afam Eze',
       youtubeLink: 'https://www.youtube.com/watch?v=B0qMXmMhfpE&t=1s?rel=0',
       image: Rebuild },    
     { title: 'How to Live and Survive in a Conflict Zone (Part 3)', 
-      pastor: 'Pastor Afam Eze',
       youtubeLink: 'https://www.youtube.com/watch?v=TMRlLrEWBy0?rel=0',
       image: Survive } 
   ];
@@ -117,7 +113,7 @@ const Home: React.FC = () => {
                 <div className='image-text'>WORSHIP</div>
               </div>
             </div>
-              <div className='caption'>Worship</div>
+              <div className='caption'>WORSHIP</div>
             </div>
 
                 {/* Image 2 */}
@@ -128,7 +124,7 @@ const Home: React.FC = () => {
                 <div className='image-text'>WORD</div>
               </div>
             </div>
-              <div className='caption'>Word</div>
+              <div className='caption'>WORD</div>
             </div>
               
               {/* Image 3 */}
@@ -139,27 +135,26 @@ const Home: React.FC = () => {
                 <div className='image-text'>CELEBRATION</div>
               </div>
             </div>
-              <div className='caption'>Celebration</div>
+              <div className='caption'>CELEBRATION</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Latest Teachings */}
-        <div className="teachings-container">
-            <h2 className='teachings-header'>Latest Teachings</h2>
-          <div className="teachings-grid">
-            {teachings.map((teaching, index) => (
-              <div key={index} className="teachings-card">
+        <div className="word-container">
+            <h2 className='word-header'>Latest Teachings</h2>
+          <div className="word-grid">
+            {word.map((word, index) => (
+              <div key={index} className="word-card">
                 <img
-                  src={teaching.image}
-                  alt="Teaching"
-                  className="teachings-img"
+                  src={word.image}
+                  alt="The Word"
+                  className="word-img"
                 />
-                <div className="teaching-info">
-                  <h3 className="teachings-title">{teaching.title}</h3>
-                  <p className="teaching-pastor">{teaching.pastor}</p>
-                  <a href={teaching.youtubeLink} target='_blank' rel='noopener noreferrer' className="teaching-link">Watch Now</a>
+                <div className="word-info">
+                  <h3 className="word-title">{word.title}</h3>                  
+                  <a href={word.youtubeLink} target='_blank' rel='noopener noreferrer' className="word-link">Watch Now</a>
                 </div>
               </div>
             ))}
@@ -199,16 +194,9 @@ const Home: React.FC = () => {
                   <p className='comm-p'>{event.description}</p>                  
                 </div>
               ))}
-          </div>
-                
-            {/* New Registration / Donation Link */}
-          <div className='register-section'>
-              <h3 className='register-h3'>Become a Partner</h3>
-              <p className='register-p'>Are you passionate about helping people through giving? Your generosity helps us make a bigger impact!</p>
-              <a href='/partnership' className='registration-link'>Partner with us through your giving</a>
-              </div>
-          </div>
-        </div>          
+          </div>         
+        </div>
+      </div>          
   )
 }
 

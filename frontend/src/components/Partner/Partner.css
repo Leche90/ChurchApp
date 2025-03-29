@@ -1,133 +1,211 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto:wght@400;500&display=swap');
-
+/* Main Container */
 .partner-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    margin-top: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
     position: relative;
-    overflow: visible; 
-    height: 550px; /* Adjust the height to suit your layout preferred*/
-    background-image: url('/frontend/src/assets/trees.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;    
-}
+  }
 
+  /* Full-width pseudo-element background */
 .partner-container::before {
     content: '';
     position: absolute;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: #f9f9f9;
+    z-index: -1;
+  }
+  
+  /* Cards - Modern Minimalist */
+  .partner-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .partner-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  }
+  
+  .partner-right {
+    padding: 1.8rem;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .partner-right-title {
+    color: #313131;
+    font-size: 32px;
+    margin-bottom: 0;
+    font-weight: 600;
+    position: relative;
+    margin-top: 0;
+  }  
+
+  .partner-right-text {
+    color: #313131;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+    flex: 1;
+  }
+  
+  .bible-ref {
+    display: block;
+    font-style: italic;
+    color: #666;
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Buttons - Modern Gradient */
+  .partner-right-button {
+    background: linear-gradient(135deg, #4B0082 0%, #6a3093 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(75, 0, 130, 0.2);
+    letter-spacing: 0.5px;
+    align-self: center;
+    width: fit-content;
+  }
+  
+  .partner-right-button:hover {
+    background: linear-gradient(135deg, #5a0d9c 0%, #7b3fb3 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(75, 0, 130, 0.3);
+  }
+  
+  /* Modals - Dark Theme with Brand Accents */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
-    z-index: 1;
-}
-
-.partner-card {
+    background: rgba(49, 49, 49, 0.95);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    padding: 40px;
-    gap: 30px;
-    position: relative;
-    /* background-color: rgba(244, 244, 244, 0.7); /* Slightly transparent background */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    overflow: visible;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+  }
+  
+  .modal {
+    background: #f6f0ff;
+    padding: 2rem;
     border-radius: 12px;
-    z-index: 2;
-    margin-top: 80px;
-}
-
-.partner-us {
-    font-size: 22px;
-    color: rgba(54, 69, 79, 1);
-}
-
-.partner-card:hover {
-    transform: translateY(-10px); /* Lift effect on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
-}
-
-.partner-left-title,
-.partner-right-title {
-    font-size: 36px;
-    color: #3d3d3d;
-    margin-bottom: 10px;
-    font-weight: 600px;
-    margin-top: 15px;
-    letter-spacing: 1px;
-    text-decoration: underline;
-    padding: 10px;
-}
-
-.partner-line {
-    display: block; /* Ensures each span is on a new line */
-    font-size: 36px;
-    color: #3d3d3d;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-decoration: underline;
-}
-
-.partner-left,
-.partner-right {
-    background: #ffffff;
-    padding: 30px 20px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-top: 4px solid #4B0082;
+    color: #ffffff;
+  }
+  
+  .modal h3 {
+    color: #313131;
     text-align: center;
-    width: 400px;
-    border-radius: 8px;
+    margin-bottom: 1.8rem;
+    font-size: 1.4rem;
     position: relative;
-}
-
-.partner-left-text,
-.partner-right-text {
-    font-size: 16px;
-    font-weight: 400;
-    color: #444;
-    margin-top: 3px;
-    text-align: left;
-    margin-bottom: 40px;
-    line-height: 1.8;
-}
-
-.prayer-request-button:hover {
-    color: rgb(255, 255, 255);
-    background-color: rgb(180, 77, 49);
-}
-
-.partner-link:hover {
-    color: rgb(255, 255, 255);
-    background-color: rgb(180, 77, 49);
-}
-
-.bible-ref {
-    font-style: italic;
-    color: #d27e01; /* Rich gold accent color */
-}
-
-.partner-left-button,
-.partner-right-button {
-    background: linear-gradient(135deg, #eeb407, #dc6700); /* Gradient for buttons */
+    padding-bottom: 0.8rem;
+  }
+  
+  .modal h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #4B0082;
+  }
+  
+  /* Forms - Dark Theme */
+  .modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .modal input,
+  .modal textarea {
+    padding: 12px 15px;
+    background: #ffffff;
+    border: 1px solid #f4e9fe;
+    border-radius: 6px;
+    font-size: 0.95rem;
     color: #fff;
-    text-decoration: none;
-    padding: 12px 30px;
-    font-size: 16px;
-    border-radius: 8px;
-    transition: transform 0.2s ease;
-}
-
-.partner-left-button:hover,
-.partner-right-button:hover {
-    background: linear-gradient(135deg, #b55501, #c99700); /* Reverse gradient on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
-    transform: scale(1.05); /* Slight zoom effect on hover */
-}
+    transition: all 0.3s ease;
+  }
+  
+  .modal input::placeholder,
+  .modal textarea::placeholder {
+    color: #aaa;
+  }
+  
+  .modal input:focus,
+  .modal textarea:focus {
+    outline: none;
+    border-color: #4B0082;
+    background: #ffffff;
+    box-shadow: 0 0 0 2px rgba(75, 0, 130, 0.3);
+  }
+  
+  .modal textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  /* Buttons in Modal */
+  .modal button {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+  }
+  
+  .modal button[type="submit"] {
+    background: #4B0082;
+    color: white;
+  }
+  
+  .modal button[type="submit"]:hover {
+    background: #5a0d9c;
+    transform: translateY(-2px);
+  }
+  
+  .modal button[type="button"] {
+    background: #ed0b0b;
+    color: white;
+    margin-top: 1px;
+  }
+  
+  .modal button[type="button"]:hover {
+    background: #cf0202;
+  }
+  
