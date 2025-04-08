@@ -7,7 +7,7 @@ const About: React.FC = () => {
   return (
     <div className='about-container'>
       <div className='about-header'>
-        <h1 className='about-title'>About Us</h1>
+        <h1 className='about-h1'>About Us</h1>
       </div>
 
       <h4 className='know-title'>WHAT YOU SHOULD KNOW</h4>
@@ -62,7 +62,7 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        <div className='started-container'></div>
+        {/* <div className='started-container'></div>
           <h5 className='started-heading'>How We Started
           </h5>
           <div className='started-text'>
@@ -76,7 +76,7 @@ const About: React.FC = () => {
 
           <p>Today, we invite you to be a part of this incredible journey. At Kingmakers, we believe that every believer is called to reign, and together, we are building a legacy of faith, victory, and transformation.
           </p>
-        </div>        
+        </div>         */}
     </div>
   )
 }

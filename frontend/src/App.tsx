@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import LayoutWrapper from './LayoutWrapper';
 
 // Importing pages
-import Partnership from './pages/Partnership/Partnership';
+import ThankYou from './pages/ThankYou/ThankYou';
 
 // Other imports for sections/components
 import Home from './components/Home/Home';
@@ -22,8 +22,8 @@ import Programs from './pages/Events/Programs/Programs';
 const App: React.FC = () => {
   return (
     <Routes>
-      {/* Routes for Signup and Login without Navbar and Footer */}      
-      <Route path='/partnership' element={<Partnership />} />
+      {/* Routes for Signup and Login without Navbar and Footer */}     
+      <Route path='/thank-you' element={<ThankYou />} />
 
       {/* Routes with LayoutWrapper (Navbar and Footer) */}
       <Route path="/" element={
@@ -51,7 +51,7 @@ const App: React.FC = () => {
           <Contact />
         </LayoutWrapper>
       } />
-       <Route path="/community_outreach" element={
+       <Route path="/community-outreach" element={
         <LayoutWrapper>
           <CommunityOutreach />
         </LayoutWrapper>

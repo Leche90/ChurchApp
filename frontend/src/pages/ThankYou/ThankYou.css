@@ -1,0 +1,62 @@
+/* src/pages/ThankYou.css */
+.thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f5ff;
+    padding: 2rem;
+  }
+  
+  .thank-you-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(106, 48, 147, 0.1);
+    border-top: 4px solid #6a3093;
+  }
+  
+  h1 {
+    color: #4B0082;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gospel-message {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .donation-prompt {
+    background: #f8f5ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+  
+  .donation-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #4B0082, #6a3093);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .donation-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(75, 0, 130, 0.2);
+  }
+  
+  .bible-verse {
+    font-style: italic;
+    color: #666;
+    margin-top: 2rem;
+    line-height: 1.5;
+  }

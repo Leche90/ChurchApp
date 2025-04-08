@@ -1,18 +1,40 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "module": "esnext",
-      "typeRoots": ["node_modules/@types", "src/@types"],
-      "strict": true,
-      "jsx": "react",
-      "esModuleInterop": true,
-      "moduleResolution": "node",
-      "baseUrl": "./src",
-      "paths": {
-        "*": ["node_modules/*", "src/*"]
-      },
-      "skipLibCheck": true
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "typeRoots": [
+      "node_modules/@types",
+      "src/@types"
+    ],
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": "./src",
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "src/*"
+      ]
     },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "dist"]
-  }
+    "skipLibCheck": true,
+    "noEmit": true,
+    "incremental": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
