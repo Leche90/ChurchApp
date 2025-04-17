@@ -1,46 +1,46 @@
 /* Base Styles */
 .contact-container {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 /* Hero Section */
 .contact-hero {
   position: relative;
-  height: 500px;
-  background: linear-gradient(to right, #2b2b2b, #7e7e7e);
+  height: 500px; 
 }
 
 .contact-hero-content {
   position: relative;
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
 .contact-hero-text {
-  color: white;
-}
-
-.contact-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
   color: #ffffff;
 }
 
-.contact-hero-text p {
-  font-size: 1.25rem;
-  max-width: 42rem;
+.contact-h1 {
+  font-size: 60px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.contact-p {
+  font-size: 16px;
+  line-height: 1.7;
+  padding-left: 40px;
+  padding-right: 200px;
+  color: #ffffff;
+  margin-top: 7px;
 }
 
 /* Contact Information Cards */
 .contact-cards-container {
-  max-width: 80rem;
+  max-width: 60rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
@@ -51,14 +51,15 @@
 
 .contact-cards-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 0 5px;
 }
 
 .contact-card {
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 25px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.073);
   text-align: center;
   transition: transform 0.3s;
 }
@@ -68,11 +69,7 @@
 }
 
 .card-white {
-  background-color: white;
-}
-
-.card-primary {
-  background-color: #22004b;
+  background-color: #fffdf1;
 }
 
 .contact-card-icon {
@@ -84,17 +81,18 @@
 }
 
 .icon-primary {
-  color: #ff0000;
+  color: #4B0082;
 }
 
 .icon-white {
-  color: white;
+  color: #ffffff;
 }
 
 .contact-card h3 {
-  font-size: 1.25rem;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+  margin-top: 20px;
 }
 
 .card-white h3 {
@@ -102,20 +100,20 @@
 }
 
 .card-primary h3 {
-  color: white;
+  color: #ffffff;
 }
 
 .contact-card-info {
-  font-size: 1.125rem;
-  margin-bottom: 0.25rem;
+  font-size: 16px;
+  margin-top: 7px;
 }
 
 .card-white .contact-card-info {
-  color: #374151;
+  color: #313131;
 }
 
 .card-primary .contact-card-info {
-  color: white;
+  color: #ffffff;
 }
 
 .contact-card-detail {
@@ -143,16 +141,23 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
 }
 
-.contact-h2 {
+.contact-h2,
+.location-h2 {
   font-size: 2rem;
   font-weight: 700;
   color: #111827;
-  margin-bottom: 0px;
   padding: 20px;
+  margin-top: -40px;
+}
+
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .contact-form-section h2,
@@ -168,6 +173,7 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 20px;
+  margin-top: -30px;
 }
 
 .contact-form-grid {
@@ -179,6 +185,8 @@
 .contact-form-group {
   display: flex;
   flex-direction: column;
+  padding-right: 40px;
+  margin-top: 0;
 }
 
 .contact-form-group label {
@@ -213,12 +221,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 20px;
   border: none;
-  border-radius: 9999px;
-  font-size: 1rem;
+  border-radius: 10px;
+  font-size: 16px;
   font-weight: 500;
-  color: white;
+  color: #ffffff;
   background-color: #4B0082;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -267,6 +275,8 @@
 }
 
 .map-container {
+  height: 300px;
+  width: 100%;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -283,7 +293,8 @@
 .info-card {
   background-color: #f9fafb;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
+  margin-top: -10px;
 }
 
 .info-card h3 {
@@ -301,6 +312,7 @@
 .info-item {
   display: flex;
   align-items: flex-start;
+  margin-top: -10px;
 }
 
 .info-icon {
@@ -313,33 +325,10 @@
 
 .info-item h4 {
   font-weight: 500;
+  margin-top: 5px;
 }
 
 .info-item p {
   color: #4b5563;
-}
-
-/* Responsive Styles */
-@media (min-width: 768px) {
-  .contact-cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .form-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .contact-hero-text h1 {
-    font-size: 4.5rem;
-  }
-  
-  .contact-hero-text p {
-    font-size: 1.5rem;
-  }
+  margin-top: -3px;
 }

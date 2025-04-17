@@ -12,7 +12,7 @@ import Survive from '/home/lleche/ChurchApp/frontend/src/assets/Survive.jpg';
 import pst from '/home/lleche/ChurchApp/frontend/src/assets/pst.jpg';
 import { motion } from 'framer-motion';
 import { FaCalendar } from 'react-icons/fa';
-import barbecue from '/home/lleche/ChurchApp/frontend/src/assets/barbecue.jpg';
+import barbecuees from '/home/lleche/ChurchApp/frontend/src/assets/barbecuees.jpg';
 
 // Defining the event type
 type Event = {
@@ -102,11 +102,7 @@ const Home: React.FC = () => {
         {/* Service Cards */}
         <div className="service-grid">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+            <div key={index}            
               className={`service-card ${service.color}`}
             >              
               <h3 className="service-h3">{service.title}</h3>
@@ -115,12 +111,12 @@ const Home: React.FC = () => {
                   {time}
                 </p>
               ))}
-            </motion.div>
+            </div>
           ))}
-        </div>
       </div>
+    </div>
     );
-  };
+  }; 
 
   // Dynamic titles for each teaching
   const word = [
@@ -145,7 +141,7 @@ const Home: React.FC = () => {
   const events: Event[] = [
     {
       date: 'June 14, 2025',
-      heading: 'Gospel & Grill',
+      heading: 'Faith & Flames',
       description: 'Join us for a fun-filled evening of barbecue, fellowship, and uplifting conversations.',
     },
     {
@@ -155,8 +151,8 @@ const Home: React.FC = () => {
         'Come together for a day of great food, fellowship, and sharing in God’s Word.',
     },
     {
-      date: 'August 23, 2025',
-      heading: 'Gospel & Grill',
+      date: 'August 16, 2025',
+      heading: 'Feast & Fellowship',
       description:
         'A day to celebrate good food, good company, and growing together in faith and fellowship.',
     },
@@ -188,6 +184,7 @@ const Home: React.FC = () => {
         <div className="church-card">
           <h2 className="church-h2">Church Experience</h2>
           <div className="church-grid">
+
             {/* Image 1 */}
             <div className="church-item">
               <div className="image-container">
@@ -224,9 +221,9 @@ const Home: React.FC = () => {
               <img src={word.image} alt="The Word" className="word-img" />
               <div className="word-info">
                 <h3 className="word-title">{word.title}</h3>
-                <a href={word.youtubeLink} target="_blank" rel="noopener noreferrer" className="word-link">
+                {/* <a href={word.youtubeLink} target="_blank" rel="noopener noreferrer" className="word-link">
                   Watch Now
-                </a>
+                </a> */}
               </div>
             </div>
           ))}
@@ -234,7 +231,9 @@ const Home: React.FC = () => {
       </div>
 
       {/* Leadership */}
-      <div className="leader-container" style={{ backgroundImage: `url(${pst})` }}>
+      <div className="leader-container" style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(${pst})`,
+        }}>
         <div className="leader">
           <div className="leader-left">
             <img src={leader} alt="Leader" className="leader-img" />
@@ -252,7 +251,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Upcoming Events */}
-      <div className="events-container" style={{ backgroundImage: `url(${barbecue})` }}>
+      <div className="events-container" style={{ backgroundImage: `url(${barbecuees})` }}>
         <div className="events-header">
           <h2 className="events-h2">Upcoming Events</h2>
         </div>
@@ -260,7 +259,7 @@ const Home: React.FC = () => {
           {events.map((event, index) => (
             <div key={index} className="events-card">
               <div className="events-date">
-                <span className="events-icon">📅</span> {event.date}
+                {event.date}
               </div>
               <h3 className="comm-header">{event.heading}</h3>
               <p className="comm-p">{event.description}</p>

@@ -1,174 +1,226 @@
-nav{
-    width: 100%; /* Make navbar span the full width of the screen */
-    background: #ffffff; /* Set background color to white */
-    padding: 10px 100px; /* Add padding for vertical spacing */
-    position: fixed !important; /* Fix navbar to the top of the screen */
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Vertically center items */
-    justify-content: space-between; /* Space out items */
-    z-index: 1000; /* Ensure navbar appears above other content */
-    transition: 0.5s ease-in-out; /* Smooth transition for styling changes */
-    /* top: 0; */
-    left: 0;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+.navbar {
+  width: 100%;
+  padding: 15px 5% 10px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+  background-color: transparent;
 }
 
-.container {
+/* White text when navbar is transparent */
+.navbar:not(.scrolled) .nav-links li a,
+.navbar:not(.scrolled) .hamburger {
+  color: white;
+}
+
+.navbar.scrolled {
   background-color: #ffffff;
-  transition: background-color 0.5s ease-in-out;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  padding: 13px 5% 10px; /* Even slimmer when scrolled */
 }
-/* 
-.container.sticky {
-  background-color: rgb(13, 55, 57);
-} 
 
-/* Sticky Navbar */
-/* .sticky {
-    position: fixed;  /* Keep navbar fixed at the top */
-    /* top: 0;  /* Position at the top */
-    /* left: 0;  /* Align left */
-    /* width: 100%;  /* Full width */
-    /* background-color: rgb(189, 18, 18);  /* White background */
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Add subtle shadow for depth */
-    /* z-index: 1000;  /* Higher z-index to stay on top */
-/*} */
+.navbar.scrolled .logo {
+  width: 60px;
+}
+
+/* Dark text when navbar has white background */
+.navbar.scrolled .nav-links li a,
+.navbar.scrolled .hamburger {
+  color: #333;
+}
 
 .logo {
-    width: 80px;
+  width: 70px;
+  height: auto;
+  transition: all 0.3s ease;
+  margin-top: 3px; /* Optional: fine-tune logo position */
 }
 
-/* Animation for Hamburger Menu when clicked */
-.bar.toggle:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);  /* Rotate the first bar to form an "X" */
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
 }
 
-.bar.toggle:nth-child(2) {
-  opacity: 0;  /* Hide the middle bar */
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
 }
-
-.bar.toggle:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);  /* Rotate the third bar to form an "X" */
-}
-
-/* Navbar Links Styling */
-.nav-link {
-    list-style-type: none;  /* Remove list styling */
-    display: flex;  /* Use flexbox to align navbar items horizontally */
-    gap: 10px;  /* Add space between items */
-    margin: 0;  /* Remove margin */
-    padding: 0;  /* Remove padding */
-    transition: transform 0.2s ease-in-out;
-  }
 
 .nav-links li {
   position: relative;
-    font-size: 16px;  /* Set font size */
-    color: rgba(54, 69, 79, 1);  /* Set text color */
-    margin-left: 5px;
-    /* transition: transform 0.3s ease, color 0.3s ease;  /* Smooth transition for hover effect */
-  }
-
-  /* Hover Effect for Navbar Items */
-.nav-links li a:hover {
-    transform: scale(2);  /* Move the item up when hovered */
-    color: #D4AF37;  /* Change color when hovered */
-    opacity: 1; /* Change opacity when hovered */
-    filter: blur(0);  /* Remove any blur effect */
-    text-decoration: none; 
 }
 
-.nav-links li a:hover:before {
-  transform: scaleX(1);
-  transform-origin: left;
-  transition: transform, 0.5s;
-}
-
-.nav-links .btn:hover ~ li a {
-  transform: scale(1);
-  opacity: 1;
-  filter: blur(0);
-}
-
-.nav-links:hover li a {
-  transform: scale(0.9);
-  opacity: 0.2;
-  filter: blur(1px);
-  /* background-color: rgba(4, 136, 151, 0.297); */
+.nav-links li a {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+  transition: all 0.3s ease;
 }
 
 .nav-links li a:hover {
-  transform: scale(1.5);
+  color: #4B0082;
+}
+
+.nav-links > li:not(.dropdown-parent) a {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+/* 3D hover effect for main nav links (excluding dropdown) */
+.nav-links > li:not(.dropdown-parent) a:hover {
+  transform: scale(1.4);
+  /* text-shadow: 2px 7px 2px rgba(0, 0, 0, 0.829); */
+  transition: all 0.3s ease;
   opacity: 1;
   filter: blur(0);
   text-decoration: none;
-  color: #4B0082;
-  background-color: rgba(244, 243, 243, 0.267);
-  border-radius: 20px;
 }
 
-/* Navbar Link Styling */
-.nav-links li a {
-    display: block;  /* Make links block-level elements */
-    padding: 10px;  /* Add padding around the links */
-    color: rgba(54, 69, 79, 1);  /* Set text color */
-    text-decoration: none;  /* Remove underlines from links */
-    transition: 0.5s;
-  }
-
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 5px 20px;
-    font-size: 16px;
-    color: rgba(54, 69, 79, 1);
-    transition: color 0.3s ease, transform 0.3s ease;
+.nav-links:hover > li:not(.dropdown-parent):not(:hover) a {
+  transform: scale(0.9);
+  opacity: 0.2;
+  filter: blur(1px);
 }
 
+/* Events Dropdown */
 .events-dropdown {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #fff;
-  z-index: 1000;
+  min-width: 210px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1001;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  min-width: 200px;
-  align-items: center;
-  justify-content: center;
+  padding-left: 0;
+  color: #333;
 }
 
 .events-dropdown.active {
   display: block;
 }
 
-.events-dropdown li {
-  padding: 3px;
+.events-dropdown li a {
+  padding: 10px 15px;
+  color: #333 !important;
+  transition: all 0.3s ease;
+  background: transparent;
 }
 
-.events-dropdown li a {
-  color: #333;
-  display: block;
+.navbar:not(.scrolled) .events-dropdown li a {
+  color: #333 !important; /* Override any transparent navbar text colors */
+}
+
+/* Different hover effect for dropdown items */
+.events-dropdown li:hover {
+  background-color: #4B0082;
+  transform: none;
+  padding-left: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Ensure dropdown parent doesn't get nav hover effect */
+.dropdown-parent > a:hover {
+  transform: none !important;
+  text-shadow: none !important;
+  background-color: transparent !important;
 }
 
 .events-dropdown li a:hover {
-  transform: scale(1.1);
-  filter: none;
+  background-color: #f5f5f5;
 }
 
-.events-dropdown li a {
-  filter: none;
+/* Add space between Events text and dropdown icon */
+.nav-links li a .fa-caret-down {
+  margin-left: 5px; /* Adjust this value as needed */
+  transition: transform 0.3s ease; /* Optional: for smooth animation */
 }
 
-.fa-caret-down {
-  margin-left: 5px;
+/* Optional: Add dropdown icon animation */
+.nav-links li:hover a .fa-caret-down {
+  transform: translateY(2px);
 }
 
+/* Give Button */
 .give-btn {
-  background-color: #4B0082; /* Indigo color */
-  color: white; /* White text */
-  padding: 10px 20px; /* Padding for button */
+  background-color: #4B0082;
+  color: white;
+  padding: 10px 20px;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.give-btn:hover {
+  background-color: #3a0068;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar {
+    padding: 5px 5%;
+  }
+
+  .navbar.scrolled {
+    padding: 5px 5%;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .events-dropdown {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .give-btn-container {
+    margin-top: 20px;
+  }
+}
+
+.events-dropdown li a:hover {
+  padding-left: 15px;
 }

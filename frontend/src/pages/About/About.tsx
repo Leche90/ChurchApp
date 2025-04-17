@@ -1,7 +1,8 @@
 import React from 'react'
 import './About.css'
 import about from '../../assets/about.jpg'
-import about_left from '../../assets/about_left.jpg'
+import pastoratee from '../../assets/pastoratee.jpg'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 const About: React.FC = () => {
   return (
@@ -10,13 +11,13 @@ const About: React.FC = () => {
         <h1 className='about-h1'>About Us</h1>
       </div>
 
-      <h4 className='know-title'>WHAT YOU SHOULD KNOW</h4>
+      <h4 className='about-h4'>WHAT YOU SHOULD KNOW</h4>
       
       <div className='about-content'>
       <p className='text'>Kingmakers International Ministries is a mandate from God founded in 2018 and led Pastor Afam and Sister Ijeoma Eze. Our ministry is built on the unwavering belief that God has called us to equip believers to reign in every area of life through the power of the Holy Spirit and the Word of God. At Kingmakers, we are passionate about empowering individuals to live out their divine purpose and impact the world around them. We believe that every believer is a king and a ruler in God's kingdom, and we are committed to helping you discover your royal identity, develop your gifts, and walk in the fullness of God's promises for your life.
       </p>      
                   
-      <p className='texts'>We welcome you to join us in this exciting journey of faith! At Kingmakers International Ministries, we believe that with God, all things are possible, and we are here to help you reign over life's challenges and step into the greatness that God has called you to. Together, we are building a legacy of faith, power, and victory.</p>
+      <p className='text'>We welcome you to join us in this exciting journey of faith! At Kingmakers International Ministries, we believe that with God, all things are possible, and we are here to help you reign over life's challenges and step into the greatness that God has called you to. Together, we are building a legacy of faith, power, and victory.</p>
       </div>
 
       <p className='text-author'>
@@ -25,7 +26,7 @@ const About: React.FC = () => {
 
       <div className='about-about'>
       <div className='about-left'>
-        <img src={about_left} alt='About left' className='about-left-img' />
+        <img src={pastoratee} alt='Pastor' className='pastoratee' />
       </div>
 
        {/* Vision and Mission Section */}
@@ -48,16 +49,16 @@ const About: React.FC = () => {
      </div>
 
      <div className='values-container'>
-        <div className='values'>Our Core Values</div>       
+          <h2 className="values-h2">Our Core Values</h2>      
           <div className='values-text'>
               <ul>
-                <ol>Righteousness</ol>
-                <ol>Prayer</ol>
-                <ol>Royalty</ol>
-                <ol>Excellence</ol>
-                <ol>Accountability</ol>
-                <ol>Love</ol>
-                <ol>Family</ol>
+                <ol><i className="fas fa-balance-scale"></i>Righteousness</ol>
+                <ol><i className="fas fa-praying-hands"></i>Prayer</ol>
+                <ol><i className="fas fa-crown"></i>Royalty</ol>
+                <ol><i className="fas fa-trophy"></i>Excellence</ol>
+                <ol><i className="fas fa-clipboard-check"></i>Accountability</ol>
+                <ol><i className="fas fa-heart"></i>Love</ol>
+                <ol><i className="fas fa-users"></i>Family</ol>
               </ul>
           </div>
         </div>

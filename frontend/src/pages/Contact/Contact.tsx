@@ -59,7 +59,13 @@ const Contact: React.FC = () => {
   return (
     <div className="contact-container">
       {/* Hero Section */}
-      <div className="contact-hero">
+      <div className="contact-hero"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 51, 36, 0.8), rgba(0, 20, 30, 0.9)), url(${contact})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,10 +73,9 @@ const Contact: React.FC = () => {
           className="contact-hero-content"
         >
           <div className="contact-hero-text">
-            <h1 className='contact-h1'>We'd Love to Hear from You</h1>
-            <p>
-              Whether you have a prayer request, need guidance, or want to join the Kingmakers International family, 
-              please feel free to contact us.
+            <h1 className='contact-h1'>Get in Touch with Us</h1>
+            <p className='contact-p'>
+              We’re here to support you in any way we can - whether you have a question, need counseling, or want to connect with our church community. Reach out and let’s talk!
             </p>
           </div>
         </motion.div>
@@ -81,26 +86,16 @@ const Contact: React.FC = () => {
         <div className="contact-cards-grid">
           {[
             {
-              icon: MessageSquare,
-              title: "Chat with Us",
-              info: "We're here to help",
-              detail: "Response within 24 hours",
-              color: "card-white",
-              iconColor: "icon-primary",
-            },
-            {
               icon: Phone,
               title: "Call Us",
               info: "204-341-5567",
-              detail: "Mon-Fri, 9am-5pm",
-              color: "card-primary",
-              iconColor: "icon-white",
-            },
+              color: "card-white",
+              iconColor: "icon-primary",
+            },            
             {
               icon: Mail,
               title: "Email Us",
               info: "kingmakersinternationalministries@gmail.com",
-              detail: "Available 24/7",
               color: "card-white",
               iconColor: "icon-primary",
             },
@@ -115,7 +110,7 @@ const Contact: React.FC = () => {
               <item.icon className={`contact-card-icon ${item.iconColor}`} />
               <h3>{item.title}</h3>
               <p className="contact-card-info">{item.info}</p>
-              <p className="contact-card-detail">{item.detail}</p>
+              <p className="contact-card-detail"></p>
             </motion.div>
           ))}
         </div>
@@ -238,22 +233,22 @@ const Contact: React.FC = () => {
                 <div className="info-item">
                   <Clock className="info-icon" />
                   <div>
-                    <h4>Sunday Services</h4>
-                    <p>10:00 AM</p>
+                    <h4 className='info-h4'>Sunday Services</h4>
+                    <p className='info-p'>10:00 AM</p>
                   </div>
                 </div>
                 <div className="info-item">
                   <Clock className="info-icon" />
                   <div>
-                    <h4>Friday Night</h4>
-                    <p>6:00 PM</p>
+                    <h4 className='info-h4'>Friday Night</h4>
+                    <p className='info-p'>6:00 PM</p>
                   </div>
                 </div>
                 <div className="info-item">
                   <Clock className="info-icon" />
                   <div>
-                    <h4>Vigil (Last Friday of Every Month)</h4>
-                    <p>10:00 PM</p>
+                    <h4 className='info-h4'>Vigil (Last Friday of Every Month)</h4>
+                    <p className='info-p'>10:00 PM</p>
                   </div>
                 </div>
               </div>
