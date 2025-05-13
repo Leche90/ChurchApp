@@ -72,14 +72,13 @@ const CommunityOutreach: React.FC = () => {
     <div className='community-container'>
       <div className='community-header'
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.29), rgba(0, 0, 0, 0.82)), url(${feast})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(${feast})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}>
         <h1 className='community-outreach-h1'>Faith & Flames BBQ</h1>        
         <p className='community-p'>
-          Every year, from June to September, we host a community-wide Barbeque Hangout! The event is an opportunity for the people in our community to come together, enjoy some delicious food, and hear "The Word." During the event, we give out free clothing items, shoes, and more to attendees. Lives are transformed, and the community is impacted through this outreach. We invite you to be a part of
-          this impactful time!
+          A summer hangout filled with food, fun, fellowship — and life-changing encounters.
         </p>
       </div>
 
@@ -89,7 +88,7 @@ const CommunityOutreach: React.FC = () => {
 
           {/* 2024 Section */}
         <div className="year-section">
-          <h3 className="year-intro">Journey through the moments that have defined our story — from past outreaches to present celebrations and the vision that leads us forward. Take a glimpse into the heartbeat of our community across the years.</h3>
+          <h3 className="year-intro">From June through August each year, we host our annual BBQ which brings people within our community togehter. It’s more than just feasting and wining; it's a time of sharing, connecting, and giving. Attendees enjoy free delicious barbecue, free clothing, shoes, and essentials, and experience uplifting moments through sharing the Word of God with them. Explore some of the beautiful moments captured during each of the yearly BBQ events.</h3>
           </div>
 
           <div className='section-row'>
@@ -104,8 +103,11 @@ const CommunityOutreach: React.FC = () => {
                   className='image-hover-effect'
                   onClick={() => openLightbox(index, '2024')} // Open lightbox when clicked
                 />
-                ))}
+              ))}
             </div>
+            <div className="view-more-container">
+              <button className='view-more-btn' onClick={() => openLightbox(0, '2024')}>View More</button>
+            </div>               
           </div>
 
 
@@ -123,7 +125,10 @@ const CommunityOutreach: React.FC = () => {
                   onClick={() => openLightbox(index, '2023')} // Open lightbox when clicked
                 />
                 ))}
-            </div>
+              </div>
+              <div className="view-more-container">
+                <button className='view-more-btn' onClick={() => openLightbox(0, '2024')}>View More</button> 
+              </div>
           </div>
         </section>
       </div>

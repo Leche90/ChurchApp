@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Navbar.css';
-import logo from '../../assets/logo.jpg';
+import logowhite from '../../assets/logowhite.png';
+import logoblack from '../../assets/logoblack.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -49,7 +50,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <Link to="/" className='logo-link' onClick={closeAllMenus}>
-        <img src={logo} alt="Logo" className='logo' />
+        <img src={scrolled ? logoblack : logowhite} alt="Logo" className="logo" />
       </Link>
 
       {/* Mobile Hamburger Button */}
@@ -72,8 +73,8 @@ const Navbar: React.FC = () => {
             className={`events-dropdown ${isEventsDropdownOpen ? 'active' : ''}`}
           >
             <li><Link to="/community-outreach" onClick={closeAllMenus}>Community Outreach</Link></li>
-            <li><Link to="/prisons-mission" onClick={closeAllMenus}>Prisons Mission</Link></li>
-            <li><Link to="/special-programs" onClick={closeAllMenus}>Special Programs</Link></li>
+            <li><Link to="/prisons" onClick={closeAllMenus}>Prisons Mission</Link></li>
+            <li><Link to="/programs" onClick={closeAllMenus}>Special Programs</Link></li>
           </ul>
         </li>
         <li><Link to="/contact" onClick={closeAllMenus}>Contact</Link></li>

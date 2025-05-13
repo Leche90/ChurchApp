@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import about from '../../assets/about.jpg'
+import about from '../../assets/strategic.jpg'
 import pastoratee from '../../assets/pastoratee.jpg'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -25,27 +25,27 @@ const About: React.FC = () => {
       </p>
 
       <div className='about-about'>
-      <div className='about-left'>
-        <img src={pastoratee} alt='Pastor' className='pastoratee' />
-      </div>
+        <div className='about-left'>
+          <img src={pastoratee} alt='Pastor' className='pastoratee' />
+        </div>
 
-       {/* Vision and Mission Section */}
-       <div className='about-right'>
-          <div className='vision'>
-            <h2 className='vision-heading'>VISION
-            </h2>
-            <p className='vision-text'>
-              Raising royalties.
-            </p>
-          </div>
+        {/* Vision and Mission Section */}
+        <div className='about-right'>
+            <div className='vision'>
+              <h2 className='vision-heading'>VISION
+              </h2>
+              <p className='vision-text'>
+                Raising royalties.
+              </p>
+            </div>
 
-          <div className='mission'>
-            <h2 className='mission-heading'>MISSION</h2>
-            <p className='mission-text'>
-             To reach out, discover, train and release members to be like Jesus wherever we are.
-            </p>
-         </div>
-       </div>
+            <div className='mission'>
+              <h2 className='mission-heading'>MISSION</h2>
+              <p className='mission-text'>
+              To reach out, discover, train and release members to be like Jesus wherever we are.
+              </p>
+            </div>
+        </div>
      </div>
 
      <div className='values-container'>

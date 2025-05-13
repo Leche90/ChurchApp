@@ -1,10 +1,10 @@
 import React from 'react';
+import './Programs.css'; 
 
 const Programs: React.FC = () => {
   return (
-    <div>
-      <h1>Ipsum Event</h1>
-      <p>Details about the Ipsum event go here.</p>
+    <div className="coming-soon-container">
+      <h1 className="coming-soon-text">Coming Soon!</h1>      
     </div>
   );
 };

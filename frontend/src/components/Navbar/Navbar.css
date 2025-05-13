@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  padding: 15px 5% 10px;
+  padding: 0px 5% 0px;
   position: fixed;
   display: flex;
   align-items: center;
@@ -15,17 +15,17 @@
 /* White text when navbar is transparent */
 .navbar:not(.scrolled) .nav-links li a,
 .navbar:not(.scrolled) .hamburger {
-  color: white;
+  color: #ffffff;
 }
 
 .navbar.scrolled {
   background-color: #ffffff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  padding: 13px 5% 10px; /* Even slimmer when scrolled */
+  padding: 0px 5% 0px; /* Even slimmer when scrolled */
 }
 
 .navbar.scrolled .logo {
-  width: 60px;
+  width: 150px;
 }
 
 /* Dark text when navbar has white background */
@@ -35,7 +35,7 @@
 }
 
 .logo {
-  width: 70px;
+  width: 170px;
   height: auto;
   transition: all 0.3s ease;
   margin-top: 3px; /* Optional: fine-tune logo position */
@@ -63,34 +63,84 @@
   position: relative;
 }
 
-.nav-links li a {
+/* Main Navbar Links Hover Effects - Exclude .give-btn-container */
+.nav-links > li:not(.give-btn-container) > a {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect for all nav items except Give button */
+.nav-links > li:not(.give-btn-container):hover > a {
+  transform: scale(1.4);
+  color: #ffffff !important;
+  opacity: 1;
+  filter: blur(0);
+  text-decoration: none;
+  border-radius: 20px;
+  z-index: 1000;
+}
+
+/* When navbar is scrolled, change hover colour to black */
+.navbar.scrolled .nav-links > li:not(.give-btn-container):hover > a {
+  color: #333 !important;
+}
+
+/* Dim other items except Give button */
+.nav-links:hover > li:not(.give-btn-container):not(:hover) > a {
+  transform: scale(0.9);
+  opacity: 0.2;
+  filter: blur(1px);
+}
+
+/* Ensure Give button is never affected */
+.give-btn-container a,
+.give-btn-container:hover a {
+  transform: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  background-color: transparent !important;
+}
+
+/* Keep existing Give button styles */
+.give-btn {
+  background-color: #4B0082;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.give-btn:hover {
+  background-color: #3a0068;
+  transform: none !important; /* Ensure no scale effect */
+}
+
+.nav-links > li a {
   color: #333;
   text-decoration: none;
   padding: 8px 12px;
   display: block;
   transition: all 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #4B0082;
-}
-
-.nav-links > li:not(.dropdown-parent) a {
   position: relative;
-  transition: all 0.4s ease;
+  font-size: 18px;
 }
 
-/* 3D hover effect for main nav links (excluding dropdown) */
-.nav-links > li:not(.dropdown-parent) a:hover {
+/* Applies to all nav items including Events */
+.nav-links > li:hover > a {
   transform: scale(1.4);
-  /* text-shadow: 2px 7px 2px rgba(0, 0, 0, 0.829); */
-  transition: all 0.3s ease;
+  color: #4B0082 !important;
   opacity: 1;
   filter: blur(0);
   text-decoration: none;
+  border-radius: 20px;
+  z-index: 1001;
 }
 
-.nav-links:hover > li:not(.dropdown-parent):not(:hover) a {
+/* Dim other items when hovering any nav link */
+.nav-links:hover > li:not(:hover) > a {
   transform: scale(0.9);
   opacity: 0.2;
   filter: blur(1px);
@@ -104,7 +154,7 @@
   left: 0;
   background-color: #fff;
   min-width: 210px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   border-radius: 4px;
   z-index: 1001;
   list-style: none;
@@ -120,6 +170,8 @@
   padding: 10px 15px;
   color: #333 !important;
   transition: all 0.3s ease;
+  transform: none !important;
+  border-radius: 0 !important;
   background: transparent;
 }
 
@@ -129,21 +181,19 @@
 
 /* Different hover effect for dropdown items */
 .events-dropdown li:hover {
-  background-color: #4B0082;
+  background-color: #f2f6ffa7;
   transform: none;
-  padding-left: 20px;
+  padding-left: 7px;
   transition: all 0.3s ease;
 }
 
-/* Ensure dropdown parent doesn't get nav hover effect */
-.dropdown-parent > a:hover {
-  transform: none !important;
-  text-shadow: none !important;
-  background-color: transparent !important;
-}
-
 .events-dropdown li a:hover {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
+  /* background-color: rgba(244, 243, 243, 0.8) !important; */
+  padding-left: 25px;
+  border-radius: 4px;
+  opacity: 1 !important;
+  /* filter: blur(0) !important; */
 }
 
 /* Add space between Events text and dropdown icon */

@@ -66,19 +66,13 @@ const Contact: React.FC = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}>
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="contact-hero-content"
-        >
+        
           <div className="contact-hero-text">
             <h1 className='contact-h1'>Get in Touch with Us</h1>
             <p className='contact-p'>
-              We’re here to support you in any way we can - whether you have a question, need counseling, or want to connect with our church community. Reach out and let’s talk!
+              Have a question or need support? We’re here for you—reach out anytime.
             </p>
           </div>
-        </motion.div>
       </div>
 
       {/* Contact Information Cards */}
@@ -99,19 +93,14 @@ const Contact: React.FC = () => {
               color: "card-white",
               iconColor: "icon-primary",
             },
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className={`contact-card ${item.color}`}
-            >
+          ].map((item, index) =>(
+            <div key={index} className={`contact-card ${item.color}`}>
+            <div className='card-title-with-icon'>
               <item.icon className={`contact-card-icon ${item.iconColor}`} />
               <h3>{item.title}</h3>
-              <p className="contact-card-info">{item.info}</p>
-              <p className="contact-card-detail"></p>
-            </motion.div>
+            </div>
+              <p className="contact-card-info">{item.info}</p>              
+            </div>
           ))}
         </div>
       </div>
@@ -120,10 +109,7 @@ const Contact: React.FC = () => {
         <div className="contact-grid">
           {/* Contact Form */}
           <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={fadeIn}
+            ref={ref}           
             className="contact-form-section"
           >
             <h2 className='contact-h2'>Send us a Message</h2>

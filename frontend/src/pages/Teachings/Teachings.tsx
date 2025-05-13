@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Play } from 'lucide-react'
 import './Teachings.css'
-import teachingsImage from '../../assets/teachings.jpg'
+import wordforImage from '../../assets/wordfor.jpg'
 import preacherImage from '../../assets/preacher.jpg'
 import scripturesImage from '../../assets/scriptures.jpg'
 import timeImage from '../../assets/time.jpg'
@@ -114,16 +114,16 @@ const Teachings: React.FC<TeachingProps> = () => {
   ]
 
   return (
-    <div className="teachings-container">
-      <div className="teachings-hero-section" style={{ backgroundImage: `url(${teachingsImage})` }}>
-        <div className="teachings-card" />
+    <>
+      <div className="teachings-header" style={{ backgroundImage: `url(${wordforImage})` }}>
         <div className="teachings-card-second">
-          <div className="teachings-heading">
+          <div className="teachings-title">
             <h1 className="teachings-h1">Our Teachings</h1>
             <p className="headings-title-p">Growing in faith through God's Word</p>
           </div>
         </div>
-      </div>    
+      </div>
+
 
       {/* Latest Sermons */}
       <div className="sermons-section">
@@ -135,8 +135,8 @@ const Teachings: React.FC<TeachingProps> = () => {
                 <div className="sermon-image-container">
                   {/* Hover effect to show play button */}
                   <img src={sermon.image} alt="Preacher" className="sermon-image" />
-                  <button className="series-play-button" onClick={() => handlePlayClick(sermon.id)}>
-                    <Play className="series-play-icon" />
+                  <button className="sermon-play-button" onClick={() => handlePlayClick(sermon.id)}>
+                    <Play className="sermon-play-icon" />
                   </button>
                 </div>
                 <div className="sermon-details">       
@@ -145,13 +145,13 @@ const Teachings: React.FC<TeachingProps> = () => {
                   <div className="sermon-meta">
                     <span className="sermon-time">{sermon.duration}</span>
                     {/* <span className="sermon-separator">•</span>                     */}
-                  </div>
                 </div>
               </div>
+            </div>
             ))}
-          </div>
         </div>
       </div>
+    </div>
 
       {/* Modal for playing YouTube video */}
       {isModalOpen && currentVideo !== null && (
@@ -171,31 +171,8 @@ const Teachings: React.FC<TeachingProps> = () => {
         </div>
       </div>
       )}
-
-      {/* Series Section */}
-      <div className="series-section">
-        <div className="series-container">
-          <h2 className="series-h2">Series</h2>
-          <div className="series-grid">
-            {series.map((series) => (
-              <div key={series.id} className="series-card">
-                <div className="series-content">
-                  <div className="series-image-container">
-                    <img className="series-image" src={scripturesImage} alt="Series" />
-                  </div>
-                  <div className="series-details">
-                    <h3 className="series-title">{series.title}</h3>
-                    <p className="series-description">{series.description}</p>
-                    <button className="view-series-button">View Series</button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+    </>      
   )
-}
+}; 
 
 export default Teachings;

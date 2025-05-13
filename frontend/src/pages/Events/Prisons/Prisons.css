@@ -6,9 +6,9 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f7f7f7;
     text-align: center;
     padding: 0 15px; /* Padding to avoid text being too close to the edges */
+    background-color: rgb(147, 114, 186);
   }
   
   /* Styling for the Coming Soon text */
@@ -16,7 +16,7 @@
     font-family: 'Arial', sans-serif;
     font-size: 80px;
     font-weight: 900;
-    color: #4B0082; /* Deep purple */
+    color: #ffffff;
     letter-spacing: 5px;
     text-transform: uppercase;
     position: relative;
@@ -34,59 +34,34 @@
       transform: rotateX(0deg) rotateY(0deg);
     }
   }
-  
-  /* Styling for the subtext */
-  .coming-soon-subtext {
-    font-size: 20px;
-    font-weight: 500;
-    color: #333;
-    margin-top: 20px;
-    font-style: italic;
-  }
-  
+ 
   /* Responsive Styles for Different Screen Sizes */
   
   /* For larger screens (Desktop) */
   @media (min-width: 1024px) {
     .coming-soon-text {
       font-size: 100px;
-    }
-  
-    .coming-soon-subtext {
-      font-size: 24px;
-    }
+    }  
   }
   
   /* For Tablets (768px to 1024px) */
   @media (max-width: 1024px) and (min-width: 768px) {
     .coming-soon-text {
       font-size: 80px;
-    }
-  
-    .coming-soon-subtext {
-      font-size: 22px;
-    }
+    }  
   }
   
   /* For Small Screens (Mobile) */
   @media (max-width: 767px) {
     .coming-soon-text {
       font-size: 50px;
-    }
-  
-    .coming-soon-subtext {
-      font-size: 18px;
-    }
+    }  
   }
   
   /* For Extra Small Screens (Portrait Phones) */
   @media (max-width: 480px) {
     .coming-soon-text {
       font-size: 40px;
-    }
-  
-    .coming-soon-subtext {
-      font-size: 16px;
-    }
+    }  
   }
   

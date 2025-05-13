@@ -2,15 +2,13 @@ import React from 'react';
 import './styles/tailwind.css';
 import { Routes, Route } from 'react-router-dom';
 
+import ScrollToTop from './components/ScrollToTop';
+
 // Importing components
 import LayoutWrapper from './LayoutWrapper';
 
-// Importing pages
-import ThankYou from './pages/ThankYou/ThankYou';
-
 // Other imports for sections/components
-import Home from './components/Home/Home';
-import Partner from './components/Partner/Partner';
+import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Teachings from './pages/Teachings/Teachings';
 import Contact from './pages/Contact/Contact';
@@ -21,16 +19,15 @@ import Programs from './pages/Events/Programs/Programs';
 
 const App: React.FC = () => {
   return (
-    <Routes>
-      {/* Routes for Signup and Login without Navbar and Footer */}     
-      <Route path='/thank-you' element={<ThankYou />} />
+    <>
+    <ScrollToTop />
+    <Routes>      
 
       {/* Routes with LayoutWrapper (Navbar and Footer) */}
       <Route path="/" element={
         <LayoutWrapper>
           <div className="app-container">
             <Home />
-            <Partner />
           </div>
         </LayoutWrapper>
       } />
@@ -58,7 +55,7 @@ const App: React.FC = () => {
       } />
       <Route path="/prisons" element={
         <LayoutWrapper>
-          <CommunityOutreach />
+          <Prisons />
         </LayoutWrapper>
       } />
       <Route path="/programs" element={
@@ -67,6 +64,7 @@ const App: React.FC = () => {
         </LayoutWrapper>
       } />
     </Routes>
+  </>
   );
 }
 
