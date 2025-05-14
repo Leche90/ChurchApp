@@ -8,9 +8,9 @@ import worship from '../../assets/worship.jpg';
 import teaching from '../../assets/teaching.jpg';
 import prayer from '../../assets/prayer.jpg';
 import leader from '../../assets/leader.jpg';
-import fellowship from '../../assets/August.jpg';
-import flames from '../../assets/June.jpg';
-import grill from '../../assets/July.jpg';
+import August from '../../assets/August.jpg';
+import June from '../../assets/June.jpg';
+import July from '../../assets/July.jpg';
 import praise from '/home/lleche/ChurchApp/frontend/src/assets/Prayers.jpg';
 import Strong from '/home/lleche/ChurchApp/frontend/src/assets/Strong.jpg';
 import Rebuild from '/home/lleche/ChurchApp/frontend/src/assets/Rebuild.jpg';
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
       const typed = new Typed(typedRef.current, {
         strings: [
           "Rooted in Christ, we stand as one; growing in faith, walking in love, and shining His light to the world.",
-          "At Kingmakers, every heart matters, every soul has purpose, and together, we reign in His grace.",
+          "At Kingmakers, every heart matters, every soul has a purpose, and together, we reign in His grace.",
           "We invite you to come and fellowship with us.",
         ],
         typeSpeed: 40,
@@ -160,18 +160,18 @@ const Home: React.FC = () => {
     // Image carousel data
   const eventImages = [
     {
-      src: flames,
-      blurredSrc: `${flames}?blur=10`,
+      src: June,
+      blurredSrc: `${June}?blur=10`,
       alt: "Faith & Flames",      
     },
     {
-      src: grill,
-      blurredSrc: `${grill}?blur=10`,
+      src: July,
+      blurredSrc: `${July}?blur=10`,
       alt: "Gospel & Grill",      
     },
     {
-      src: fellowship,
-      blurredSrc: `${fellowship}?blur=10`,
+      src: August,
+      blurredSrc: `${August}?blur=10`,
       alt: "Feast & Fellowship",      
     }
   ];
@@ -295,9 +295,7 @@ const Home: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      
+      </div>      
     </div>
   );
 };

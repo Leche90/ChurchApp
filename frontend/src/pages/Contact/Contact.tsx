@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
         }}>
         
           <div className="contact-hero-text">
-            <h1 className='contact-h1'>Get in Touch with Us</h1>
+            <h1 className='contact-h1'>Get in Touch With Us</h1>
             <p className='contact-p'>
               Have a question or need support? We’re here for you—reach out anytime.
             </p>
@@ -212,33 +212,35 @@ const Contact: React.FC = () => {
                 <p>582 Burrows Avenue, Winnipeg, MB</p>
               </div>
             </div>
-            
-            <div className="info-card">
-              <h3>Service Times</h3>
-              <div className="info-list">
-                <div className="info-item">
-                  <Clock className="info-icon" />
-                  <div>
-                    <h4 className='info-h4'>Sunday Services</h4>
-                    <p className='info-p'>10:00 AM</p>
+
+           <div className='info-container'>
+              <div className="info-card">
+                <h3>Service Times</h3>
+                <div className="info-list">
+                  <div className="info-item">
+                    <Clock className="info-icon" />
+                    <div>
+                      <h4 className='info-h4'>Sunday Services</h4>
+                      <p className='info-p'>10:00 AM</p>
+                    </div>
                   </div>
-                </div>
-                <div className="info-item">
-                  <Clock className="info-icon" />
-                  <div>
-                    <h4 className='info-h4'>Friday Night</h4>
-                    <p className='info-p'>6:00 PM</p>
+                  <div className="info-item">
+                    <Clock className="info-icon" />
+                    <div>
+                      <h4 className='info-h4'>Friday Night</h4>
+                      <p className='info-p'>6:00 PM</p>
+                    </div>
                   </div>
-                </div>
-                <div className="info-item">
-                  <Clock className="info-icon" />
-                  <div>
-                    <h4 className='info-h4'>Vigil (Last Friday of Every Month)</h4>
-                    <p className='info-p'>10:00 PM</p>
+                  <div className="info-item">
+                    <Clock className="info-icon" />
+                    <div>
+                      <h4 className='info-h4'>Vigil (Last Friday of Every Month)</h4>
+                      <p className='info-p'>10:00 PM</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>            
+            </div>
           </motion.div>
         </div>
       </div>

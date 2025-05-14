@@ -33,42 +33,36 @@ const Teachings: React.FC<TeachingProps> = () => {
   {
     id: 1,
     title: 'The Hand of God',
-    preacher: 'Pastor Afam Eze',
     duration: '38 Minutes',
     image: handImage
   },
   {
     id: 2,
     title: 'The Value of Time',
-    preacher: 'Pastor Afam Eze',
     duration: '42 Minutes',
     image: timeImage
   },
   {
     id: 3,
     title: "Bearing Each Other's Burdens",
-    preacher: "Pastor Afam Eze",
     duration: "44 Minutes",
     image: burdenImage
   },
   {
     id: 4,
     title: 'Revisiting the Old Plan',
-    preacher: 'Pastor Afam Eze',
     duration: '41 Minutes',
     image: planImage
   },
   {
     id: 5,
     title: 'Strategic Planning',
-    preacher: 'Pastor Afam Eze',
     duration: '37 Minutes',
     image: strategicImage
   },
   {
     id: 6,
     title: 'Returning to Praise the Lord',
-    preacher: 'Pastor Afam Eze',
     duration: '38 Minutes',
     image: praiseImage
   },
@@ -140,8 +134,7 @@ const Teachings: React.FC<TeachingProps> = () => {
                   </button>
                 </div>
                 <div className="sermon-details">       
-                  <h3 className="sermon-title">{sermon.title}</h3>
-                  <p className="sermon-precher">{sermon.preacher}</p>
+                  <h3 className="sermon-title">{sermon.title}</h3>                  
                   <div className="sermon-meta">
                     <span className="sermon-time">{sermon.duration}</span>
                     {/* <span className="sermon-separator">•</span>                     */}

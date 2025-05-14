@@ -296,6 +296,10 @@
   margin-top: 1rem;
 }
 
+.info-container {
+  margin-bottom: -60px;
+}
+
 .info-card {
   background-color: #f9fafb;
   border-radius: 1rem;

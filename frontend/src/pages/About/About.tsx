@@ -14,10 +14,10 @@ const About: React.FC = () => {
       <h4 className='about-h4'>WHAT YOU SHOULD KNOW</h4>
       
       <div className='about-content'>
-      <p className='text'>Kingmakers International Ministries is a mandate from God founded in 2018 and led Pastor Afam and Sister Ijeoma Eze. Our ministry is built on the unwavering belief that God has called us to equip believers to reign in every area of life through the power of the Holy Spirit and the Word of God. At Kingmakers, we are passionate about empowering individuals to live out their divine purpose and impact the world around them. We believe that every believer is a king and a ruler in God's kingdom, and we are committed to helping you discover your royal identity, develop your gifts, and walk in the fullness of God's promises for your life.
+      <p className='text'>Kingmakers International Ministries is a mandate from God founded in 2018 and led by Pastor Afam and Sister Ijeoma Eze. Our ministry is built on the unwavering belief that God has called us to equip believers to reign in every area of life through the power of the Holy Spirit and the Word of God. At Kingmakers, we are passionate about empowering individuals to live out their divine purpose and impact the world around them. We believe that every believer is a king and a ruler in God's kingdom, and we are committed to helping you discover your royal identity, develop your gifts, and walk in the fullness of God's promises for your life.
       </p>      
                   
-      <p className='text'>We welcome you to join us in this exciting journey of faith! At Kingmakers International Ministries, we believe that with God, all things are possible, and we are here to help you reign over life's challenges and step into the greatness that God has called you to. Together, we are building a legacy of faith, power, and victory.</p>
+      <p className='text'>At Kingmakers International Ministries, we believe that with God, all things are possible, and we are here to help you reign over life's challenges and step into the greatness that God has called you to. Together, we are building a legacy of faith, power, and victory. We welcome you to join us in this exciting journey of faith! </p>
       </div>
 
       <p className='text-author'>
