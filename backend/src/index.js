@@ -1,9 +1,9 @@
 require('dotenv').config();
-const mongoose = require('mongoose');
-const connectDB = require('./config/db');
 const express = require('express');
 const cors = require('cors');
-const donationRoutes = require('./routes/donationRoutes');
+const connectDB = require('./config/db');
+const prayerRoutes = require('./routes/prayerRoutes');
+const partnershipRoutes = require('./routes/partnershipRoutes');
 
 const app = express();
 
@@ -11,15 +11,18 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173' }));
 
-// Routes
-app.use('/api/donations', donationRoutes);
+// Connect to MongoDB
+connectDB();
+
+// Define routes
+app.use('/api', prayerRoutes);
+app.use('/api/partnership', partnershipRoutes);
 
 // Default route
 app.get('/', (req, res) => {
-  res.send('Server is ready');
+  res.send('Server is up and running!');
 });
 
-// Start the server
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
