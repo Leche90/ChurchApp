@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
           <div className="contact-hero-text">
             <h1 className='contact-h1'>Get in Touch With Us</h1>
             <p className='contact-p'>
-              Have a question or need support? We’re here for you—reach out anytime.
+              Have a question or need support? We’re here for you; reach out anytime.
             </p>
           </div>
       </div>
@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
             ref={ref}           
             className="contact-form-section"
           >
-            <h2 className='contact-h2'>Send us a Message</h2>
+            <h2 className='contact-h2'>Send Us a Message</h2>
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="contact-form-grid">
                 <div className="contact-form-group">
@@ -173,8 +173,7 @@ const Contact: React.FC = () => {
                   'Sending...'
                 ) : (
                   <>
-                    Send Message
-                    <Send className="send-icon" />
+                    Submit             
                   </>
                 )}
               </button>
