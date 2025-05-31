@@ -3,7 +3,6 @@ import './CommunityOutreach.css';
 import feast from '/home/lleche/ChurchApp/frontend/src/assets/feast.jpg';
 
 // Importing images for the 2024 BBQ Hangout
-import hangout1 from '/assets/2024/hangout1.jpg';
 import hangout2 from '/assets/2024/hangout2.jpg';
 import hangout3 from '/assets/2024/hangout3.jpg';
 import hangout4 from '/assets/2024/hangout4.jpg';
@@ -41,7 +40,7 @@ const images2023 = [
 
   // Images for 2024 BBQ Hangout
 const images2024 = [
-  hangout1, hangout2, hangout3, hangout4, hangout5, hangout6, hangout7, hangout8, hangout9, hangout10,
+  hangout2, hangout3, hangout4, hangout5, hangout6, hangout7, hangout8, hangout9, hangout10,
   hangout11, hangout12, hangout13, hangout14, hangout15, hangout16, hangout17, hangout18, hangout19, hangout20
 ];
 
@@ -78,7 +77,7 @@ const CommunityOutreach: React.FC = () => {
       }}>
         <h1 className='community-outreach-h1'>Faith & Flames BBQ</h1>        
         <p className='community-p'>
-          A summer hangout filled with food, fun, fellowship — and life-changing encounters.
+          A summer hangout filled with wining and dining, giving to the needy and sharing the Word of God together.
         </p>
       </div>
 
@@ -88,11 +87,11 @@ const CommunityOutreach: React.FC = () => {
 
           {/* 2024 Section */}
         <div className="year-section">
-          <h3 className="year-intro">From June through August each year, we host our annual BBQ which brings people within our community togehter. It’s more than just feasting and wining; it's a time of sharing, connecting, and giving. Attendees enjoy free delicious barbecue, free clothing, shoes, and essentials, and experience uplifting moments through sharing the Word of God with them. Explore some of the beautiful moments captured during each of the yearly BBQ events.</h3>
-          </div>
-
           <div className='section-row'>
+            <h3 className="year-intro">From June through August each year, we host our annual BBQ which brings people within our community togehter. It’s more than just feasting and wining; it's a time of sharing, connecting, and giving. Attendees enjoy free delicious barbecue, free clothing, shoes, and essentials, and experience uplifting moments through sharing the Word of God with them. Explore some of the beautiful moments captured during each of the yearly BBQ events.</h3>
+
             <h2 className='year-heading'>2024</h2>
+
             <div className='image-grid'>
             {/* Show only 3 images initially */}
             {images2024.slice(0, 3).map((image, index) => (
@@ -109,7 +108,7 @@ const CommunityOutreach: React.FC = () => {
               <button className='view-more-btn' onClick={() => openLightbox(0, '2024')}>View More</button>
             </div>               
           </div>
-
+        </div>
 
           {/* 2023 Section */}
           <div className='section-row'>
