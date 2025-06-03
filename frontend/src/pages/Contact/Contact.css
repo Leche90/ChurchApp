@@ -253,7 +253,7 @@
   margin-top: 0;
 }
 
-/* Mibile = <480px */
+/* Mobile = <480px */
 @media (max-width: 30rem) {
   .contact-hero {
     height: clamp(15rem, 35vh, 20rem);

@@ -1,5 +1,3 @@
-
-/* Main container */
 .coming-soon-container {
     display: flex;
     flex-direction: column;
@@ -7,11 +5,10 @@
     justify-content: center;
     height: 100vh;
     text-align: center;
-    padding: 0 15px; /* Padding to avoid text being too close to the edges */
+    padding: 0 15px; 
     background-color: rgb(147, 114, 186);
-  }
-  
-  /* Styling for the Coming Soon text */
+  }  
+ 
   .coming-soon-text {
     font-family: 'Arial', sans-serif;
     font-size: 80px;
