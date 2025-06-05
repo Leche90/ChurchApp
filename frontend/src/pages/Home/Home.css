@@ -350,7 +350,6 @@
   margin-top: 0px;
 }
 
-/* Right section (Text) */
 .leader-right {
   flex-basis: 54%;
   display: flex;
@@ -359,7 +358,6 @@
   margin-top: 0px;
 }
 
-/* Image styling */
 .leader-img {
   width: 90%;
   aspect-ratio: 1 / 1;
@@ -381,7 +379,6 @@
   margin-top: -25px;
 }
 
-/* Text styling */
 .pastor-paragraph {
   color: #333;
   font-size: 15px;
@@ -390,7 +387,6 @@
   margin-top: -20px;
 }
 
-/* Container for teachings */
 .teachings-container {
   padding: 0rem 2rem;
   background-color: #ffffff;
@@ -399,7 +395,6 @@
   width: 100%;
 }
 
-/* Header for teachings */
 .teachings-h2 {
   text-align: center;
   font-size: 37px;
@@ -409,16 +404,14 @@
   position: relative;
 }
 
-/* Flex container for the grid of cards */
 .teachings-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 12px;
-  max-width: 1100px; /* Optional max-width to control card size */
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Each card styling */
 .teachings-card {
   background-color: #fefefe;
   overflow: hidden;
@@ -437,18 +430,16 @@
   padding: 1.5rem;
 }
 
-/* Image Styling */
 .word-img {
   width: 300px;
   height: 300px;
   object-fit: cover;
   border-radius: 50%;
-  padding: 1rem;
-  /* border: 3px solid #42007b; */
+  padding: 1rem; 
   margin-top: 0;
   filter: brightness(0.96);
   transition: filter 0.3s ease;
-} /* #82C44B */
+}
 
 .teachings-card:hover .word-image {
   filter: brightness(1);
@@ -470,18 +461,20 @@
   position: relative;
 }
 
-/* Video Modal Styles */
 .video-modal {
   position: fixed;
-  top: 60%;
+  top: 58%;
   left: 57%;
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 1000px;
   height:70vh;
   background: transparent;
-  border: none;
-  outline: none;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible;
   z-index: 1000;
 }
 
@@ -500,11 +493,28 @@
   position: relative;
   width: 100%;
   height: 100%;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.video-modal iframe {
+  border: none !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.video-modal:focus, 
+.modal-content:focus, 
+iframe:focus {
+  outline: none !important;
 }
 
 .close-modal {
   position: absolute;
-  top: -40px;
+  top: -20px;
   right: -40px;
   background: transparent;
   border: none;
@@ -513,7 +523,6 @@
   z-index: 1001;
 }
 
-/* Play Button Styles */
 .image-container {
   position: relative;
 }
@@ -548,10 +557,327 @@
 }
 
 .word-link:hover {
-  background-color: #ffffff; /* 15% lighter */
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Matching glow */
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
 .word-link:active {
   transform: translateY(2px);
+}
+
+@media (max-width: 30rem) {
+  /* Hero Section */
+  .hero {
+    height: 45vh;
+    margin-bottom: 10px;
+    background-position: 65% center; /* Better mobile cropping */
+  }
+
+  .hero-text h1 {
+    font-size: 1.7rem !important;
+    margin-top: 50px;
+    text-shadow: 
+      -1px -1px 0px #353535, 
+      1px 1px 0px #353535;
+    animation: none; /* Disable complex animation on mobile */
+  }
+
+  .hero-p {
+    font-size: 0.875rem !important;
+    margin: 0 2rem !important;
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  .join-btn {
+    margin-top: 40px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.875rem;
+  }
+
+  .service-container {
+    padding: 2rem 1rem !important;
+    margin-top: 60px !important;
+  }
+
+  .service-h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-description {
+    font-size: 0.675rem !important;
+    margin: 0 1rem 1.5rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    max-width: 80%;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .service-card {
+    padding: 0.3rem 1rem !important;
+    border-radius: 25px;
+  }
+
+  .events-h2 {
+    font-size: 1.8rem;
+  }
+
+  .expanding-cards {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .card {
+    flex: 1 0 200px;
+    margin-bottom: 0.5rem;
+  }
+
+  .card.active {
+    flex: 1 0 350px;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  /* Leadership Section */
+  .leader-container {
+    height: auto;
+    padding: 1rem 1rem;
+    background-attachment: scroll; /* Disable parallax on mobile */
+    margin-bottom: 3rem;
+  }
+
+  .leader {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .leader-left, 
+  .leader-right {
+    flex-basis: 100%;
+  }
+
+  .leader-img {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .lead-pastor {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.9rem;
+  }
+
+  .pastor {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+
+  .pastor-paragraph {
+    font-size: 0.875rem;
+    text-align: left;
+  }
+
+  /* Teachings Section */
+  .teachings-h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .teachings-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .word-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .video-modal {
+    top: 50%;
+    left: 60%;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .close-modal {
+    top: -30px;
+    right: 0;
+  }
+
+  .play-button {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Tiny Mobile Devices (below 360px) */
+@media (max-width: 22.5rem) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-p {
+    font-size: 0.9rem;
+  }
+
+  .service-card {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Tablet Styles (48rem - 64rem) */
+@media (min-width: 48rem) and (max-width: 64rem) {
+  /* Hero Section Adjustments */
+  .hero {
+    height: clamp(28rem, 80vh, 35rem);
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(3rem, 6vw, 4rem);
+    margin-top: 7rem;
+    text-shadow: 
+      -0.05rem -0.05rem 0 #353535,
+      0.15rem 0.15rem 0 #353535;
+  }
+
+  .hero-p {
+    font-size: 1.125rem;
+    padding: 0 3rem;
+    max-width: 45rem;
+  }
+
+  .join-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Services Grid */
+  .service-container {
+    padding: 3rem 2rem;
+    margin-top: 6rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    max-width: 50rem;
+    gap: 1.75rem;
+  }
+
+  .service-card {
+    padding: 1.25rem;
+    border-radius: 3.5rem;
+  }
+
+  .service-h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Events Section */
+  .expanding-cards {
+    height: 35rem;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .card {
+    flex: 1 0 8rem;
+  }
+
+  .card.active {
+    flex: 1 0 25rem;
+  }
+
+  .card-content {
+    padding: 1.75rem;
+  }
+
+  /* Leadership Section */
+  .leader-container {
+    height: 32rem;
+    padding: 0 5%;
+  }
+
+  .leader {
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .leader-left {
+    flex-basis: 35%;
+  }
+
+  .leader-right {
+    flex-basis: 60%;
+  }
+
+  .leader-img {
+    width: 100%;
+  }
+
+  /* Teachings Grid */
+  .teachings-grid {
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    gap: 1.5rem;
+    max-width: 50rem;
+  }
+
+  .word-img {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  /* Video Modal */
+  .video-modal {
+    width: 85%;
+    height: 60vh;
+  }
+
+  .play-button {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  /* Utility Adjustments */
+  .section-row {
+    padding: 0 2.5rem;
+  }
+
+  .comm-header {
+    font-size: 1.5rem;
+  }
+
+  .comm-p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Tablet Styles (64rem - 75rem) */
+@media (min-width: 64rem) and (max-width: 75rem) {
+  .hero-text h1 {
+    font-size: 4.5rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(3, minmax(15rem, 1fr));
+  }
+
+  .teachings-grid {
+    grid-template-columns: repeat(3, minmax(16rem, 1fr));
+  }
+
+  .expanding-cards {
+    height: 40rem;
+  }
 }
