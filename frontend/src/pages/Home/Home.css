@@ -803,7 +803,6 @@ iframe:focus {
     padding: 1.75rem;
   }
 
-  /* Leadership Section */
   .leader-container {
     height: 32rem;
     padding: 0 5%;
@@ -826,7 +825,6 @@ iframe:focus {
     width: 100%;
   }
 
-  /* Teachings Grid */
   .teachings-grid {
     grid-template-columns: repeat(2, minmax(18rem, 1fr));
     gap: 1.5rem;
@@ -838,10 +836,11 @@ iframe:focus {
     height: 16rem;
   }
 
-  /* Video Modal */
   .video-modal {
-    width: 85%;
-    height: 60vh;
+    width: 100%;
+    height: 48vh;
+    top: 55%;
+    left: 60%;
   }
 
   .play-button {
@@ -849,7 +848,6 @@ iframe:focus {
     height: 5rem;
   }
 
-  /* Utility Adjustments */
   .section-row {
     padding: 0 2.5rem;
   }
