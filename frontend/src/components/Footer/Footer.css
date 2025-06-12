@@ -80,3 +80,215 @@
     font-size: 0.9rem;
     opacity: 0.8;
 }
+
+@media (max-width: 30rem) {
+  .footer {
+    padding: 30px 15px;
+    margin-top: 80px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    min-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .footer-column a {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .footer-container {
+    padding: 0;
+  }
+
+  .footer-top {
+    gap: 10px;
+  }
+
+  .footer-brand {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .social-links {
+    gap: 20px;
+    margin-top: -0.5rem;
+  }
+
+  .social-links a {
+    font-size: 20px;
+  }
+
+  .footer-bottom {
+    margin-top: 25px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 30.0625rem) and (max-width: 48rem) {
+  .footer {
+    padding: 40px 20px;
+    margin-top: 100px;
+  }
+
+  .footer-links {
+    gap: 30px;
+    margin-top: 25px;
+    justify-content: space-around;
+  }
+
+  .footer-column {
+    min-width: 160px;
+  }
+
+  .footer-column h4 {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .footer-column a {
+    font-size: 14px;
+  }
+
+  .footer-container {
+    padding: 10px;
+  }
+
+  .footer-top {
+    gap: 8px;
+  }
+
+  .footer-brand {
+    font-size: 22px;
+  }
+
+  .social-links {
+    gap: 18px;
+  }
+
+  .social-links a {
+    font-size: 22px;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+}
+
+/* iPad Specific Styles (810px - 1080px) */
+@media (min-width: 50.625rem) and (max-width: 67.5rem) {
+  .footer {
+    padding: 50px 40px;
+    margin-top: 110px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 35px;
+    text-align: left;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }  
+
+  .footer-column h4 {
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: #ffffff;    
+  }
+  
+  .footer-column:last-child h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .footer-column a {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .footer-container {
+    max-width: 1000px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-brand {
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .social-links a {
+    font-size: 22px;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    font-size: 14px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* Landscape orientation adjustments */
+  @media (orientation: landscape) {
+    .footer-links {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    
+    .footer {
+      padding: 40px 60px;
+    }
+
+    /* Keep Follow Us centered in landscape */
+    .footer-column:last-child {
+      grid-column: 2 / span 1; /* Centers it in the middle column */
+      text-align: center;
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+}

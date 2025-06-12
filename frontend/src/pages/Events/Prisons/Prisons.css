@@ -31,34 +31,49 @@
       transform: rotateX(0deg) rotateY(0deg);
     }
   }
- 
-  /* Responsive Styles for Different Screen Sizes */
   
-  /* For larger screens (Desktop) */
+/* Desktop (1024px and above) */
   @media (min-width: 1024px) {
     .coming-soon-text {
       font-size: 100px;
     }  
   }
   
-  /* For Tablets (768px to 1024px) */
+/* Tablet Landscape (768px - 1023px) */
   @media (max-width: 1024px) and (min-width: 768px) {
-    .coming-soon-text {
-      font-size: 80px;
-    }  
+    .coming-soon-container { 
+      height: 70vh !important; }
+    .coming-soon-text { 
+      font-size: 70px; }
   }
   
-  /* For Small Screens (Mobile) */
-  @media (max-width: 767px) {
-    .coming-soon-text {
-      font-size: 50px;
-    }  
+/* Tablet Portrait (600px - 767px) */
+  @media (max-width: 767px) and (min-width: 600px) {
+  .coming-soon-container { 
+    height: 60vh !important; }
+  .coming-soon-text { 
+    font-size: 60px;
+    letter-spacing: 3px;
   }
+}
   
-  /* For Extra Small Screens (Portrait Phones) */
-  @media (max-width: 480px) {
-    .coming-soon-text {
-      font-size: 40px;
-    }  
+/* Mobile (480px - 599px) */
+  @media (max-width: 599px) and (min-width: 481px) {
+  .coming-soon-container { 
+    height: 50vh !important; }
+  .coming-soon-text { 
+    font-size: 50px;
+    letter-spacing: 2px;
   }
-  
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .coming-soon-container { 
+    height: 40vh !important; }
+  .coming-soon-text { 
+    font-size: 36px;
+    letter-spacing: 1px;
+    animation: text3d 1.2s infinite alternate ease-in-out;
+  }
+}

@@ -9,10 +9,6 @@
   position: relative;
 }
 
-/* * {
-  outline: 1px solid rgba(255, 0, 0, 0.1);
-}  */
-
 .teachings-card-second {
   position: absolute;
   inset: 0;
@@ -39,7 +35,7 @@
   color: #ffffff;
   letter-spacing: 1px;
   font-weight: 600;
-  margin-top: 15%;
+  margin-top: 16%;
 }
   
 .headings-title-p {
@@ -89,17 +85,6 @@
   height: 10rem;
   object-fit: cover;
 }
-  
-  /* .series-play-button {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 0.3s;
-  } */
   
 .sermon-card:hover .play-button {
   opacity: 1;
@@ -161,12 +146,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;  
-}
-
-.sermon-image-container:hover .sermon-play-button {
   opacity: 1;
+  transition: opacity 0.3s ease;  
 }
 
 /* Modal Overlay */
@@ -174,6 +155,8 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -226,12 +209,10 @@
 
 /* iPad Specific Styles (810px - 1080px) */
 @media (min-width: 50.625rem) and (max-width: 67.5rem) {
-  /* Container & Layout */
   .teachings-container {
     padding: 0 2rem;
   }
 
-  /* Header Section */
   .teachings-header {
     height: 25rem;
     margin-bottom: 2.5rem;
@@ -248,8 +229,8 @@
 
   .teachings-h1 {
     font-size: 3rem;
-    margin-top: 20%;
-    margin-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0.1rem;
     text-align: center;
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
@@ -263,7 +244,6 @@
     margin-top: 0;
   }
 
-  /* Sermons Grid */
   .sermons-section {
     padding: 2rem 1.5rem;
   }
@@ -284,7 +264,7 @@
   }
 
   .sermon-card {
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -319,7 +299,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 1;
     transition: all 0.3s ease;
   }
 
@@ -350,27 +330,29 @@
     color: #666;
   }
 
-  /* Video Modal */
   .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
     z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 0;
+    overflow: hidden;
   }
 
   .modal-content {
     position: relative;
     width: 85%;
+    max-height: 75vh;
     max-width: 900px;
     aspect-ratio: 16/9;
-    max-height: 75vh;
     background: #000;
     border-radius: 1rem;
     overflow: visible;
@@ -407,7 +389,6 @@
     color: #000;
   }
 
-  /* Landscape Orientation */
   @media (orientation: landscape) {
     .teachings-header {
       height: 30rem;
@@ -543,13 +524,14 @@
 /* Small Mobile Devices (max-width: 30rem/480px) */
 @media (max-width: 30rem) {  
   .teachings-header {
-    height: 40vh;
+    height: 35vh;
   }
 
   .teachings-h1 {
     font-size: 1.7rem;
-    margin-top: 38%;
+    margin-top: 50% !important;
     margin-bottom: 0.2rem;
+    text-align: center;
   }
 
   .sermon-image {

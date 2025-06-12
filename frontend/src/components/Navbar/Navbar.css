@@ -81,19 +81,16 @@
   z-index: 1000;
 }
 
-/* When navbar is scrolled, change hover colour to black */
 .navbar.scrolled .nav-links > li:not(.give-btn-container):hover > a {
   color: #333 !important;
 }
 
-/* Dim other items except Give button */
 .nav-links:hover > li:not(.give-btn-container):not(:hover) > a {
   transform: scale(0.9);
   opacity: 0.2;
   filter: blur(1px);
 }
 
-/* Ensure Give button is never affected */
 .give-btn-container a,
 .give-btn-container:hover a {
   transform: none !important;
@@ -220,6 +217,103 @@
 
 .give-btn:hover {
   background-color: #3a0068;
+}
+
+/* Mobile Styles (max-width: 480px) */
+@media (max-width: 30rem) {
+  .navbar {
+    padding: 5px 4% !important;
+    height: 60px;
+  }
+
+  .navbar.scrolled {
+    padding: 5px 4% !important;
+  }
+
+  .logo {
+    width: 130px !important;
+    margin-top: 0;
+  }
+
+  .navbar.scrolled .logo {
+    width: 120px !important;
+  }
+
+  .hamburger {
+    font-size: 1.4rem;
+    padding: 5px;
+  }
+
+  /* Mobile menu */
+  .nav-links {
+    top: 60px !important;
+    height: calc(100vh - 60px) !important;
+    padding-top: 15px !important;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(5px);
+  }
+
+  .nav-links li {
+    margin: 8px 0 !important;
+    padding: 0 15px;
+  }
+
+  .nav-links li a {
+    font-size: 16px !important;
+    padding: 10px 0 !important;
+    color: #333 !important;
+  }
+
+  /* Disable hover effects on mobile */
+  .nav-links > li:not(.give-btn-container):hover > a,
+  .nav-links > li:hover > a,
+  .nav-links:hover > li:not(:hover) > a {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    color: #4B0082 !important;
+  }
+
+  /* Events dropdown */
+  .events-dropdown {
+    background-color: rgba(242, 242, 242, 0.9) !important;
+    margin-top: 5px;
+    border-radius: 8px !important;
+    width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .events-dropdown li a {
+    padding: 8px 15px !important;
+    font-size: 15px !important;
+  }
+
+  .events-dropdown li a:hover {
+    padding-left: 20px !important;
+  }
+
+  /* Give button */
+  .give-btn {
+    padding: 8px 16px !important;
+    font-size: 15px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Caret icon */
+  .nav-links li a .fa-caret-down {
+    margin-left: 3px !important;
+    font-size: 0.9em !important;
+  }
+
+  /* Transparent navbar text color */
+  .navbar:not(.scrolled) .hamburger {
+    color: white !important;
+  }
+
+  .navbar.scrolled .hamburger {
+    color: #333 !important;
+  }
 }
 
 /* Mobile Styles */
