@@ -116,6 +116,7 @@
 .about-p {
   text-align: justify;
   margin: 0 clamp(1rem, 5%, 1.875rem);
+  font-weight: 400 !important;
 }
 
 .text-author {
