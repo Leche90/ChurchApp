@@ -1,17 +1,18 @@
 {
-  "version": 2,
+  "projects": {},
   "builds": [
     {
-      "src": "vite.config.ts",
+      "src": "frontend/index.html",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist",
-        "framework": "vite"
+        "distDir": "frontend/dist"
       }
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
