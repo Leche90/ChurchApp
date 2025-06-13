@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "types": [
+      "node",
+      "react",
+      "react-dom",
+      "estree"
+    ],
     "target": "es6",
     "lib": [
       "dom",

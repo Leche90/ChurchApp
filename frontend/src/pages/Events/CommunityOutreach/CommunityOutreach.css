@@ -43,9 +43,9 @@
   
   .year-intro {
     font-size: clamp(0.875rem, 1.5vw, 1rem);
-    font-weight: 500;
+    font-weight: 400;
     color: #313131;
-    padding: 0 clamp(2rem, 5%, 1rem);
+    padding: 0 clamp(0rem, 5%, 0.7rem);
     margin-bottom: 2rem;
     line-height: 1.7;
   }
@@ -169,12 +169,12 @@
   }
 
   .lightbox .prev {
-    left: 22%;
+    left: 15%;
     font-size: 30px;
   }
 
   .lightbox .next {
-    right: 22%;
+    right: 15%;
     font-size: 30px;
   }
 
@@ -406,5 +406,108 @@
 
   .lightbox .next {
     right: 3%;
+  }
+}
+
+/* Tablet Styles (769px - 1024px) */
+@media (min-width: 48.01rem) and (max-width: 64rem) {
+  .community-header {
+    height: clamp(18rem, 45vw, 22rem);
+    padding: 1.5rem;
+  }
+
+  .community-outreach-h1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .community-p {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    max-width: 50rem;
+  }
+
+  .year-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-row {
+    padding: 1.5rem clamp(1.5rem, 5%, 2rem);
+    gap: 1.5rem;
+  }
+
+  .year-heading {
+    font-size: clamp(1.5rem, 2.8vw, 1.8rem);
+    margin: -1rem 0 0.5rem;
+  }
+
+  .year-intro {
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .image-gallery {
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-top: 1.5rem;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.8rem, 1.5vw, 1rem);
+  }
+
+  .image-hover-effect {
+    width: clamp(12rem, 25vw, 15rem);
+    height: clamp(12rem, 25vw, 15rem);
+    border-radius: 0.4rem;
+  }
+
+  .image-hover-effect:hover {
+    transform: scale(0.92);
+    opacity: 0.6;
+  }
+
+  .view-more-container {
+    margin-bottom: -2rem;
+  }
+
+  .view-more-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+  }
+
+  /* Lightbox adjustments */
+  .lightbox img {
+    max-width: 85%;
+    max-height: 85%;
+  }
+
+  .lightbox .close {
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .lightbox .close {
+    top: 15rem;
+    right: 3.2rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    background: none;
+    line-height: 1;
+    color: #fff;
+  }
+
+  .lightbox .prev,
+  .lightbox .next {
+    padding: 0.7rem 1rem;
+    font-size: 2rem;
+  }
+
+  .lightbox .prev {
+    left: 1%;
+  }
+
+  .lightbox .next {
+    right: 1%;
   }
 }
