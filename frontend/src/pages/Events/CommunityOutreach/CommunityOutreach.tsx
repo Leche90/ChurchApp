@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './CommunityOutreach.css';
-import feast from '/home/lleche/ChurchApp/frontend/src/assets/optimized/feast.webp';
+import feast from '../../../assets/optimized/feast.webp';
 
 // Importing images for the 2024 BBQ Hangout
 import hangout2 from '/assets/2024/hangout2.jpg';
