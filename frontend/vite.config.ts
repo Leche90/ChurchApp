@@ -5,27 +5,39 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': './src'
+      '@': '/src' // Changed from './src' to '/src'
     }
   },
+  // Add this base configuration
+  base: './', // Critical for correct asset paths in production
+  
+  // Production-specific build settings
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true, // Clears dist folder before build
+    sourcemap: false, // Disable for production
+    rollupOptions: {
+      output: {
+        manualChunks: undefined // Prevents unexpected chunk splitting
+      }
+    }
+  },
+  
+  // Development-only settings (Vercel ignores these in production)
   server: {
-    host: '0.0.0.0', // Add this line
-    port: 5173, // Explicitly set port
-    strictPort: true, // Don't try other ports
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
     hmr: {
-      clientPort: 0 // Force HMR to use same port
+      clientPort: 0
     },
     proxy: {
       '/api': {
         target: 'http://localhost:5000',
         changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
         ws: true
       }
-    },
-    headers: {
-      "Cache-Control": "public, max-age=3600, must-revalidate"
     }
   }
 })
