@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { Play } from 'lucide-react'
 import './Teachings.css'
-import wordforImage from '../../assets/wordfor.jpg'
+import wordforImage from '../../assets/optimized/wordfor.webp'
 import preacherImage from '../../assets/preacher.jpg'
-import scripturesImage from '../../assets/scriptures.jpg'
-import timeImage from '../../assets/time.jpg'
-import planImage from '../../assets/plan.jpg'
-import strategicImage from '../../assets/strategic.jpg'
-import praiseImage from '../../assets/praise.jpg'
+import scripturesImage from '../../assets/optimized/scriptures.webp'
+import timeImage from '../../assets/optimized/time.webp'
+import planImage from '../../assets/optimized/plan.webp'
+import strategicImage from '../../assets/optimized/strategic.webp'
+import praiseImage from '../../assets/optimized/praise.webp'
 import handImage from '../../assets/hand.jpg'
-import burdenImage from '../../assets/burden.jpg'
+import burdenImage from '../../assets/optimized/burden.webp'
 
 const youtubeLinks: { [key: number]: string } = {
   1: 'https://www.youtube.com/embed/3aCfFoH_PE4?rel=0&modestbranding=1',

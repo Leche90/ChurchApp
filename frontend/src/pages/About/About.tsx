@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import about from '../../assets/strategic.jpg'
+import about from '../../assets/strategic.webp'
 import pastoratee from '../../assets/pastoratee.jpg'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 

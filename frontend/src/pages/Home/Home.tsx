@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom';
 import { Play, X } from 'lucide-react';
 import Modal from 'react-modal';
 import './Home.css';
-import worship from '../../assets/worship.jpg';
+import worship from '../../assets/worship.webp';
 import teaching from '../../assets/teaching.jpg';
 import prayer from '../../assets/prayer.jpg';
 import leader from '../../assets/leader.jpg';
 import August from '../../assets/August.jpg';
-import June from '../../assets/June.jpg';
+import June from '../../assets/optimized/June.webp';
 import July from '../../assets/July.jpg';
-import praise from '/home/lleche/ChurchApp/frontend/src/assets/Prayers.jpg';
+import praise from '/home/lleche/ChurchApp/frontend/src/assets/Prayers.webp';
 import Strong from '/home/lleche/ChurchApp/frontend/src/assets/Strong.jpg';
 import Rebuild from '/home/lleche/ChurchApp/frontend/src/assets/Rebuild.jpg';
 import Survive from '/home/lleche/ChurchApp/frontend/src/assets/Survive.jpg';
 import pst from '/home/lleche/ChurchApp/frontend/src/assets/pst.jpg';
 import { motion } from 'framer-motion';
 import { FaCalendar } from 'react-icons/fa';
-// import barbecuees from '/home/lleche/ChurchApp/frontend/src/assets/barbecuees.jpg';
+// import barbecuees from '/home/lleche/ChurchApp/frontend/src/assets/barbecuees.webp';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 
