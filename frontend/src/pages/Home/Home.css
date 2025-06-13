@@ -837,10 +837,10 @@ iframe:focus {
   }
 
   .video-modal {
-    width: 100%;
+    width: 95%;
     height: 48vh;
     top: 55%;
-    left: 60%;
+    left: 55%;
   }
 
   .play-button {
@@ -877,5 +877,12 @@ iframe:focus {
 
   .expanding-cards {
     height: 40rem;
+  }
+
+  .video-modal {
+    width: 95%;
+    height: 48vh;
+    top: 55%;
+    left: 60% !important;
   }
 }

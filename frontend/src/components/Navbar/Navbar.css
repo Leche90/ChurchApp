@@ -222,8 +222,8 @@
 /* Mobile Styles (max-width: 480px) */
 @media (max-width: 30rem) {
   .navbar {
-    padding: 5px 4% !important;
-    height: 60px;
+    padding: 5px 7% !important;
+    height: 90px;
   }
 
   .navbar.scrolled {

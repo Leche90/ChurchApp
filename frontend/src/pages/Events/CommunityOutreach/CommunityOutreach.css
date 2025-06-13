@@ -292,11 +292,11 @@
   }
 
   .lightbox .prev {
-    left: 15%;
+    left: 1%;
   }
 
   .lightbox .next {
-    right: 15%;
+    right: 1%;
   }
 
   .image-grid .image-hover-effect:nth-child(n+3) {
@@ -390,11 +390,21 @@
     font-size: 1rem;
   }
 
+   .lightbox .close {
+    top: 15rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    background: none;
+    line-height: 1;
+    color: #fff;
+  }
+
   .lightbox .prev {
-    left: 15%;
+    left: 3%;
   }
 
   .lightbox .next {
-    right: 15%;
+    right: 3%;
   }
 }

@@ -28,7 +28,10 @@ const Navbar: React.FC = () => {
 
   const toggleEventsDropdown = (e: React.MouseEvent) => {
     e.preventDefault();
-    setIsEventsDropdownOpen(!isEventsDropdownOpen);
+    e.stopPropagation(); // Critical: Isolate this click
+  
+    // Toggle with explicit close
+    setIsEventsDropdownOpen(prev => !prev);
   };
 
   const closeAllMenus = () => {
