@@ -183,7 +183,7 @@ const Home: React.FC = () => {
       <div className="hero-wrapper">
         <div className="hero">
           <div className="hero-text">
-            <h1>KINGMAKERS' FAMILY</h1>
+            <h1>WE ARE FAMILY</h1>
             <p className="hero-p">
                 <span ref={typedRef}></span>
             </p>
