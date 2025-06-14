@@ -214,7 +214,7 @@
   }
 
   .teachings-header {
-    height: 25rem;
+    height: 25rem !important;
     margin-bottom: 2.5rem;
     background-size: cover;
     background-position: center;
