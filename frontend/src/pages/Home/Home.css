@@ -569,7 +569,7 @@ iframe:focus {
   /* Hero Section */
   .hero {
     height: 50vh;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     background-position: 65% center; /* Better mobile cropping */
   }
 
@@ -718,21 +718,6 @@ iframe:focus {
   .play-button {
     width: 60px;
     height: 60px;
-  }
-}
-
-/* Tiny Mobile Devices (below 360px) */
-@media (max-width: 22.5rem) {
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-p {
-    font-size: 0.9rem;
-  }
-
-  .service-card {
-    padding: 1rem 0.5rem;
   }
 }
 
