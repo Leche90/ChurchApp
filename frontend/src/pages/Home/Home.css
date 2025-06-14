@@ -568,13 +568,13 @@ iframe:focus {
 @media (max-width: 30rem) {
   /* Hero Section */
   .hero {
-    height: 45vh;
+    height: 50vh;
     margin-bottom: 10px;
     background-position: 65% center; /* Better mobile cropping */
   }
 
   .hero-text h1 {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
     margin-top: 50px;
     text-shadow: 
       -1px -1px 0px #353535, 
