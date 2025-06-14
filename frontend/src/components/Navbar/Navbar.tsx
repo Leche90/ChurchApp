@@ -4,6 +4,7 @@ import logowhite from '../../assets/logowhite.png';
 import logoblack from '../../assets/logoblack.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTimes, faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar: React.FC = () => {

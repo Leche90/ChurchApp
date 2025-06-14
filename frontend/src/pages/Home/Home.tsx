@@ -143,7 +143,7 @@ const Home: React.FC = () => {
     {
       title: 'Staying Strong in the Face of Opposition',
       youtubeLink: 'https://www.youtube.com/watch?v=EF2LijgjMmM&t=22s?rel=0',
-      image: Strong,
+      image: strong,
     },
     {
       title: 'Returning to Build',
