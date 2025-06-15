@@ -142,12 +142,12 @@ const Home: React.FC = () => {
   const word = [
     {
       title: 'Staying Strong in the Face of Opposition',
-      youtubeLink: 'https://www.youtube.com/watch?v=EF2LijgjMmM&t=22s?rel=0',
+      youtubeLink: 'https://www.youtube.com/watch?v=EF2LijgjMmM?rel=0',
       image: strong,
     },
     {
       title: 'Returning to Build',
-      youtubeLink: 'https://www.youtube.com/watch?v=B0qMXmMhfpE&t=1s?rel=0',
+      youtubeLink: 'https://www.youtube.com/watch?v=B0qMXmMhfpE&t=9s?rel=0',
       image: Rebuild,
     },
     {
