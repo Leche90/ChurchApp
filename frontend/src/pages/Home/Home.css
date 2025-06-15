@@ -569,7 +569,7 @@ iframe:focus {
 @media (max-width: 30rem) {
   /* ===== Hero Section ===== */
   .hero {
-    height: 50vh;
+    height: 45vh;
     margin-bottom: 0.625rem;
     background-position: 65% center;
     background-size: cover;
@@ -597,7 +597,7 @@ iframe:focus {
     margin-top: 2.5rem;
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
-    min-width: 60%;
+    min-width: 50%;
   }
 
   /* ===== Services Section ===== */
@@ -688,13 +688,13 @@ iframe:focus {
   .lead-pastor {
     font-size: 1.5rem;
     text-align: center;
-    margin: 1rem 0 1.2rem;
+    margin-bottom: 1.8rem;
   }
 
   .pastor {
     font-size: 1.7rem;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .pastor-paragraph {

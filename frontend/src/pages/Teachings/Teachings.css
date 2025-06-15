@@ -524,12 +524,12 @@
 /* Small Mobile Devices (max-width: 30rem/480px) */
 @media (max-width: 30rem) {  
   .teachings-header {
-    height: 35vh;
+    height: 30vh;
   }
 
   .teachings-h1 {
-    font-size: 1.7rem;
-    margin-top: 50% !important;
+    font-size: 2rem;
+    margin-top: 35% !important;
     margin-bottom: 0.2rem;
     text-align: center;
   }
@@ -543,12 +543,12 @@
   }
 
   .sermon-title {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
 
   .sermon-preacher,
   .sermon-meta {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .modal-overlay {
