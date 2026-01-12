@@ -1,0 +1,915 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap');
+
+.hero {
+  position: relative;
+  width: 100%;   
+  min-height: 80vh; /* Take up the full viewport height */
+  max-height: 1200px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), 
+              url('../../assets/hero.jpg') no-repeat center center;
+  background-size: cover; /* Ensure the background covers the area */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+.hero-text {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-text h1 {
+  font-size: clamp(6rem, 10vw, 6.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 2rem 0 1rem;
+  letter-spacing: -0.5px;
+
+  /* Modern 3D Effect */
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  
+  /*  Modern 3D Effect - Simplified for mobile */
+  text-shadow: 
+      -0.5px -0.5px 0px #353535, 
+      1px 1px 0px #353535;      
+  
+  /* 3D Bounce Animation */
+  animation: bounce3D 3s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-text h1 {
+      animation: none;
+  }
+}
+
+/* Keyframes for Bouncing & Depth Effect */
+@keyframes bounce3D {
+  0%, 100% {
+      transform: translateY(0);
+      text-shadow:
+        -0.5px -0.5px 0px #353535, 
+        1px 1px 0px #353535;
+  }
+  50% {
+      transform: translateY(-8px);
+      text-shadow: 
+        -1px -1px 0px #353535, 
+        2px 2px 0px #353535;
+  }
+}
+
+.hero-p {
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  margin: 0 auto;
+  line-height: 1.6;
+  padding: 0 clamp(1rem, 5vw 4rem);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+}
+
+.typed-cursor {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.join-btn b {
+  margin-left: 5px; /* Adds space between 'US' and 'LIVE' */
+  color: #ffffff;
+}
+
+.join-btn {
+  margin-top: 50px;
+  background-color: #4B0082;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.join-btn:hover {
+  background-color: #5A1A9A;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(91, 26, 154, 0.7); /* Matching glow */
+  transform: translateY(-3px);
+  animation: pulse 1.5s infinite alternate;
+}
+
+.join-btn a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+.service-container {
+  display: flex;
+  flex-direction: column;
+  /* background-color:  #fbfbfb; */
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 80px;  
+}
+
+.service-h2 {
+  font-size: 28px;
+  font-weight: 500px;
+  color: #313131;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.service-description {
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  color: #666; /* Equivalent to text-gray-600 */
+  margin-top: 13px;
+  margin-bottom: 30px;
+  align-items: center;
+  text-align: center;
+}
+
+/* Grid for Service Cards */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Single column by default */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 650px; /* Optional max-width to control card size */
+  align-items: center;
+  padding: 0 20px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  color: #ffffff;
+  background-color: #6102c7;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card-icon {
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.service-h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.service-card-time {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -15px;
+  font-weight: 600;
+}
+
+.events-container {
+  width: 100%;
+  padding: 2rem 0rem;
+  /* overflow: hidden; */
+  position: relative;
+  margin-top: 0px;
+}
+
+.events-header {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.events-h2 {
+  font-weight: 700;
+  font-size: 37px;
+  color: #313131;  
+  margin-bottom: 0;
+}
+
+.expanding-cards {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  gap: 10px;
+  padding: 1.5rem;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  border-radius: 2px;  
+  transition: flex 0.7s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card.active {
+  flex: 4;
+}
+
+.card.active .event-image {
+  transform: scale(0.9); /* Slight zoom out when active */
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;  
+  color: #ffffff;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease 0.4s;
+}
+
+.card.active .card-content {
+  opacity: 1;
+}
+
+/* Blurred Background */
+.blur-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  transform: scale(1.05); /* Prevents edge gaps */
+  z-index: 1;
+  opacity: 0.3; /* Adjust opacity for better visibility */
+}
+
+/* Sharp Foreground Image */
+.event-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.comm-header {
+  font-size: 22px;
+  font-weight: 600;
+  color: #313131;
+  margin-bottom: -7px;
+  margin-top: 6px;
+}
+
+.comm-p {
+  font-size: 18px;
+  color: #313131;
+  margin-bottom: 7px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.comm-p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #73379e;
+}
+
+.leader-container {
+  position: relative;
+  margin-top: 60px;
+  padding-left: 7%;
+  padding-right: 7%;  
+  background: url('/frontend/src/assets/pst.jpg') no-repeat center center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.leader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 30px; /* Adds space between elements */
+  padding: 20px 3%; /* Adds some padding to prevent edge-cutting */
+  z-index: 3;
+  overflow: visible;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Left section (Image) */
+.leader-left {
+  flex-basis: 40%;
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.leader-right {
+  flex-basis: 54%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin-top: 0px;
+}
+
+.leader-img {
+  width: 90%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.lead-pastor {
+  font-size: 30px;
+  color: #333;
+  font-weight: 300;
+  margin-top: 0px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pastor {
+  font-size: 40px;
+  color: #333;
+  margin-top: -25px;
+}
+
+.pastor-paragraph {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: justify;
+  margin-top: -20px;
+}
+
+.teachings-container {
+  padding: 0rem 2rem;
+  background-color: #ffffff;
+  margin-top: 0px;
+  text-align: center;
+  width: 100%;
+}
+
+.teachings-h2 {
+  text-align: center;
+  font-size: 37px;
+  font-weight: 600;
+  color: #313131;
+  margin-top: 0px;
+  position: relative;
+}
+
+.teachings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.teachings-card {
+  background-color: #fefefe;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: #dcdcdc 1px solid;
+}
+
+.teachings-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.image-container {
+  position: relative;
+  padding: 1.5rem;
+}
+
+.word-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 1rem; 
+  margin-top: 0;
+  filter: brightness(0.96);
+  transition: filter 0.3s ease;
+}
+
+.teachings-card:hover .word-image {
+  filter: brightness(1);
+}
+
+.word-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.word-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-top: -45px;
+  position: relative;
+}
+
+.video-modal {
+  position: fixed;
+  top: 58%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1000px;
+  height:70vh;
+  background: transparent;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible;
+  z-index: 1000;
+}
+
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.video-modal iframe {
+  border: none !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.video-modal:focus, 
+.modal-content:focus, 
+iframe:focus {
+  outline: none !important;
+}
+
+.close-modal {
+  position: absolute;
+  top: -20px;
+  right: -40px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.image-container {
+  position: relative;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background: rgba(46, 46, 46, 0.8);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.word-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.word-link:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.word-link:active {
+  transform: translateY(2px);
+}
+
+/* Mobile-first styles (0-480px) */
+@media (max-width: 30rem) {
+  /* ===== Hero Section ===== */
+  .hero {
+    height: 45vh;
+    margin-bottom: 0.625rem;
+    background-position: 65% center;
+    background-size: cover;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+    margin: 3.125rem 0 0;
+    text-shadow: 
+      -1px -1px 0 #353535, 
+      1px 1px 0 #353535;
+    animation: none;
+    line-height: 1.2;
+  }
+
+  .hero-p {
+    font-size: 0.875rem;
+    margin: 0 2rem;
+    padding: 0;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
+
+  .join-btn {
+    margin-top: 2.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    min-width: 50%;
+  }
+
+  /* ===== Services Section ===== */
+  .service-container {
+    padding: 2rem 1rem;
+    margin-top: 3.75rem;
+  }
+
+  .service-h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-description {
+    font-size: 0.675rem;
+    margin: 0 1rem 1.5rem;
+    line-height: 1.4;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    max-width: 80%;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .service-card {
+    padding: 0.3rem 1rem;
+    border-radius: 1.5625rem;
+    min-height: 5rem;
+  }
+
+  /* ===== Events Section ===== */
+  .events-h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .expanding-cards {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .card {
+    flex: 1 0 12.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .card.active {
+    flex: 1 0 21.875rem;
+  }
+
+  .card-content {
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* ===== Leadership Section ===== */
+  .leader-container {
+    height: auto;
+    padding: 1rem;
+    background-attachment: scroll;
+    margin-bottom: 3rem;
+    background-size: cover;
+  }
+
+  .leader {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .leader-left, 
+  .leader-right {
+    flex-basis: 100%;
+  }
+
+  .leader-img {
+    width: 70%;
+    max-width: 15rem;
+    margin: 0 auto;
+    border: 3px solid white;
+  }
+
+  .lead-pastor {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.8rem;
+  }
+
+  .pastor {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .pastor-paragraph {
+    font-size: 0.875rem;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  /* ===== Teachings Section ===== */
+  .teachings-h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .teachings-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .word-img {
+    width: 12.5rem;
+    height: 12.5rem;
+    border: 2px solid #f0f0f0;
+  }
+
+  .video-modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 50vh;
+    max-height: 25rem;
+  }
+
+  .close-modal {
+    top: -1.875rem;
+    right: 0;
+    font-size: 1.5rem;
+  }
+
+  .play-button {
+    width: 3.75rem;
+    height: 3.75rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== Extra Small Devices (below 360px) ===== */
+@media (max-width: 22.5rem) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .hero-p {
+    font-size: 0.8rem;
+    margin: 0 1rem;
+  }
+
+  .service-card {
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+  }
+
+  .leader-img {
+    width: 60%;
+  }
+}
+
+/* Tablet Styles (48rem - 64rem) */
+@media (min-width: 48rem) and (max-width: 64rem) {
+  /* Hero Section Adjustments */
+  .hero {
+    height: clamp(28rem, 80vh, 35rem);
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(3rem, 6vw, 4rem);
+    margin-top: 7rem;
+    text-shadow: 
+      -0.05rem -0.05rem 0 #353535,
+      0.15rem 0.15rem 0 #353535;
+  }
+
+  .hero-p {
+    font-size: 1.125rem;
+    padding: 0 3rem;
+    max-width: 45rem;
+  }
+
+  .join-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Services Grid */
+  .service-container {
+    padding: 3rem 2rem;
+    margin-top: 6rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    max-width: 50rem;
+    gap: 1.75rem;
+  }
+
+  .service-card {
+    padding: 1.25rem;
+    border-radius: 3.5rem;
+  }
+
+  .service-h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Events Section */
+  .expanding-cards {
+    height: 35rem;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .card {
+    flex: 1 0 8rem;
+  }
+
+  .card.active {
+    flex: 1 0 25rem;
+  }
+
+  .card-content {
+    padding: 1.75rem;
+  }
+
+  .leader-container {
+    height: 32rem;
+    padding: 0 5%;
+  }
+
+  .leader {
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .leader-left {
+    flex-basis: 35%;
+  }
+
+  .leader-right {
+    flex-basis: 60%;
+  }
+
+  .leader-img {
+    width: 100%;
+  }
+
+  .teachings-grid {
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
+    gap: 1.5rem;
+    max-width: 50rem;
+  }
+
+  .word-img {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .video-modal {
+    width: 95%;
+    height: 48vh;
+    top: 55%;
+    left: 55%;
+  }
+
+  .play-button {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .section-row {
+    padding: 0 2.5rem;
+  }
+
+  .comm-header {
+    font-size: 1.5rem;
+  }
+
+  .comm-p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Tablet Styles (64rem - 75rem) */
+@media (min-width: 64rem) and (max-width: 75rem) {
+  .hero-text h1 {
+    font-size: 4.5rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(3, minmax(15rem, 1fr));
+  }
+
+  .teachings-grid {
+    grid-template-columns: repeat(3, minmax(16rem, 1fr));
+  }
+
+  .expanding-cards {
+    height: 40rem;
+  }
+
+  .video-modal {
+    width: 95%;
+    height: 48vh;
+    top: 55%;
+    left: 60% !important;
+  }
+}
