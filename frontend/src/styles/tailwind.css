@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+  background: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+a {
+  cursor: pointer;
+}
+
+.app-container {
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+/* Hide mobile elements on tablets and larger screens */
+@media (min-width: 1024px) {
+  .b2s_mobile {
+    display: none !important;
+  }
+}
+
+/* Hide desktop elements on mobile and smaller tablets */
+@media (max-width: 1023px) {
+  .b2s_desktop {
+    display: none !important;
+  }
+}
