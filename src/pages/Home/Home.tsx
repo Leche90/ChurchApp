@@ -231,6 +231,7 @@ const Home: React.FC = () => {
     </div>
 
     {/* Leadership */}
+    <h2 className="leader-h2">Meet the Senior Pastor</h2>
       <div className="leader-container">
         <div className="leader">
           <div className="leader-left">
