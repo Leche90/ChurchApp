@@ -15,7 +15,6 @@ import Contact from './pages/Contact/Contact';
 import CommunityOutreach from './pages/Events/CommunityOutreach/CommunityOutreach';
 import Prisons from './pages/Events/Prisons/Prisons';
 import Programs from './pages/Events/Programs/Programs';
-// import Modal from './components/Modal/Modal';
 
 const App: React.FC = () => {
   return (
