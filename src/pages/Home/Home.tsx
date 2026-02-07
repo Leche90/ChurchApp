@@ -294,8 +294,8 @@ const Home: React.FC = () => {
     <section className="teachings-immersive">
       <div className="teachings-header">
         <div className="header-left">
-          <span className="elevation-eyebrow">EQUIPPING THE SAINTS</span>
-          <h2 className="teachings-main-h2">The Word</h2>
+          <span className="elevation-eyebrow">EQUIPPING THE SAINTS WITH GOD'S WORD</span>
+          <h2 className="teachings-main-h2">LATEST SERMONS</h2>
         </div>
         <button className="view-all-btn">Browse Archive <ArrowRight size={16} /></button>
       </div>
