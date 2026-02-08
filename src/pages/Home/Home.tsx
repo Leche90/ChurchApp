@@ -83,21 +83,24 @@ const Home: React.FC = () => {
 
   const eventImages = [
     { src: June, 
-      alt: "Faith & Flames", 
+      title: "Faith & Flames",
+      description: "Join us for an evening of worship, fellowship, and BBQ at 5:00 PM.",
       month: "JUN", 
       day: 14, 
       time: "5:00 PM", 
       location: "582 Burrows Avenue"
     },
     { src: July, 
-      alt: "Gospel & Grill", 
+      title: "Gospel & Grill",
+      description: "Experience authentic connection over food and faith at 5PM.",
       month: "JUL", 
       day: 19, 
       time: "5:00 PM", 
       location: "582 Burrows Avenue"
     },
     { src: August, 
-      alt: "Feast & Fellowship", 
+      title: "Feast & Fellowship",
+      description: "Come hungry for both the Word and great food at 5:00 PM.",
       month: "AUG", 
       day: 16, 
       time: "5:00 PM", 
@@ -149,7 +152,7 @@ const Home: React.FC = () => {
       {/* Service Times Section */}
       <section className="service-immersive">
         <div className="service-header-wrap">
-          <span className="elevation-eyebrow">EXPERIENCE THE PRESENCE</span>
+          <span className="elevation-eyebrow">EXPERIENCE GOD'S PRESENCE</span>
           <h2 className="service-main-heading">Weekly Gatherings</h2>
           <p className="service-tagline">
             Whether in-person or online, there is a place for you to encounter God 
@@ -178,7 +181,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="service-footer-note">
-          <p>All times are in CST. </p>
+          <p>All times are in CST</p>
         </div>
       </section>
 
@@ -198,7 +201,7 @@ const Home: React.FC = () => {
 
           <div className="welcome-text-side">
             <div className="elevation-content-wrap">
-              <span className="elevation-eyebrow">WELCOME HOME</span>
+              <span className="welcome-eyebrow">WELCOME HOME</span>
               <h2 className="elevation-heading">We're glad <br/> you're here</h2>
               <div className="elevation-divider"></div>
               <p className="welcome-desc">
@@ -233,7 +236,7 @@ const Home: React.FC = () => {
 
           <div className="leadership-copy-side">
             <div className="leadership-header">
-              <span className="elevation-eyebrow">THE VISIONARY</span>
+              <span className="leadership-eyebrow">THE VISIONARY</span>
               <h2 className="leadership-name">Pastor <br/> Afam Eze</h2>
               <div className="leadership-line"></div>
             </div>
@@ -250,17 +253,18 @@ const Home: React.FC = () => {
               </p>
               
               <div className="leadership-signature">
-                <span className="sig-text">Faith. Purpose. Community.</span>
+                <span className="sig-text">PEACE & BLESSINGS TO YOU</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-            {/* Upcoming Events - The Gallery Hybrid */}
+            {/* Upcoming Events - Glassmorphism Hybrid */}
       <section className="events-immersive">
         <div className="events-top-meta">
           <h2 className="events-h2">Upcoming Events</h2>
+          <p className="events-subheading">Join us for our yearly barbecue and fellowship event which runs from June to August</p>
         </div>
 
         <div className="expanding-gallery">
@@ -269,21 +273,30 @@ const Home: React.FC = () => {
               key={index}
               className={`event-tile ${index === activeIndex ? 'is-active' : ''}`}
               onClick={() => setActiveIndex(index)}
+              onMouseEnter={() => setActiveIndex(index)} // Optional: expand on hover
             >
+              {/* Heavily blurred background - becomes abstract color mood */}
               <div className="tile-image-wrapper">
-                <img src={event.src} alt={event.alt} className="tile-img" />
+                <img 
+                  src={event.src} 
+                  alt="" 
+                  className="tile-img"
+                  aria-hidden="true" 
+                />
                 <div className="tile-overlay"></div>
               </div>
 
-              {/* Elevation-style date badge */}
+              {/* Floating date badge */}
               <div className="event-date-badge">
                 <span className="month">{event.month}</span>
                 <span className="day">{event.day}</span>
               </div>
 
+              {/* Glass card content */}
               <div className="tile-content">
-                <h3 className="tile-title">{event.alt}</h3>
-                <p className="tile-description">Join us for a life-changing experience. Everyone is welcome.</p>
+                <h3 className="tile-title">{event.title}</h3>
+                <p className="tile-description">{event.description}</p>                
+                    <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </div>
             </div>
           ))}
@@ -291,76 +304,79 @@ const Home: React.FC = () => {
       </section>      
 
           {/* Latest Teachings - Cinematic Media Library */}
-    <section className="teachings-immersive">
-      <div className="teachings-header">
-        <div className="header-left">
-          <span className="elevation-eyebrow">EQUIPPING THE SAINTS WITH GOD'S WORD</span>
-          <h2 className="teachings-main-h2">LATEST SERMONS</h2>
+      <section className="teachings-immersive">
+        <div className="teachings-header">
+          <div className="header-left">
+            <span className="teachings-eyebrow">EQUIPPING THE SAINTS WITH GOD'S WORD</span>
+            <h2 className="teachings-main-h2">LATEST SERMONS</h2>
+          </div>
+          <a href="/teachings" className="view-all-btn">
+            More sermons <ArrowRight size={16} />
+          </a>
+
         </div>
-        <button className="view-all-btn">Browse Archive <ArrowRight size={16} /></button>
-      </div>
 
-      <div className="teachings-featured-layout">
-        {word.slice(0, 3).map((item, index) => (
-          <div 
-            key={index} 
-            className={`teachings-card ${index === 0 ? 'featured-card' : 'standard-card'}`}
-            /* Triggers the video modal on click */
-            onClick={() => { setCurrentVideo(item.youtubeLink); setModalIsOpen(true); }}
-          >
-            <div className="card-media-wrapper">
-              <img src={item.image} alt={item.title} className="teaching-img" />
-              <div className="card-overlay-gradient"></div>
-              
-              <div className="play-indicator-wrap">
-                <div className="play-circle">
-                  <Play size={index === 0 ? 32 : 20} fill="currentColor" />
+        <div className="teachings-featured-layout">
+          {word.slice(0, 3).map((item, index) => (
+            <div 
+              key={index} 
+              className={`teachings-card ${index === 0 ? 'featured-card' : 'standard-card'}`}
+              /* Triggers the video modal on click */
+              onClick={() => { setCurrentVideo(item.youtubeLink); setModalIsOpen(true); }}
+            >
+              <div className="card-media-wrapper">
+                <img src={item.image} alt={item.title} className="teaching-img" />
+                <div className="card-overlay-gradient"></div>
+                
+                <div className="play-indicator-wrap">
+                  <div className="play-circle">
+                    <Play size={index === 0 ? 32 : 20} fill="currentColor" />
+                  </div>
                 </div>
-              </div>
 
-              <div className="teaching-metadata">
-                <span className="teaching-category">Latest Message</span>
-                <h3 className="teaching-title">{item.title}</h3>
-                {index === 0 && (
-                  <p className="teaching-excerpt">
-                    Experience this life-transforming message from Scriptures through God's servant.
-                  </p>
-                )}
-                <div className="teaching-actions">
-                  {/* Only 'Watch' remains, styled as a clean action link */}
-                  <span className="action-link"><Play size={14} fill="currentColor" /> WATCH NOW</span>
+                <div className="teaching-metadata">
+                  <span className="teaching-category">Latest Message</span>
+                  <h3 className="teaching-title">{item.title}</h3>
+                  {index === 0 && (
+                    <p className="teaching-excerpt">
+                      Experience this life-transforming message from Scriptures through God's servant.
+                    </p>
+                  )}
+                  <div className="teaching-actions">
+                    {/* Only 'Watch' remains, styled as a clean action link */}
+                    <span className="action-link"><Play size={14} fill="currentColor" /> WATCH NOW</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Re-adding the Video Modal within this section or at the bottom of the component */}
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        className="video-modal"
-        overlayClassName="video-modal-overlay"
-      >
-        <div className="modal-content">
-          <button className="close-modal" onClick={() => setModalIsOpen(false)}>
-            <X size={24} />
-          </button>
-          {currentVideo && (
-            <iframe
-              width="100%"
-              height="100%"
-              src={currentVideo.replace('watch?v=', 'embed/')}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          )}
+          ))}
         </div>
-      </Modal>
-    </section>
+
+        {/* Re-adding the Video Modal within this section or at the bottom of the component */}
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={() => setModalIsOpen(false)}
+          className="video-modal"
+          overlayClassName="video-modal-overlay"
+        >
+          <div className="modal-content">
+            <button className="close-modal" onClick={() => setModalIsOpen(false)}>
+              <X size={24} />
+            </button>
+            {currentVideo && (
+              <iframe
+                width="100%"
+                height="100%"
+                src={currentVideo.replace('watch?v=', 'embed/')}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            )}
+          </div>
+        </Modal>
+      </section>
     </div>
   );
 };
