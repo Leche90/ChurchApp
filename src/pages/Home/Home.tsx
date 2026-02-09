@@ -86,7 +86,7 @@ const Home: React.FC = () => {
       title: "Faith & Flames",
       description: "Join us for an evening of worship, fellowship, and BBQ at 5:00 PM.",
       month: "JUN", 
-      day: 14, 
+      day: 20, 
       time: "5:00 PM", 
       location: "582 Burrows Avenue"
     },
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
       title: "Gospel & Grill",
       description: "Experience authentic connection over food and faith at 5PM.",
       month: "JUL", 
-      day: 19, 
+      day: 18, 
       time: "5:00 PM", 
       location: "582 Burrows Avenue"
     },
@@ -102,7 +102,7 @@ const Home: React.FC = () => {
       title: "Feast & Fellowship",
       description: "Come hungry for both the Word and great food at 5:00 PM.",
       month: "AUG", 
-      day: 16, 
+      day: 15, 
       time: "5:00 PM", 
       location: "582 Burrows Avenue"
     }

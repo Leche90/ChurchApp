@@ -506,7 +506,7 @@
     rgba(255, 255, 255, 0.4) 0%,
     rgba(255, 255, 255, 0.1) 100%
   );
-  backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(90%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all 0.6s ease;
@@ -514,9 +514,9 @@
 
 .event-tile.is-active .tile-overlay {
   background: linear-gradient(
-    135deg,
+    90deg,
     rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0.05) 100%
+    rgba(153, 70, 70, 0.05) 100%
   );
   backdrop-filter: blur(30px) saturate(200%);
   -webkit-backdrop-filter: blur(30px) saturate(200%);
