@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
       <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         <li><Link to="/" onClick={closeAllMenus}>Home</Link></li>
         <li><Link to="/about" onClick={closeAllMenus}>About</Link></li>
-        <li><Link to="/teachings" onClick={closeAllMenus}>Teachings</Link></li>
+        <li><Link to="/sermons" onClick={closeAllMenus}>Sermons</Link></li>
         <li className="dropdown-parent" onClick={toggleEventsDropdown}>
           <Link to='/events' onClick={(e) => e.preventDefault()}>
             Events

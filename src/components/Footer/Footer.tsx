@@ -11,15 +11,6 @@ const Footer: React.FC = () => {
     <footer className="footer">
 
       <div className="footer-container">
-        
-        {/* CTA Banner Section */}
-        <div className="footer-cta-banner">
-          <div className="cta-content">
-            <h2>Stay Connected</h2>
-            <p className='footer-paragraph'>We keep you informed about upcoming events, inspirational messages, and community updates.</p>
-          </div>                    
-        </div>
-
         {/* Main Footer Content */}
         <div className="footer-main">
           
@@ -85,24 +76,6 @@ const Footer: React.FC = () => {
               <Link to="/partnership">Become a Partner</Link>
             </div>
           </div>
-        </div>
-
-        {/* Trust Badges Section */}
-        <div className="footer-trust-section">
-          <div className="trust-badge">
-            <div className="badge-icon">🔒</div>
-            <div className="badge-text">
-              <strong>Secure Giving</strong>
-              <span>Encrypted & PCI Compliant</span>
-            </div>
-          </div>
-          <div className="trust-badge">
-            <div className="badge-icon">✓</div>
-            <div className="badge-text">
-              <strong>Tax Receipts</strong>
-              <span>Generated Yearly</span>
-            </div>
-          </div>          
         </div>
 
         {/* Bottom Legal Section */}

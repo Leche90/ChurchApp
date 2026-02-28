@@ -22,49 +22,12 @@
   padding: 0 40px;
 }
 
-/* CTA BANNER SECTION */
-.footer-cta-banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
-  padding: 80px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: -30px;
-  margin-bottom: -10px;
-}
-
-.cta-content h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 500;
-  color: #ffffff;
-  margin-bottom: 0;
-  line-height: 1.2;
-}
-
-.footer-paragraph {
-  margin-bottom: 0;
-}
-
-.cta-content p {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 500px;
-  line-height: 1.6;
-}
-
-.input-wrapper {
-  position: relative;
-  flex: 1;
-}
-
 /* MAIN FOOTER CONTENT */
 .footer-main {
   display: grid;
   grid-template-columns: 1.2fr 2fr;
   gap: 100px;
-  padding: 80px 0;
+  padding: 50px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -198,52 +161,6 @@
 
 .footer-column a:hover::before {
   width: 20px;
-}
-
-/* TRUST BADGES SECTION */
-.footer-trust-section {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  padding: 50px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.trust-badge {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.badge-icon {
-  font-size: 2rem;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 193, 7, 0.1);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 193, 7, 0.2);
-}
-
-.badge-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.badge-text strong {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.badge-text span {
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 /* BOTTOM LEGAL SECTION */

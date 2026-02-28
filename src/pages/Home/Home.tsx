@@ -14,13 +14,13 @@ import effective from '../../assets/effective.png';
 import transformation from '../../assets/transformation.png';
 import leader from '../../assets/leader.jpg';
 import welcome from '../../assets/welcome.jpg';
-import hero1 from '../../assets/hero1.jpg';
-import hero3 from '../../assets/hero3.jpg';
+import hero4 from '../../assets/hero4.jpg';
+// import hero3 from '../../assets/hero3.jpg';
 
 const Home: React.FC = () => {
   const typedRef = useRef<HTMLSpanElement | null>(null);
   const [currentBg, setCurrentBg] = useState(0);
-  const heroImages = [hero1, hero3];
+  const heroImages = [hero4];
   
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState('');
@@ -39,15 +39,7 @@ const Home: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Background Slider
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBg((prev) => (prev === 0 ? 1 : 0));
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  }, []); 
 
   // Typed JS
   useEffect(() => {
@@ -124,7 +116,7 @@ const Home: React.FC = () => {
             
             <div className="hero-cta-group">
               <a href="https://www.youtube.com/@kingmakerstv6942" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                <Video size={20} /> WATCH LIVE
+                <Video size={20} />JOIN LIVE
               </a>              
             </div>            
           </div>
@@ -195,13 +187,13 @@ const Home: React.FC = () => {
             </div>
             {/* Floating accent - typical Elevation design element */}
             <div className="elevation-accent-box">
-              <p className="accent-quote">"A place where everyone is welcome, because nobody is perfect."</p>
+              <p className="accent-quote">"Oh, how wonderful, how pleasing it is when God’s people all come together as one - (Ps 133v1 - ERV)"</p>
             </div>
           </div>
 
           <div className="welcome-text-side">
             <div className="elevation-content-wrap">
-              <span className="welcome-eyebrow">WELCOME HOME</span>
+              {/* <span className="welcome-eyebrow">WELCOME HOME</span> */}
               <h2 className="elevation-heading">We're glad <br/> you're here</h2>
               <div className="elevation-divider"></div>
               <p className="welcome-desc">

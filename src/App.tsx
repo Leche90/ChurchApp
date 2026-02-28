@@ -10,7 +10,7 @@ import LayoutWrapper from './LayoutWrapper';
 // Other imports for sections/components
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import Teachings from './pages/Teachings/Teachings';
+import Sermons from './pages/Sermons/Sermons';
 import Contact from './pages/Contact/Contact';
 import CommunityOutreach from './pages/Events/CommunityOutreach/CommunityOutreach';
 import Prisons from './pages/Events/Prisons/Prisons';
@@ -37,9 +37,9 @@ const App: React.FC = () => {
           <About />
         </LayoutWrapper>
       } />
-      <Route path="/teachings" element={
+      <Route path="/sermons" element={
         <LayoutWrapper>
-          <Teachings />
+          <Sermons />
         </LayoutWrapper>
       } />
       <Route path="/contact" element={
