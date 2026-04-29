@@ -19,6 +19,7 @@
       "node_modules/@types",
       "src/@types"
     ],
+    "ignoreDeprecations": "6.0",
     "strict": true,
     "jsx": "preserve",
     "esModuleInterop": true,

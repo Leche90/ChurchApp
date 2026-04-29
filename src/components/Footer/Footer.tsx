@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaFacebookF, FaYoutube, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import './Footer.css';
 
-const Footer: React.FC = () => {    
-  const currentYear = new Date().getFullYear();  
+const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer">
-
       <div className="footer-container">
-        {/* Main Footer Content */}
+
+        {/* Main */}
         <div className="footer-main">
-          
-          {/* Brand Section */}
+
+          {/* Brand */}
           <div className="footer-brand-section">
-            <h2 className="footer-logo">Kingmakers International Ministries</h2>
-            <p className="brand-tagline">...Raising Royalties</p>
-            
+            <h2 className="footer-logo">
+              Kingmakers <br />
+              <em>International Ministries</em>
+            </h2>
+            <p className="brand-tagline">…Raising Royalties</p>
+
             <div className="contact-info">
               <div className="contact-item">
                 <FaMapMarkerAlt />
@@ -26,37 +28,38 @@ const Footer: React.FC = () => {
               </div>
               <div className="contact-item">
                 <FaPhone />
-                <a href="tel:+12045551234">(204) 341-5567</a>
+                <a href="tel:+12043415567">(204) 341-5567</a>
               </div>
               <div className="contact-item">
                 <FaEnvelope />
-                <a href="mailto:info@kingmakers.org">kingmakersinternationalministries@gmail.com</a>
+                <a href="mailto:kingmakersinternationalministries@gmail.com">
+                  kingmakersinternationalministries@gmail.com
+                </a>
               </div>
             </div>
 
             <div className="social-links">
-              <a href="https://facebook.com/..." target="_blank" rel="noreferrer" aria-label="Facebook">
+              <a 
+                href="https://www.facebook.com/profile.php?id=100075792504435" 
+                target="_blank" rel="noreferrer" 
+                aria-label="Facebook"
+              >
                 <FaFacebookF />
               </a>
-              <a href="https://x.com/..." target="_blank" rel="noreferrer" aria-label="X">
-                <FaXTwitter />
-              </a>
-              <a href="https://instagram.com/..." target="_blank" rel="noreferrer" aria-label="Instagram">
-                <FaInstagram />
-              </a>
-              <a href="https://linkedin.com/..." target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <FaLinkedinIn />
-              </a>
-              <a href="https://youtube.com/..." target="_blank" rel="noreferrer" aria-label="YouTube">
+              <a 
+                href="https://www.youtube.com/@kingmakerstv6942" 
+                target="_blank" rel="noreferrer" 
+                aria-label="YouTube"
+              >
                 <FaYoutube />
               </a>
             </div>
           </div>
 
-          {/* Navigation Grid */}
+          {/* Nav */}
           <div className="footer-nav-grid">
             <div className="footer-column">
-              <h3>Discover</h3>
+              <h3><span className="col-dash" />Discover</h3>
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/contact">Contact</Link>
@@ -64,25 +67,31 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="footer-column">
-              <h3>Get Involved</h3>
+              <h3><span className="col-dash" />Get Involved</h3>
               <Link to="/community-outreach">Community Outreach</Link>
               <Link to="/prisons">Prison Missions</Link>
               <Link to="/volunteer">Special Programs</Link>
             </div>
 
             <div className="footer-column">
-              <h3>Support</h3>
-              <a href="https://members.faithpays.org/donate/FP8588921" target="_blank" rel="noopener">Give</a>
+              <h3><span className="col-dash" />Support</h3>
+              <a 
+                href="https://members.faithpays.org/donate/FP8588921" 
+                target="_blank" rel="noopener noreferrer"
+              >
+                Give
+              </a>
               <Link to="/partnership">Become a Partner</Link>
             </div>
           </div>
         </div>
 
-        {/* Bottom Legal Section */}
+        {/* Bottom */}
         <div className="footer-bottom">
-          <div className="footer-legal">
-            <span>&copy; {currentYear} Kingmakers International Ministries. All rights reserved.</span>            
-          </div>          
+          <span className="footer-bottom-line" />
+          <span className="footer-legal">
+            &copy; {currentYear} Kingmakers International Ministries. All rights reserved.
+          </span>
         </div>
       </div>
     </footer>

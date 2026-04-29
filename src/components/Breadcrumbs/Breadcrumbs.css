@@ -1,0 +1,127 @@
+.breadcrumbs {
+  width: 100%;
+  padding: 14px 8%;
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+  z-index: 5;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breadcrumbs-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+/* Linkable crumbs */
+.breadcrumbs-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.breadcrumbs-link:hover {
+  color: var(--gold, #FFC107);
+}
+
+.breadcrumbs-home-icon {
+  display: inline-block;
+}
+
+/* Separator */
+.breadcrumbs-separator {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* Current page (not clickable) */
+.breadcrumbs-current {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ============================================
+   LIGHT THEME (cream/white backgrounds)
+   ============================================ */
+.breadcrumbs-light {
+  background: rgba(248, 231, 205, 0.5); /* cream tint */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.breadcrumbs-light .breadcrumbs-link {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.breadcrumbs-light .breadcrumbs-link:hover {
+  color: #E5AD06;
+}
+
+.breadcrumbs-light .breadcrumbs-current {
+  color: #1F1B17;
+}
+
+.breadcrumbs-light .breadcrumbs-separator {
+  color: #E5AD06;
+}
+
+/* ============================================
+   DARK THEME (charcoal/black backgrounds)
+   ============================================ */
+.breadcrumbs-dark {
+  background: rgba(31, 27, 23, 0.6);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 193, 7, 0.08);
+}
+
+.breadcrumbs-dark .breadcrumbs-link {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.breadcrumbs-dark .breadcrumbs-link:hover {
+  color: #FFC107;
+}
+
+.breadcrumbs-dark .breadcrumbs-current {
+  color: #F8E7CD;
+}
+
+.breadcrumbs-dark .breadcrumbs-separator {
+  color: #FFC107;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding: 12px 5%;
+  }
+
+  .breadcrumbs-item {
+    font-size: 0.62rem;
+    letter-spacing: 1.5px;
+  }
+
+  .breadcrumbs-list {
+    gap: 4px;
+  }
+}

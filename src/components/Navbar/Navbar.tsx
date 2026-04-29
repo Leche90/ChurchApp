@@ -1,38 +1,57 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import './Navbar.css';
 import logowhite from '../../assets/logowhite.png';
 import logoblack from '../../assets/logoblack.png';
-import { Link, useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTimes, faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isEventsDropdownOpen, setIsEventsDropdownOpen] = useState(false);
-  const navigate = useNavigate();
-  const eventsDropdownRef = useRef<HTMLUListElement | null>(null);
+  const eventsParentRef = useRef<HTMLLIElement | null>(null);
 
+  // Scroll detection
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // Trigger at 50px scroll
+      setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  // Click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        eventsParentRef.current &&
+        !eventsParentRef.current.contains(event.target as Node)
+      ) {
+        setIsEventsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   const toggleEventsDropdown = (e: React.MouseEvent) => {
     e.preventDefault();
-    e.stopPropagation(); // Critical: Isolate this click
-  
-    // Toggle with explicit close
-    setIsEventsDropdownOpen(prev => !prev);
+    e.stopPropagation();
+    setIsEventsDropdownOpen((prev) => !prev);
   };
 
   const closeAllMenus = () => {
@@ -40,54 +59,83 @@ const Navbar: React.FC = () => {
     setIsEventsDropdownOpen(false);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (eventsDropdownRef.current && !eventsDropdownRef.current.contains(event.target as Node)) {
-        setIsEventsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <Link to="/" className='logo-link' onClick={closeAllMenus}>
-        <img src={scrolled ? logoblack : logowhite} alt="Logo" className="logo" />
-      </Link>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
+      <div className="navbar-inner">
+        <Link to="/" className="navbar-logo-link" onClick={closeAllMenus}>
+          <img
+            src={scrolled || isMenuOpen ? logoblack : logowhite}
+            alt="Kingmakers International Ministries"
+            className="navbar-logo"
+          />
+        </Link>
 
-      {/* Mobile Hamburger Button */}
-      <div className="hamburger" onClick={toggleMenu}>
-        <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
-      </div>
+        {/* Hamburger (mobile) */}
+        <button
+          className="navbar-hamburger"
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
-      {/* Navigation Links */}
-      <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-        <li><Link to="/" onClick={closeAllMenus}>Home</Link></li>
-        <li><Link to="/about" onClick={closeAllMenus}>About</Link></li>
-        <li><Link to="/sermons" onClick={closeAllMenus}>Sermons</Link></li>
-        <li className="dropdown-parent" onClick={toggleEventsDropdown}>
-          <Link to='/events' onClick={(e) => e.preventDefault()}>
-            Events
-            <FontAwesomeIcon icon={faCaretDown} className="dropdown-icon" />
-          </Link>
-          <ul 
-            ref={eventsDropdownRef}
-            className={`events-dropdown ${isEventsDropdownOpen ? 'active' : ''}`}
+        {/* Nav links */}
+        <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
+          <li>
+            <Link to="/" onClick={closeAllMenus}>Home</Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={closeAllMenus}>About</Link>
+          </li>
+          <li>
+            <Link to="/sermons" onClick={closeAllMenus}>Sermons</Link>
+          </li>
+
+          {/* Events dropdown */}
+          <li 
+            ref={eventsParentRef}
+            className={`navbar-dropdown-parent ${isEventsDropdownOpen ? 'open' : ''}`}
           >
-            <li><Link to="/community-outreach" onClick={closeAllMenus}>Community Outreach</Link></li>
-            <li><Link to="/prisons" onClick={closeAllMenus}>Prisons Mission</Link></li>
-            <li><Link to="/programs" onClick={closeAllMenus}>Special Programs</Link></li>
-          </ul>
-        </li>
-        <li><Link to="/contact" onClick={closeAllMenus}>Contact</Link></li>
-        <li className="give-btn-container">
-          <a href='https://members.faithpays.org/donate/FP8588921' target="_blank" rel="noopener noreferrer">
-            <button className="give-btn">GIVE</button>
-          </a>
-        </li>
-      </ul>
+            <button
+              className="navbar-dropdown-trigger"
+              onClick={toggleEventsDropdown}
+              aria-haspopup="true"
+              aria-expanded={isEventsDropdownOpen}
+            >
+              <span>Events</span>
+              <ChevronDown 
+                size={14} 
+                className={`navbar-dropdown-icon ${isEventsDropdownOpen ? 'rotated' : ''}`}
+              />
+            </button>
+
+            <ul className={`navbar-dropdown ${isEventsDropdownOpen ? 'active' : ''}`}>
+              <li>
+                <Link to="/community-outreach" onClick={closeAllMenus}>                  
+                  <span className="navbar-dropdown-label">Community Outreach</span>
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <Link to="/contact" onClick={closeAllMenus}>Contact</Link>
+          </li>
+
+          <li className="navbar-give-wrap">
+            <a
+              href="https://members.faithpays.org/donate/FP8588921"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-give-btn"
+              onClick={closeAllMenus}
+            >
+              GIVE
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
