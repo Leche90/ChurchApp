@@ -334,19 +334,19 @@ const Home: React.FC = () => {
     { 
       title: "Faith & Flames",
       description: "An evening of worship, fellowship, and BBQ.",
-      month: "JUN", year: "'26", day: 20, 
+      month: "JUN", year: "'26", day: 13, 
       time: "5:00 PM", location: "582 Burrows Avenue"
     },
     { 
       title: "Gospel & Grill",
       description: "Authentic connection over food and faith.",
-      month: "JUL", year: "'26", day: 18, 
+      month: "JUL", year: "'26", day: 11, 
       time: "5:00 PM", location: "582 Burrows Avenue"
     },
     { 
       title: "Feast & Fellowship",
       description: "Come hungry for the Word and great food.",
-      month: "AUG", year: "'26", day: 15, 
+      month: "AUG", year: "'26", day: 22, 
       time: "5:00 PM", location: "582 Burrows Avenue"
     }
   ];
