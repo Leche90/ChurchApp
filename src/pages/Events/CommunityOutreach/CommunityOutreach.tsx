@@ -387,7 +387,7 @@ const CommunityOutreach: React.FC = () => {
             className="community-btn-ghost-dark"
             onClick={() => openLightbox(0, '2023')}
           >
-            <span>View All {images2023.length}</span>
+            <span>View All</span>
             <ArrowRight size={16} />
           </button>
         </div>
