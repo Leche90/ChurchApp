@@ -222,7 +222,7 @@ const Contact: React.FC = () => {
               SEND US A MESSAGE
             </span>
             <h2 className="contact-section-title">
-              Drop a <em>line</em>
+              Reach Out <em>anytime</em>
             </h2>
 
             <form onSubmit={handleSubmit} className="contact-form" noValidate>
